@@ -1,0 +1,160 @@
+// =============================================================================
+//  Mirea Flat — Badges index (/badges)
+// =============================================================================
+.badges {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-bottom: var(--mf-space-16);
+  box-sizing: border-box;
+
+  > h1 {
+    margin: 0 0 var(--mf-space-6);
+    font-size: var(--mf-text-3xl);
+    font-weight: var(--mf-weight-bold);
+  }
+
+  .badge-grouping {
+    margin-bottom: var(--mf-space-10);
+  }
+
+  .badge-grouping > .title > h2,
+  .badge-grouping > h2 {
+    margin: 0 0 var(--mf-space-3);
+    color: var(--mf-ink);
+    font-size: var(--mf-text-xl);
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .badge-group-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--mf-space-3);
+  }
+
+  .badge-card,
+  .badge-card.--badge-medium {
+    position: relative;
+    min-width: 0;
+    min-height: 126px;
+    padding: var(--mf-space-4);
+    box-sizing: border-box;
+    background: var(--mf-panel);
+    border: 0 !important;
+    border-radius: var(--mf-radius-xl);
+    box-shadow: none !important;
+    transition:
+      background var(--mf-dur-fast) var(--mf-ease),
+      transform var(--mf-dur-fast) var(--mf-ease);
+
+    &:hover {
+      background: var(--mf-panel-strong);
+      transform: translateY(-1px);
+    }
+
+    .badge-contents {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: var(--mf-space-3);
+      height: 100%;
+    }
+
+    .badge-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      margin: 0;
+      border-radius: var(--mf-radius-lg);
+    }
+
+    .badge-info,
+    .badge-info-item {
+      min-width: 0;
+      width: 100%;
+    }
+
+    h3 {
+      margin: 0 28px 5px 0;
+      line-height: 1.25;
+    }
+
+    .badge-link {
+      color: var(--mf-ink);
+      font-size: var(--mf-text-base);
+      font-weight: var(--mf-weight-semibold);
+      letter-spacing: var(--mf-tracking-snug);
+      overflow-wrap: anywhere;
+    }
+
+    .badge-summary {
+      display: -webkit-box;
+      min-height: 2.8em;
+      margin-bottom: 7px;
+      overflow: hidden;
+      color: var(--mf-ink-3);
+      font-size: var(--mf-text-sm);
+      line-height: 1.4;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .badge-granted {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .check-display {
+      position: absolute;
+      top: var(--mf-space-3);
+      right: var(--mf-space-3);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      color: var(--mf-success);
+      background: var(--mf-success-tint);
+      border-radius: var(--mf-radius-pill);
+
+      .d-icon {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+}
+
+@media (width <= 980px) {
+  .badges .badge-group-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width <= 600px) {
+  .badges {
+    padding-inline: var(--mf-space-3);
+
+    > h1 {
+      margin-bottom: var(--mf-space-5);
+      font-size: var(--mf-text-2xl);
+    }
+
+    .badge-grouping {
+      margin-bottom: var(--mf-space-8);
+    }
+
+    .badge-group-list {
+      grid-template-columns: 1fr;
+      gap: var(--mf-space-2);
+    }
+
+    .badge-card,
+    .badge-card.--badge-medium {
+      min-height: 116px;
+      padding: var(--mf-space-3);
+      border-radius: var(--mf-radius-lg);
+    }
+  }
+}
