@@ -1,0 +1,196 @@
+// =============================================================================
+//  Mirea Flat — Sidebar
+// =============================================================================
+.sidebar-wrapper {
+  background: var(--mf-app-bg);
+
+  .sidebar-container {
+    border-right: none;
+  }
+}
+
+// the whole sidebar sits on the canvas — no stray white panels/skeletons
+.sidebar-wrapper,
+.sidebar-container,
+#d-sidebar,
+.sidebar-sections,
+.sidebar-section-content,
+.sidebar-footer-wrapper {
+  background: var(--mf-app-bg);
+}
+
+.sidebar-wrapper .select-kit-header,
+.sidebar-wrapper .select-kit-body,
+.sidebar-section-link-loading,
+.sidebar-sections .loading-container,
+.sidebar-wrapper [class*="placeholder"],
+.sidebar-wrapper [class*="skeleton"] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#d-sidebar,
+.sidebar-sections {
+  padding-top: var(--mf-space-2);
+
+  --d-sidebar-row-height: 2.3em;
+
+  // no stray horizontal scrollbar at the sidebar bottom (long category/tag names)
+  overflow-x: hidden;
+}
+
+// long link labels truncate instead of forcing a horizontal scrollbar
+.sidebar-section-link .sidebar-section-link-content-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// breathing room between sections + tidy inner padding — NO dividers
+.sidebar-section-wrapper {
+  margin-bottom: var(--mf-space-2);
+  padding: 0 var(--mf-space-2);
+  border: none !important;
+
+  &::before,
+  &::after {
+    display: none !important;
+  }
+}
+
+.sidebar-sections,
+.sidebar-section,
+.sidebar-section-content {
+  border: none !important;
+}
+
+// Section header: small, quiet, uppercase — clearly separates groups
+.sidebar-section-header-wrapper,
+.sidebar-section-header {
+  margin-top: var(--mf-space-3);
+  padding: 0 8px;
+
+  .sidebar-section-header-text {
+    text-transform: uppercase;
+    font-size: var(--mf-text-2xs);
+    letter-spacing: 0.08em;
+    font-weight: var(--mf-weight-semibold);
+    color: var(--mf-ink-faint);
+  }
+
+  .sidebar-section-header-caret {
+    color: var(--mf-ink-faint);
+    opacity: 0.7;
+  }
+
+  &:hover .sidebar-section-header-caret {
+    opacity: 1;
+  }
+}
+
+// the very first (primary) section sits flush at the top
+.sidebar-sections
+  > .sidebar-section-wrapper:first-child
+  .sidebar-section-header-wrapper {
+  margin-top: 0;
+}
+
+// Link rows → soft rounded pills
+.sidebar-section-link-wrapper .sidebar-section-link {
+  border-radius: var(--mf-radius-sm);
+  color: var(--mf-ink-2);
+  font-weight: var(--mf-weight-medium);
+  font-size: var(--mf-text-md);
+  min-height: 32px;
+  transition:
+    background var(--mf-dur-fast) var(--mf-ease),
+    color var(--mf-dur-fast) var(--mf-ease);
+
+  .sidebar-section-link-content-text {
+    letter-spacing: var(--mf-tracking-snug);
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--mf-fill-hover);
+    color: var(--mf-ink);
+  }
+
+  &.active,
+  &--active,
+  &.active:hover {
+    background: var(--mf-fill-selected);
+    color: var(--mf-accent);
+    font-weight: var(--mf-weight-semibold);
+    position: relative;
+
+    .sidebar-section-link-prefix.icon {
+      color: var(--mf-accent);
+    }
+
+    // crisp left accent bar on the active row
+    &::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 16px;
+      border-radius: var(--mf-radius-pill);
+      background: var(--mf-accent);
+    }
+  }
+
+  &:active {
+    background: var(--mf-fill-active);
+  }
+
+  .sidebar-section-link-prefix {
+    color: var(--mf-ink-3);
+
+    &.icon {
+      font-size: var(--mf-text-sm);
+    }
+
+    // category color squares → tidy small rounded dots
+    &.span {
+      border-radius: var(--mf-radius-pill);
+      width: 9px;
+      height: 9px;
+      box-shadow: none;
+    }
+  }
+}
+
+// Unread / count suffix dots
+.sidebar-section-link .sidebar-section-link-suffix.icon.unread {
+  color: var(--mf-accent);
+}
+
+.sidebar-section-link .sidebar-section-link-content-badge {
+  color: var(--mf-ink-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+// Footer actions (collapse, settings) — no divider
+.sidebar-footer-wrapper {
+  border-top: none;
+  background: transparent;
+
+  .sidebar-footer-actions .btn {
+    border-radius: var(--mf-radius-sm);
+  }
+}
+
+// "More" / show-more rows
+.sidebar-more-section-links-details-summary,
+.sidebar-section-link.sidebar-section-link-button {
+  color: var(--mf-ink-3);
+  border-radius: var(--mf-radius-sm);
+
+  &:hover {
+    background: var(--mf-fill-hover);
+    color: var(--mf-ink);
+  }
+}

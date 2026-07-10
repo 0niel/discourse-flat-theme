@@ -1,0 +1,387 @@
+// =============================================================================
+//  Mirea Flat — Resources / Knowledge base  (discourse-docs plugin, /resources)
+//  A delightful study-materials browser: a prominent search, a clean sticky
+//  filter rail (categories = semesters, tags = subjects) and rich result cards.
+// =============================================================================
+.docs {
+  max-width: calc(var(--mf-content-width) + 60px);
+  margin: 0 auto;
+  padding-top: var(--mf-space-2);
+
+  // the plugin's stray top <span> spacer
+  > span:empty {
+    display: none;
+  }
+}
+
+// ---- Search — the hero of the page: big, centered, pill -------------------
+.docs-search {
+  max-width: 620px;
+  margin: var(--mf-space-3) auto var(--mf-space-8);
+
+  .docs-search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--mf-space-3);
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100%;
+    background: var(--mf-surface);
+    border: 1px solid transparent;
+    border-radius: var(--mf-radius-lg);
+    padding: 4px var(--mf-space-4);
+    transition:
+      border-color var(--mf-dur) var(--mf-ease),
+      box-shadow var(--mf-dur) var(--mf-ease);
+
+    &:focus-within {
+      border-color: var(--mf-accent);
+      box-shadow: 0 0 0 4px var(--mf-accent-tint-soft);
+    }
+
+    svg {
+      order: -1; // search glyph to the LEFT of the field
+      color: var(--mf-ink-faint);
+      width: 19px;
+      height: 19px;
+      flex-shrink: 0;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      border: none;
+      background: transparent;
+      padding: 12px 0;
+      font-size: var(--mf-text-base);
+      color: var(--mf-ink);
+
+      &::placeholder {
+        color: var(--mf-ink-faint);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// ---- Browse layout: sticky filter rail | results --------------------------
+.docs-browse {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr);
+  gap: var(--mf-space-8);
+  align-items: start;
+}
+
+// ---- Filter rail ----------------------------------------------------------
+.docs-filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mf-space-6);
+  position: sticky;
+  top: 74px;
+}
+
+.docs-items {
+  .item-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--mf-space-2);
+    padding: 0 6px;
+
+    h3 {
+      margin: 0;
+      font-size: var(--mf-text-2xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: var(--mf-weight-semibold);
+      color: var(--mf-ink-faint);
+    }
+
+    .item-controls-buttons {
+      display: inline-flex;
+      gap: 2px;
+
+      .btn {
+        padding: 3px 5px;
+        color: var(--mf-ink-faint);
+        background: transparent;
+        border: none;
+        border-radius: var(--mf-radius-sm);
+
+        &:hover {
+          background: var(--mf-fill-hover);
+          color: var(--mf-ink);
+        }
+      }
+    }
+  }
+
+  // the subject-tags group can get long — let it scroll inside the rail
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  &.docs-tags ul {
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: 2px;
+  }
+}
+
+// the "Subject name" sub-label inside the tag filter
+.docs-tags ul > .docs-filter-tag-group-name,
+.docs-tags .tag-group-name {
+  color: var(--mf-ink-faint);
+  font-size: var(--mf-text-xs);
+  padding: 2px 6px 4px;
+}
+
+// individual filter row (category / tag)
+.docs-item {
+  display: flex;
+  align-items: center;
+  gap: var(--mf-space-2);
+  padding: 7px 10px;
+  border-radius: var(--mf-radius-sm);
+  color: var(--mf-ink-2);
+  font-size: var(--mf-text-md);
+  font-weight: var(--mf-weight-medium);
+  line-height: 1.3;
+  transition:
+    background var(--mf-dur-fast) var(--mf-ease),
+    color var(--mf-dur-fast) var(--mf-ease);
+
+  svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--mf-ink-faint);
+  }
+
+  .docs-item-id,
+  .category-id,
+  .tag-id {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .docs-item-count,
+  .category-count,
+  .tag-count {
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: var(--mf-fill-hover);
+    color: var(--mf-ink);
+  }
+
+  &.active,
+  &.selected,
+  &.docs-active {
+    background: var(--mf-fill-selected);
+    color: var(--mf-accent);
+    font-weight: var(--mf-weight-semibold);
+
+    svg,
+    .docs-item-count {
+      color: var(--mf-accent);
+    }
+  }
+}
+
+// ---- Results — rich resource cards ----------------------------------------
+.docs-results {
+  .topic-list,
+  .topic-list > tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .topic-list > thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  // each result becomes a self-contained card (no avatar gutter — docs rows
+  // carry no posters cell)
+  .topic-list-item {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    padding: 16px 18px;
+    margin-bottom: var(--mf-space-3);
+    border: 0;
+    border-radius: var(--mf-radius-lg);
+    background: var(--mf-surface);
+    transition: background var(--mf-dur-fast) var(--mf-ease);
+
+    &:hover {
+      background: var(--mf-surface-2);
+    }
+
+    .main-link {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    .num.posts-map {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .num.views {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .activity {
+      grid-column: 3;
+      grid-row: 2;
+      justify-self: start;
+    }
+
+    a.title {
+      font-size: var(--mf-text-lg);
+    }
+
+    a.topic-excerpt {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-top: 4px;
+      color: var(--mf-ink-3);
+      font-size: var(--mf-text-sm);
+      line-height: 1.5;
+
+      .topic-excerpt-more {
+        color: var(--mf-accent);
+        font-weight: var(--mf-weight-medium);
+      }
+
+      &:hover .topic-excerpt-more {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// ---- No results / loading -------------------------------------------------
+.docs .no-results,
+.docs-no-results {
+  text-align: center;
+  color: var(--mf-ink-3);
+  padding: var(--mf-space-10) 0;
+}
+
+// ---- Responsive: rail collapses above the results -------------------------
+@media (width <= 924px) {
+  .docs-browse {
+    grid-template-columns: 1fr;
+    gap: var(--mf-space-5);
+  }
+
+  .docs-filters {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--mf-space-5);
+
+    .docs-items {
+      flex: 1 1 240px;
+    }
+
+    &.docs-tags ul {
+      max-height: 220px;
+    }
+  }
+}
+
+@media (width <= 600px) {
+  .docs-search {
+    margin-bottom: var(--mf-space-4);
+  }
+
+  .docs-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--mf-space-3);
+
+    .docs-items {
+      min-width: 0;
+    }
+
+    .docs-items ul {
+      max-height: 164px;
+      overflow-y: auto;
+    }
+  }
+
+  .docs-results .topic-list-item {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--mf-space-4);
+    margin-bottom: var(--mf-space-2);
+
+    > .topic-list-data:only-child {
+      grid-column: 1;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .main-link {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a.topic-excerpt {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    // The docs plugin keeps desktop metadata widths on its single-cell mobile
+    // rows. Reset that inner layout so activity dates wrap inside the card.
+    .topic-item-metadata.right {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+    }
+
+    .topic-item-stats {
+      width: 100%;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .num.activity.last {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    a.title {
+      font-size: var(--mf-text-base);
+    }
+  }
+}

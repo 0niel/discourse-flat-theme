@@ -1,0 +1,98 @@
+// =============================================================================
+//  Mirea Flat — Composer & editor
+// =============================================================================
+#reply-control {
+  background: var(--mf-surface-elevated);
+  border-top: 1px solid var(--mf-hairline);
+  box-shadow: 0 -2px 14px color-mix(in srgb, var(--primary) 7%, transparent);
+
+  // CLOSED composer is collapsed to ~1px but still in the DOM — paint nothing,
+  // otherwise its surface + shadow read as a stray "line" at the page bottom
+  &.closed {
+    box-shadow: none !important;
+    background: transparent !important;
+    border-top: none !important;
+  }
+
+  &.open {
+    border: 1px solid var(--mf-hairline);
+    border-bottom: none;
+    border-top-left-radius: var(--mf-radius-xl);
+    border-top-right-radius: var(--mf-radius-xl);
+  }
+
+  .reply-to,
+  .reply-details {
+    color: var(--mf-ink-3);
+  }
+
+  #reply-title,
+  .composer-action-title {
+    font-weight: var(--mf-weight-semibold);
+    color: var(--mf-ink);
+  }
+}
+
+.d-editor {
+  .d-editor-button-bar {
+    background: var(--mf-surface-2);
+    border: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-md);
+    padding: 4px;
+    gap: 1px;
+
+    .btn {
+      background: transparent;
+      color: var(--mf-ink-3);
+      border-radius: var(--mf-radius-xs);
+
+      &:hover {
+        background: var(--mf-fill-hover);
+        color: var(--mf-ink);
+      }
+    }
+
+    .button-wrapper.separator {
+      border-color: var(--mf-hairline);
+    }
+  }
+
+  .d-editor-input,
+  .d-editor-preview-wrapper {
+    border: 1px solid var(--mf-hairline-strong);
+    border-radius: var(--mf-radius-md);
+    background: var(--mf-surface);
+
+    &:focus {
+      border-color: var(--mf-accent);
+      box-shadow: 0 0 0 3px var(--mf-accent-tint);
+    }
+  }
+
+  .d-editor-preview-wrapper {
+    background: var(--mf-surface-2);
+  }
+}
+
+.composer-popup,
+.composer-popup.education-message {
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-lg);
+  background: var(--mf-surface);
+  box-shadow: var(--shadow-dropdown);
+}
+
+.submit-panel {
+  .btn-primary {
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .cancel {
+    color: var(--mf-ink-3);
+  }
+}
+
+// composer category/tag pickers
+#reply-control .select-kit .select-kit-header {
+  background: var(--mf-surface-2);
+}

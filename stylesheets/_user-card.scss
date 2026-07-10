@@ -1,0 +1,133 @@
+// =============================================================================
+//  Mirea Flat — User & group cards, user profile
+// =============================================================================
+
+// :not(:empty) so the CLOSED, empty .user-card/.group-card that Discourse leaves
+// in the DOM (height ~2px, position static) doesn't paint a surface + shadow —
+// that stray shadow rendered as a grey bar at the bottom of the page.
+#user-card:not(:empty),
+.user-card:not(:empty),
+#group-card:not(:empty),
+.group-card:not(:empty) {
+  box-shadow: var(--shadow-dropdown) !important;
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-xl) !important;
+  background: var(--mf-surface-elevated);
+  overflow: hidden;
+
+  .card-content {
+    background: rgb(0, 0, 0, 0) !important;
+    background: transparent !important;
+    padding: var(--mf-space-5);
+  }
+
+  .card-row .names {
+    h1,
+    .username {
+      font-weight: var(--mf-weight-bold);
+      letter-spacing: var(--mf-tracking-snug);
+    }
+
+    .user-card-fullname,
+    .user-title {
+      color: var(--mf-ink-3);
+    }
+  }
+
+  .user-card-avatar .avatar,
+  .card-huge-avatar .avatar {
+    border-radius: var(--mf-radius-pill);
+  }
+
+  .usercard-controls .btn {
+    border-radius: var(--mf-radius-md);
+  }
+
+  .metadata,
+  .public-user-fields .user-field {
+    color: var(--mf-ink-3);
+  }
+
+  // badge chips — clean, no fussy borders
+  .badge-section .user-badge,
+  .user-card-badges .user-badge {
+    background: var(--mf-surface-2);
+    border: none;
+    border-radius: var(--mf-radius-sm);
+    color: var(--mf-ink-2);
+    padding: 3px 9px;
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-medium);
+    box-shadow: none;
+
+    .badge-icon {
+      color: var(--mf-ink-faint);
+    }
+
+    &:hover {
+      background: var(--mf-fill-hover);
+      color: var(--mf-ink);
+    }
+  }
+}
+
+// The CLOSED/empty card placeholder Discourse leaves inline in the DOM must paint
+// nothing — its stray box-shadow showed as a grey bar at the bottom of the page.
+.user-card:empty,
+.group-card:empty,
+#user-card:empty,
+#group-card:empty {
+  box-shadow: none !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+// Card cover / background
+#user-card .card-content .first-row,
+.user-card .card-backdrop {
+  border-radius: 0;
+}
+
+// ---- User profile page ----------------------------------------------------
+.user-main {
+  .about.collapsed-info,
+  .user-profile-avatar {
+    background: transparent;
+  }
+
+  .primary .username h1 {
+    letter-spacing: var(--mf-tracking-tight);
+    font-weight: var(--mf-weight-bold);
+  }
+
+  .secondary,
+  .public-user-fields {
+    color: var(--mf-ink-3);
+  }
+
+  .user-content-wrapper .user-navigation {
+    border-bottom: 1px solid var(--mf-hairline);
+  }
+}
+
+.user-stat,
+.user-summary-stat {
+  .value {
+    color: var(--mf-ink);
+    font-weight: var(--mf-weight-semibold);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .label {
+    color: var(--mf-ink-faint);
+    text-transform: uppercase;
+    font-size: var(--mf-text-2xs);
+    letter-spacing: 0.05em;
+  }
+}
+
+// who's online / posters list avatars
+.online-marker,
+.user-card .online {
+  color: var(--mf-success);
+}

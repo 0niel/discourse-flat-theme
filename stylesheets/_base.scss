@@ -1,0 +1,127 @@
+// =============================================================================
+//  Mirea Flat — Base layer (typography, canvas, global polish)
+// =============================================================================
+html {
+  font-size: 100%;
+  background: var(--mf-app-bg);
+}
+
+html,
+body {
+  background: var(--mf-app-bg);
+  color: var(--mf-ink);
+  font-family: var(--mf-font);
+  font-feature-settings:
+    "cv05" 1,
+    "cv09" 1,
+    "ss03" 1,
+    "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  letter-spacing: var(--mf-tracking-normal);
+  line-height: var(--mf-leading-normal);
+}
+
+#main-outlet-wrapper,
+.posts-wrapper,
+.container.posts {
+  background: var(--mf-app-bg);
+}
+
+// ---- Headings -------------------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--mf-font);
+  color: var(--mf-ink);
+  letter-spacing: var(--mf-tracking-tight);
+  line-height: var(--mf-leading-tight);
+  font-weight: var(--mf-weight-semibold);
+}
+
+h1 {
+  letter-spacing: -0.03em;
+}
+
+// ---- Links ----------------------------------------------------------------
+a {
+  color: var(--mf-accent);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  transition: color var(--mf-dur-fast) var(--mf-ease);
+
+  &:hover {
+    color: var(--mf-accent-hover);
+    text-decoration: none;
+  }
+}
+
+// keep utility links (titles, names) inheriting ink, not accent
+.topic-list .main-link a.title,
+.latest-topic-list-item .main-link a,
+a.title.raw-link,
+.names a,
+.sidebar-section-link {
+  color: var(--mf-ink);
+}
+
+// ---- Selection / focus ----------------------------------------------------
+::selection {
+  background: var(--mf-accent-tint);
+  color: var(--mf-ink);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.select-kit-header:focus-visible {
+  outline: 2px solid var(--mf-accent);
+  outline-offset: 2px;
+  border-radius: var(--mf-radius-xs);
+}
+
+// ---- Code / mono ----------------------------------------------------------
+code,
+pre,
+kbd,
+tt,
+.d-editor-input {
+  font-family: var(--mf-font-mono);
+  font-feature-settings: normal;
+}
+
+:not(pre) > code {
+  background: var(--mf-surface-2);
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-xs);
+  padding: 0.12em 0.4em;
+  font-size: 0.88em;
+}
+
+pre {
+  background: var(--mf-surface-2);
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-md);
+  padding: var(--mf-space-4);
+}
+
+// ---- Rules ----------------------------------------------------------------
+hr {
+  border: none;
+  border-top: 1px solid var(--mf-hairline);
+}
+
+// ---- Images in posts ------------------------------------------------------
+.cooked img:not(.emoji, .avatar),
+.d-editor-preview img:not(.emoji, .avatar) {
+  border-radius: var(--mf-radius-md);
+}

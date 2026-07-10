@@ -1,0 +1,183 @@
+// =============================================================================
+//  Mirea Flat — Categories page (modern card grid)
+// =============================================================================
+.category-list {
+  --category-boxes-min-width: 280px;
+  --category-boxes-max-width: 1fr;
+}
+
+// ---- Box grid → masonry columns (cards keep their natural height) ----------
+.category-boxes,
+.category-boxes-with-topics {
+  display: block !important;
+  column-width: 264px;
+  column-gap: var(--mf-space-3);
+  margin-top: var(--mf-space-2);
+}
+
+.category-boxes .category-box,
+.category-boxes-with-topics .category-box {
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  border: 0;
+  border-left: 3px solid var(--category-badge-color, var(--mf-accent));
+  border-radius: var(--mf-radius-lg);
+  background: var(--mf-surface);
+  padding: 0;
+  margin: 0 0 var(--mf-space-3);
+  overflow: hidden;
+  transition: background var(--mf-dur) var(--mf-ease);
+
+  &:hover {
+    background: var(--mf-surface-2);
+    border-left-color: var(--category-badge-color, var(--mf-accent));
+  }
+
+  .category-box-inner {
+    border: none;
+    background: transparent;
+    padding: var(--mf-space-4);
+    height: auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-box-heading {
+    margin-bottom: 6px;
+    text-align: left !important;
+    justify-content: flex-start !important;
+
+    .category-title-link,
+    a,
+    h3,
+    h4,
+    .category-name {
+      justify-content: flex-start !important;
+      text-align: left !important;
+    }
+
+    h3,
+    h4,
+    .category-name {
+      font-size: var(--mf-text-base);
+      font-weight: var(--mf-weight-semibold);
+      letter-spacing: var(--mf-tracking-snug);
+      color: var(--mf-ink);
+      overflow-wrap: anywhere;
+    }
+
+    .badge-category__wrapper {
+      font-size: 1em;
+    }
+  }
+
+  .category-box-heading .category-logo.aspect-image,
+  .category-logo {
+    border-radius: var(--mf-radius-sm);
+  }
+
+  .description,
+  .category-description {
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+    line-height: 1.45;
+
+    // keep descriptions short so cards stay compact
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // subcategories → compact chips
+  .subcategories {
+    margin-top: var(--mf-space-3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+    .subcategory {
+      background: var(--mf-surface-2);
+      border: 0;
+      border-radius: var(--mf-radius-sm);
+      padding: 2px 8px;
+      font-size: var(--mf-text-2xs);
+      font-weight: var(--mf-weight-medium);
+      color: var(--mf-ink-2);
+      line-height: 1.5;
+
+      .badge-category {
+        background: transparent;
+        color: inherit;
+      }
+
+      &:hover {
+        background: var(--mf-fill-hover);
+        color: var(--mf-ink);
+      }
+    }
+  }
+}
+
+// ---- Table / list view of categories --------------------------------------
+table.category-list {
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead th {
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: var(--mf-weight-medium);
+    border-bottom: 0;
+    padding-bottom: var(--mf-space-2);
+  }
+
+  td {
+    border-top: 0;
+    padding: var(--mf-space-4) var(--mf-space-3);
+  }
+
+  tr.category-list-item:hover td {
+    background: var(--mf-fill-hover);
+  }
+
+  td.category h3,
+  .category-name {
+    font-weight: var(--mf-weight-semibold);
+    letter-spacing: var(--mf-tracking-snug);
+  }
+
+  .category-description {
+    color: var(--mf-ink-3);
+  }
+
+  .category-text-title .category-name {
+    color: var(--mf-ink);
+  }
+}
+
+// muted categories link
+.muted-categories-link,
+.muted-categories {
+  border: none;
+  color: var(--mf-ink-faint);
+}
+
+// subcategory list style "boxes"
+.subcategory-list-item {
+  border-bottom: 0;
+
+  &:hover {
+    background: var(--mf-fill-hover);
+  }
+}
+
+// category title badges in headings
+.category-title-header .category-title-contents h1 {
+  letter-spacing: var(--mf-tracking-tight);
+}

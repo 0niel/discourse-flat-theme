@@ -1,0 +1,504 @@
+// =============================================================================
+//  Mirea Flat — User profile (cardinal redesign)
+// =============================================================================
+.user-main {
+  // ---- Header card --------------------------------------------------------
+  // Discourse paints .user-content white with no padding — make it part of the
+  // canvas so the white stat tiles / cards read as elevated panels.
+  .user-main-content,
+  .user-content-wrapper,
+  .user-content,
+  #user-summary {
+    background: transparent !important;
+    box-shadow: none;
+  }
+
+  // header card — scoped with :has(.primary) so it never leaks onto the
+  // small .details elements (like-count rows) nested deeper in summaries
+  .details:has(.primary) {
+    background: var(--mf-surface);
+    border: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-lg);
+    padding: var(--mf-space-6);
+    margin-bottom: var(--mf-space-5);
+    box-shadow: none;
+    overflow: hidden;
+
+    .profile-image-background {
+      border-radius: 0;
+    }
+
+    // the inner flex row (avatar | name | controls)
+    .primary {
+      display: flex;
+      gap: var(--mf-space-5);
+      align-items: flex-start;
+    }
+
+    .user-profile-avatar {
+      margin: 0;
+
+      .avatar {
+        border-radius: var(--mf-radius-pill);
+        width: 84px;
+        height: 84px;
+        border: 3px solid var(--mf-hairline-strong);
+      }
+
+      .avatar-flair,
+      .user-profile-avatar__flair {
+        border-radius: var(--mf-radius-pill);
+      }
+    }
+
+    .primary-textual {
+      h1,
+      .username {
+        font-size: var(--mf-text-2xl);
+        font-weight: var(--mf-weight-bold);
+        letter-spacing: var(--mf-tracking-tight);
+        color: var(--mf-ink);
+        margin: 0 0 2px;
+
+        .d-icon {
+          color: var(--mf-ink-faint);
+        }
+      }
+
+      .full-name,
+      .user-profile-names__secondary {
+        color: var(--mf-ink-3);
+        font-size: var(--mf-text-base);
+      }
+
+      .user-title {
+        color: var(--mf-accent);
+        font-weight: var(--mf-weight-medium);
+      }
+
+      .bio .user-card-bio,
+      .user-profile__bio {
+        color: var(--mf-ink-2);
+        line-height: var(--mf-leading-normal);
+      }
+
+      .secondary {
+        color: var(--mf-ink-3);
+      }
+    }
+
+    .controls {
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--mf-space-2);
+
+      .btn {
+        border-radius: var(--mf-radius-md);
+      }
+    }
+  }
+
+  // ---- Primary nav → segmented tabs ---------------------------------------
+  .user-navigation {
+    background: transparent;
+    border-bottom: 1px solid var(--mf-hairline);
+    margin-bottom: var(--mf-space-5);
+
+    .user-nav.nav-pills {
+      gap: 0;
+
+      > li > a {
+        color: var(--mf-ink-3);
+        font-weight: var(--mf-weight-medium);
+        border-radius: 0;
+        padding: 9px 13px;
+        margin-bottom: -1px;
+        border: none;
+        border-bottom: 2px solid transparent;
+        background: transparent;
+        transition:
+          color var(--mf-dur-fast) var(--mf-ease),
+          border-color var(--mf-dur-fast) var(--mf-ease);
+
+        .d-icon {
+          color: inherit;
+        }
+
+        &:hover {
+          color: var(--mf-ink);
+          background: transparent;
+          border-bottom-color: var(--mf-hairline-strong);
+        }
+
+        &.active {
+          color: var(--mf-accent);
+          background: transparent;
+          border-bottom-color: var(--mf-accent);
+          font-weight: var(--mf-weight-semibold);
+        }
+      }
+    }
+
+    .user-navigation-secondary {
+      border: none;
+    }
+  }
+}
+
+// ---- Summary sections: bare (title + content), NOT cards-in-cards ----------
+.user-content .top-section,
+#user-summary .top-section {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: var(--mf-space-8);
+
+  h3,
+  .stats-title,
+  .title {
+    font-size: var(--mf-text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--mf-ink-faint);
+    font-weight: var(--mf-weight-semibold);
+    margin: 0 0 var(--mf-space-3);
+  }
+}
+
+// ---- Statistics → stat-card grid -------------------------------------------
+.user-content .stats-section ul,
+#user-summary .stats-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--mf-space-3);
+
+  li {
+    margin: 0;
+    background: var(--mf-surface);
+    border: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-md);
+    padding: var(--mf-space-3) var(--mf-space-4);
+    transition:
+      background var(--mf-dur-fast) var(--mf-ease),
+      border-color var(--mf-dur-fast) var(--mf-ease);
+
+    &:hover {
+      background: var(--mf-surface-2);
+      border-color: var(--mf-hairline-strong);
+    }
+
+    .user-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .value,
+    .number {
+      font-size: var(--mf-text-xl);
+      font-weight: var(--mf-weight-bold);
+      color: var(--mf-ink);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: var(--mf-tracking-tight);
+
+      .d-icon {
+        color: var(--mf-love);
+        font-size: 0.7em;
+      }
+    }
+
+    .label {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      text-transform: none;
+      letter-spacing: 0;
+
+      .d-icon {
+        color: var(--mf-ink-faint);
+      }
+    }
+  }
+}
+
+// ---- Two-column sub-sections (replies / topics) ----------------------------
+.user-content .top-section {
+  .top-sub-section {
+    margin-bottom: var(--mf-space-4);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // list items inside summary sections
+  ul.user-stream,
+  .topic-info,
+  .user-summary-list {
+    .group-link,
+    a {
+      color: var(--mf-ink);
+    }
+  }
+
+  // generic list rows in summary (links, replies, topics)
+  li {
+    a.title,
+    a {
+      color: var(--mf-ink);
+
+      &:hover {
+        color: var(--mf-accent);
+      }
+    }
+
+    .domain,
+    .post-count,
+    .time,
+    .relative-date {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-sm);
+    }
+  }
+
+  // top categories list
+  &.top-categories-section table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: var(--mf-weight-medium);
+      border-bottom: 1px solid var(--mf-hairline);
+      padding-bottom: 6px;
+    }
+
+    td {
+      padding: var(--mf-space-2) 0;
+      border-top: 1px solid var(--mf-hairline);
+    }
+
+    tr:first-child td {
+      border-top: none;
+    }
+  }
+
+  // badges inside profile
+  &.badges-section .badge-card {
+    margin: 0;
+  }
+
+  &.badges-section .user-badge {
+    margin: 0 6px 6px 0;
+  }
+}
+
+// "Other replies / Other topics / More" links
+.user-content .top-section .more,
+.user-content .top-section a.btn-flat {
+  color: var(--mf-accent);
+  font-weight: var(--mf-weight-medium);
+
+  &:hover {
+    color: var(--mf-accent-hover);
+  }
+}
+
+// ---- Fans / Favorites (most-liked user lists) — fix overlap & boxes --------
+.summary-user-list {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0 0 2px;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .user-info.small {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 6px 8px;
+    border: none;
+    border-radius: var(--mf-radius-md);
+    background: transparent;
+    box-shadow: none;
+    transition: background var(--mf-dur-fast) var(--mf-ease);
+
+    &:hover {
+      background: var(--mf-fill-hover);
+    }
+
+    // avatar — static (kill core absolute positioning that caused the overlap)
+    .user-image {
+      position: static;
+      margin: 0;
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+
+      .user-image-inner {
+        width: 36px;
+        height: 36px;
+        margin: 0;
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: var(--mf-radius-pill);
+      }
+    }
+
+    .user-detail {
+      position: static;
+      margin: 0;
+      padding: 0;
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      flex: 1 1 auto;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      overflow: hidden;
+    }
+
+    .name-line {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      min-width: 0;
+
+      .username,
+      .username-wrapper a {
+        font-weight: var(--mf-weight-semibold);
+        color: var(--mf-ink);
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .name {
+        color: var(--mf-ink-3);
+        font-size: var(--mf-text-sm);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .title:empty {
+      display: none;
+    }
+
+    // the like count row — reset the header-card border that leaks here
+    .details {
+      position: static;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      border: none !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      overflow: visible;
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+
+      .d-icon-heart {
+        color: var(--mf-love);
+        font-size: 0.85em;
+      }
+
+      .likes .number,
+      .number {
+        font-variant-numeric: tabular-nums;
+        color: var(--mf-ink-3);
+      }
+    }
+  }
+}
+
+// ---- Activity / messages streams -------------------------------------------
+.user-stream-item,
+.user-stream .item {
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-lg);
+  margin-bottom: var(--mf-space-3);
+  padding: var(--mf-space-4);
+  box-shadow: none;
+  transition:
+    border-color var(--mf-dur-fast) var(--mf-ease),
+    background var(--mf-dur-fast) var(--mf-ease);
+
+  &:hover {
+    border-color: var(--mf-hairline-strong);
+  }
+
+  .avatar {
+    border-radius: var(--mf-radius-pill);
+  }
+
+  .title a,
+  .stream-topic-title {
+    color: var(--mf-ink);
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .excerpt {
+    color: var(--mf-ink-2);
+  }
+
+  .time,
+  .relative-date {
+    color: var(--mf-ink-faint);
+  }
+}
+
+// ---- Preferences (settings) pages ------------------------------------------
+.user-preferences {
+  .control-group {
+    border-bottom: 1px solid var(--mf-hairline);
+    padding-bottom: var(--mf-space-5);
+    margin-bottom: var(--mf-space-5);
+  }
+
+  .controls .btn {
+    border-radius: var(--mf-radius-md);
+  }
+
+  input,
+  textarea,
+  .select-kit .select-kit-header {
+    border-radius: var(--mf-radius-md);
+  }
+}
+
+// avatar selector, notification level buttons keep flat radius
+.user-content .notification-level-controls .btn,
+.user-main .btn {
+  border-radius: var(--mf-radius-md);
+}

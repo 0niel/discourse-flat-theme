@@ -1,0 +1,87 @@
+// =============================================================================
+//  Mirea Flat — Footer (custom, injected via below-footer outlet)
+// =============================================================================
+.mf-footer {
+  border-top: 1px solid var(--mf-hairline);
+  margin-top: var(--mf-space-16);
+  padding: var(--mf-space-12) var(--mf-space-5) var(--mf-space-10);
+  background: var(--mf-app-bg);
+  color: var(--mf-ink-3);
+
+  &__inner {
+    max-width: var(--mf-content-width);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mf-space-8);
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mf-space-2);
+    max-width: 320px;
+  }
+
+  &__logo {
+    font-weight: var(--mf-weight-bold);
+    font-size: var(--mf-text-lg);
+    letter-spacing: var(--mf-tracking-tight);
+    color: var(--mf-ink);
+  }
+
+  &__tagline {
+    font-size: var(--mf-text-sm);
+    line-height: var(--mf-leading-normal);
+  }
+
+  &__cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mf-space-12);
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mf-space-2);
+
+    h4 {
+      text-transform: uppercase;
+      font-size: var(--mf-text-2xs);
+      letter-spacing: 0.07em;
+      color: var(--mf-ink-faint);
+      margin: 0 0 var(--mf-space-1);
+    }
+
+    a {
+      color: var(--mf-ink-2);
+      font-size: var(--mf-text-sm);
+
+      &:hover {
+        color: var(--mf-accent);
+      }
+    }
+  }
+
+  &__bottom {
+    max-width: var(--mf-content-width);
+    margin: var(--mf-space-8) auto 0;
+    padding-top: var(--mf-space-5);
+    border-top: 1px solid var(--mf-hairline);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mf-space-3);
+    justify-content: space-between;
+    font-size: var(--mf-text-xs);
+    color: var(--mf-ink-faint);
+  }
+}
+
+// Discourse's own bottom area (when shown)
+#footer,
+.below-footer-outlet {
+  background: var(--mf-app-bg);
+}

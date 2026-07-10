@@ -1,0 +1,43 @@
+{
+  "name": "Mirea Flat",
+  "component": false,
+  "about_url": "https://mirea.ninja",
+  "license_url": null,
+  "learn_more": "https://mirea.ninja",
+  "authors": "Mirea Ninja Community",
+  "theme_version": "1.0.0",
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {},
+  "modifiers": {},
+  "color_schemes": {
+    "Mirea Flat": {
+      "primary": "16181d",
+      "secondary": "ffffff",
+      "tertiary": "2563eb",
+      "quaternary": "2563eb",
+      "header_background": "ffffff",
+      "header_primary": "16181d",
+      "highlight": "fff3c4",
+      "selected": "eef3ff",
+      "hover": "f5f7fa",
+      "danger": "e5484d",
+      "success": "1a7f37",
+      "love": "e5484d"
+    },
+    "Mirea Flat Dark": {
+      "primary": "edeef0",
+      "secondary": "0a0b0d",
+      "tertiary": "5b8cff",
+      "quaternary": "5b8cff",
+      "header_background": "0a0b0d",
+      "header_primary": "edeef0",
+      "highlight": "33301a",
+      "selected": "14213d",
+      "hover": "16181c",
+      "danger": "ff6166",
+      "success": "2ea043",
+      "love": "ff6f86"
+    }
+  }
+}

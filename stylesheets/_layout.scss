@@ -1,0 +1,46 @@
+// =============================================================================
+//  Mirea Flat — Layout shell
+// =============================================================================
+
+// Roomy, centered content column
+#main-outlet {
+  max-width: var(--mf-content-width);
+  padding-top: var(--mf-space-4);
+  padding-bottom: var(--mf-space-12);
+}
+
+.wrap {
+  max-width: var(--mf-content-width);
+}
+
+// The page canvas vs content surfaces
+html,
+body,
+#main-outlet-wrapper {
+  background: var(--mf-app-bg);
+}
+
+// Generous, calm vertical rhythm for list pages
+.list-container .container,
+.contents {
+  .alert {
+    border: none;
+    border-radius: var(--mf-radius-lg);
+    background: var(--mf-accent-tint-soft);
+    color: var(--mf-ink);
+    box-shadow: none;
+  }
+}
+
+// Loading bar uses accent
+#ember-testing-container,
+.loading-indicator-container .loading-indicator,
+html .loading-indicator {
+  background: var(--mf-accent);
+}
+
+// Remove the global content-area top border Discourse sometimes adds
+.list-controls,
+.contents > .container {
+  border: none;
+}
