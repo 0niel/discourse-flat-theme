@@ -52,3 +52,49 @@
     color: inherit !important;
   }
 }
+
+// The profile navigation has a more specific legacy underline rule. Keep both
+// levels of profile navigation as self-contained controls, so the active state
+// never loses its lower corner radius or merges into a divider.
+.user-main .user-navigation {
+  padding: 5px;
+  background: var(--mf-panel);
+  border: 0 !important;
+  border-radius: var(--mf-radius-lg);
+
+  .user-nav.nav-pills {
+    gap: 4px;
+
+    > li > a {
+      min-height: 38px;
+      margin: 0;
+      padding: 9px 12px;
+      color: var(--mf-ink-3);
+      font-weight: var(--mf-weight-medium);
+      background: transparent;
+      border: 0 !important;
+      border-radius: var(--mf-radius-md) !important;
+
+      &:hover {
+        color: var(--mf-ink);
+        background: var(--mf-panel-strong);
+      }
+
+      &.active {
+        color: var(--mf-accent);
+        font-weight: var(--mf-weight-semibold);
+        background: var(--mf-accent-tint);
+      }
+    }
+  }
+
+  &.user-navigation-secondary .nav-pills > li > a {
+    margin: 0;
+    border: 0 !important;
+    border-radius: var(--mf-radius-md) !important;
+
+    &.active {
+      background: var(--mf-accent-tint);
+    }
+  }
+}
