@@ -55,7 +55,10 @@ body.archetype-regular {
       );
       border: 0;
       border-radius: var(--mf-radius-xl);
-      box-shadow: var(--mf-shadow-sm, 0 8px 24px rgb(0 0 0 / 18%));
+      // Timeline is persistent navigation, not a floating popover. A shadow
+      // makes it look detached from the topic and is especially heavy in the
+      // light scheme, so separation comes only from the surface tint.
+      box-shadow: none;
       box-sizing: border-box;
     }
 
@@ -113,7 +116,7 @@ body.archetype-regular {
       margin-left: 0;
       background: var(--mf-panel-strong, var(--mf-surface-2));
       border-radius: var(--mf-radius-lg);
-      box-shadow: var(--mf-shadow-sm, 0 8px 24px rgb(0 0 0 / 18%));
+      box-shadow: none;
       box-sizing: border-box;
     }
 
@@ -216,7 +219,7 @@ body.archetype-regular {
       background: var(--mf-panel-strong, var(--mf-surface-2));
       border: 0;
       border-radius: var(--mf-radius-pill);
-      box-shadow: var(--mf-shadow-sm, 0 8px 24px rgb(0 0 0 / 18%));
+      box-shadow: none;
 
       .bg {
         background: var(--mf-accent-tint);
