@@ -103,19 +103,40 @@ textarea {
 }
 
 // ---- Login / account access -----------------------------------------------
-#login-form {
-  width: min(760px, calc(100vw - 40px));
-  margin: 0 auto;
-  padding: 0;
-  background: transparent;
-  border: 0 !important;
-  box-shadow: none !important;
+.login-fullpage {
+  .login-body {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(210px, 0.72fr);
+    align-items: center;
+    gap: clamp(32px, 6vw, 64px);
+    width: min(820px, calc(100vw - 40px)) !important;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .login-left-side,
+  .login-right-side {
+    width: auto !important;
+    min-width: 0;
+    padding: 0 !important;
+    background: transparent;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    &::before,
+    &::after {
+      content: none !important;
+    }
+  }
 
   .login-welcome-header {
     margin: 0 0 var(--mf-space-6);
 
-    h1,
-    .login-welcome-header__title {
+    .login-title,
+    h1 {
       margin: 0;
       color: var(--mf-ink);
       font-size: clamp(30px, 4vw, 42px);
@@ -134,37 +155,71 @@ textarea {
     }
   }
 
-  .login-form,
-  .login-fields,
-  .login-inputs {
-    min-width: 0;
+  #login-form {
+    display: block !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0 !important;
+    box-shadow: none !important;
   }
 
-  .login-form input,
-  .login-fields input,
-  .login-inputs input {
+  #credentials {
+    display: grid;
+    gap: var(--mf-space-4);
+  }
+
+  .input-group {
+    min-width: 0;
+    margin: 0;
+  }
+
+  #login-form input {
     width: 100%;
     min-height: 46px;
   }
 
-  .login-form .btn-primary,
-  .login-button,
-  button[type="submit"] {
-    min-height: 46px;
-    margin-top: var(--mf-space-3);
-    border-radius: var(--mf-radius-md);
+  .login__password-links,
+  .no-login-filled {
+    margin-top: var(--mf-space-2);
+    color: var(--mf-accent);
+    font-size: var(--mf-text-sm);
   }
 
-  #login-buttons,
-  .login-buttons,
-  .login__providers {
+  .login-page-cta {
+    margin-top: var(--mf-space-5);
+  }
+
+  .login-page-cta__buttons {
+    display: grid;
+    gap: var(--mf-space-3);
+  }
+
+  .login-page-cta__login,
+  .login-page-cta__signup {
+    min-height: 46px;
+    margin: 0;
+    border: 0 !important;
+    border-radius: var(--mf-radius-md);
+    box-shadow: none !important;
+  }
+
+  .login-page-cta__no-account-yet {
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-sm);
+    text-align: center;
+  }
+
+  #login-buttons {
     display: grid;
     gap: var(--mf-space-2);
-    align-content: start;
+    align-content: center;
 
     .btn,
     button {
       justify-content: center;
+      width: 100%;
       min-height: 42px;
       margin: 0;
       color: var(--mf-ink);
@@ -178,54 +233,13 @@ textarea {
       }
     }
   }
-
-  .login__links,
-  .login-link,
-  .login-forgot-password {
-    margin-top: var(--mf-space-3);
-    color: var(--mf-accent);
-    font-size: var(--mf-text-sm);
-  }
-}
-
-@media (width >= 761px) {
-  #login-form {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
-    column-gap: clamp(32px, 6vw, 64px);
-    align-items: center;
-
-    .login-welcome-header {
-      grid-column: 1;
-    }
-
-    .login-form,
-    .login-fields,
-    .login-inputs {
-      grid-column: 1;
-    }
-
-    #login-buttons,
-    .login-buttons,
-    .login__providers {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-    }
-  }
 }
 
 @media (width <= 760px) {
-  #login-form {
-    width: min(100%, calc(100vw - 32px));
-
-    .login-welcome-header {
-      margin-bottom: var(--mf-space-5);
-    }
-
-    #login-buttons,
-    .login-buttons,
-    .login__providers {
-      margin-top: var(--mf-space-5);
-    }
+  .login-fullpage .login-body {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: var(--mf-space-6);
+    width: min(100%, calc(100vw - 32px)) !important;
   }
 }
