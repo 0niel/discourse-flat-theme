@@ -105,7 +105,7 @@
 // This popup is provided by discourse-reactions. Core styles are intentionally
 // sparse, which lets inherited flex rules turn its users into a horizontal,
 // overlapping avatar strip. Re-establish the list's own layout contract here.
-.fk-d-menu__inner-content:has(.post-users-popup) {
+.fk-d-menu__inner-content:has(.post-users-popup, .users-popup) {
   box-sizing: border-box;
   width: min(300px, calc(100vw - 24px));
   max-width: calc(100vw - 24px);
@@ -122,18 +122,18 @@
   scrollbar-color: var(--mf-hairline-strong) transparent;
 }
 
-.post-users-popup,
-.post-users-popup__body {
+:is(.post-users-popup, .users-popup),
+:is(.post-users-popup__body, .users-popup__body) {
   display: block;
   width: 100%;
   min-width: 0;
 }
 
-.post-users-popup__sticky-header:empty {
+:is(.post-users-popup__sticky-header, .users-popup__sticky-header):empty {
   display: none;
 }
 
-.post-users-popup__item {
+:is(.post-users-popup__item, .users-popup__item) {
   display: grid;
   grid-template-columns: 28px minmax(0, 1fr) 20px;
   align-items: center;
@@ -157,12 +157,16 @@
   }
 }
 
-.post-users-popup__user-info {
+:is(.post-users-popup__user-info, .users-popup__user-info) {
   min-width: 0;
 }
 
-.post-users-popup__name,
-.post-users-popup__username {
+:is(
+  .post-users-popup__name,
+  .post-users-popup__username,
+  .users-popup__name,
+  .users-popup__username
+) {
   display: block;
   min-width: 0;
   overflow: hidden;
@@ -174,7 +178,7 @@
   white-space: nowrap;
 }
 
-.emoji.post-users-popup__reaction {
+.emoji:is(.post-users-popup__reaction, .users-popup__reaction) {
   justify-self: end;
   width: 18px;
   height: 18px;
@@ -182,11 +186,70 @@
 }
 
 @media (width <= 600px) {
+  // The plugin opens its user list in Discourse's generic half-screen mobile
+  // sheet. For a short list this leaves a large dead area below the content.
+  // Let this one modal size to its contents while retaining a bounded scroll
+  // region for topics with many reactions.
+  .fk-d-menu-modal.discourse-reactions-users-menu-content {
+    .d-modal__container {
+      height: auto !important;
+      min-height: 0 !important;
+      max-height: min(78dvh, 640px) !important;
+    }
+
+    .d-modal__body {
+      flex: 0 1 auto;
+      min-height: 0;
+      max-height: min(78dvh, 640px);
+      padding: var(--mf-space-2) var(--mf-space-3);
+      overflow: hidden;
+      background: var(--mf-surface);
+      border-radius: var(--mf-radius-xl) var(--mf-radius-xl) 0 0;
+    }
+
+    :is(.post-users-popup, .users-popup) {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      max-height: calc(78dvh - 16px);
+      background: transparent;
+      border-radius: var(--mf-radius-lg);
+    }
+
+    :is(.post-users-popup__sticky-header, .users-popup__sticky-header) {
+      flex: 0 0 auto;
+      background: var(--mf-surface);
+    }
+
+    :is(.post-users-popup__title, .users-popup__title) {
+      padding: var(--mf-space-3) var(--mf-space-4) var(--mf-space-2);
+    }
+
+    :is(.post-users-popup__header, .users-popup__header) {
+      padding: var(--mf-space-2);
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    :is(.post-users-popup__body, .users-popup__body) {
+      flex: 1 1 auto;
+      min-height: 0;
+      max-height: calc(78dvh - 116px);
+      overflow-y: auto;
+      overscroll-behavior-y: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--mf-hairline-strong) transparent;
+    }
+  }
+
   .discourse-reactions-list .discourse-reactions-list-emoji > .user-list {
     display: none;
   }
 
-  .fk-d-menu__inner-content:has(.post-users-popup) {
+  .fk-d-menu__inner-content:has(.post-users-popup, .users-popup) {
     width: 100%;
     max-width: 100%;
   }
@@ -196,7 +259,7 @@
     padding-inline: 10px;
   }
 
-  .post-users-popup__item {
+  :is(.post-users-popup__item, .users-popup__item) {
     grid-template-columns: 32px minmax(0, 1fr) 20px;
     min-height: 46px;
 
