@@ -99,29 +99,54 @@
     }
   }
 
-  // ---- Profile navigation → segmented controls ---------------------------
+  // ---- Profile navigation → same compact tabs as discovery ----------------
   .user-navigation {
-    padding: 5px;
-    background: var(--mf-panel);
+    padding: 0;
+    background: transparent;
     border: 0 !important;
-    border-radius: var(--mf-radius-lg);
+    border-radius: 0;
     margin-bottom: var(--mf-space-5);
 
     .user-nav.nav-pills {
-      gap: 4px;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 3px;
+      min-width: 0;
+      margin: 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      > li {
+        flex: 0 0 auto;
+        margin: 0 !important;
+      }
 
       > li > a {
-        min-height: 38px;
+        display: flex;
+        align-items: center;
+        min-height: 36px;
         color: var(--mf-ink-3);
         font-weight: var(--mf-weight-medium);
         border: 0 !important;
         border-radius: var(--mf-radius-md) !important;
-        padding: 9px 12px;
+        padding: 8px 11px;
         margin: 0;
         background: transparent;
+        line-height: 1.2;
+        white-space: nowrap;
         transition:
           color var(--mf-dur-fast) var(--mf-ease),
           background-color var(--mf-dur-fast) var(--mf-ease);
+
+        &::after {
+          content: none !important;
+        }
 
         .d-icon {
           color: inherit;
@@ -129,12 +154,13 @@
 
         &:hover {
           color: var(--mf-ink);
-          background: var(--mf-panel-strong);
+          background: var(--mf-fill-hover);
         }
 
-        &.active {
+        &.active,
+        &.active:hover {
           color: var(--mf-accent);
-          background: var(--mf-accent-tint);
+          background: var(--mf-fill-selected);
           font-weight: var(--mf-weight-semibold);
         }
       }
@@ -144,15 +170,21 @@
       border: none;
     }
 
-    // Message filters have their own nav list, so explicitly keep its active
-    // state on the same fully rounded control treatment as the primary tabs.
+    // Message filters use the same compact controls as the primary profile
+    // destinations rather than a separate rounded toolbar.
     &.user-navigation-secondary .nav-pills > li > a {
+      min-height: 36px;
+      padding: 8px 11px;
       margin: 0;
       border: 0 !important;
       border-radius: var(--mf-radius-md) !important;
 
+      &::after {
+        content: none !important;
+      }
+
       &.active {
-        background: var(--mf-accent-tint);
+        background: var(--mf-fill-selected);
       }
     }
   }
