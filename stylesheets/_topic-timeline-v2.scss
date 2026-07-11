@@ -1,0 +1,232 @@
+// Compact time gaps and a focused topic timeline. Keep Discourse's native
+// positioning/drag behaviour intact and only replace the visual layer.
+body.archetype-regular {
+  .post-stream > .time-gap.small-action {
+    display: grid;
+    grid-template-columns: var(--topic-avatar-width, 45px) minmax(0, 1fr);
+    column-gap: 8px;
+    align-items: center;
+    width: 100%;
+    min-height: 32px;
+    margin: 4px 0;
+    padding: 0;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+
+    .topic-avatar {
+      width: var(--topic-avatar-width, 45px);
+      min-height: 1px;
+      padding: 0;
+      border: 0 !important;
+    }
+
+    .small-action-desc.timegap {
+      justify-self: start;
+      width: auto;
+      min-height: 28px;
+      margin: 0;
+      padding: 5px 10px;
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      font-weight: var(--mf-weight-medium);
+      line-height: 18px;
+      background: var(--mf-surface-2);
+      border: 0 !important;
+      border-radius: var(--mf-radius-pill);
+      box-shadow: none !important;
+      box-sizing: border-box;
+    }
+  }
+}
+
+@media (width >= 761px) {
+  .desktop-view body.archetype-regular .topic-navigation.with-timeline {
+    width: auto;
+    margin-left: var(--mf-space-4);
+
+    .timeline-container.timeline-docked {
+      width: 100%;
+      padding: 8px;
+      background: color-mix(
+        in srgb,
+        var(--mf-panel, var(--secondary)) 96%,
+        var(--mf-accent)
+      );
+      border: 0;
+      border-radius: var(--mf-radius-xl);
+      box-shadow: var(--mf-shadow-sm, 0 8px 24px rgb(0 0 0 / 18%));
+      box-sizing: border-box;
+    }
+
+    .topic-timeline {
+      width: 100%;
+    }
+
+    .timeline-date-wrapper {
+      width: 100%;
+      height: auto;
+      min-height: 26px;
+    }
+
+    .start-date,
+    .now-date {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      min-height: 24px;
+      padding: 3px 8px;
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      font-weight: var(--mf-weight-medium);
+      line-height: 18px;
+      background: var(--mf-surface-2);
+      border-radius: var(--mf-radius-pill);
+      box-sizing: border-box;
+    }
+
+    .timeline-scrollarea-wrapper {
+      margin-top: 8px;
+    }
+
+    .timeline-scrollarea {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      border: 0 !important;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 1px;
+        width: 4px;
+        background: var(--mf-surface-3);
+        border-radius: var(--mf-radius-pill);
+        content: "";
+        pointer-events: none;
+      }
+    }
+
+    .timeline-scroller {
+      width: calc(100% + 2px);
+      margin-left: 0;
+      background: var(--mf-panel-strong, var(--mf-surface-2));
+      border-radius: var(--mf-radius-lg);
+      box-shadow: var(--mf-shadow-sm, 0 8px 24px rgb(0 0 0 / 18%));
+      box-sizing: border-box;
+    }
+
+    .timeline-handle {
+      width: 6px;
+      min-height: 0;
+      margin-left: 0;
+      background: var(--mf-accent);
+      border-radius: var(--mf-radius-pill);
+      box-shadow: 0 0 0 3px var(--mf-accent-tint);
+    }
+
+    .timeline-scroller-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1px;
+      height: 100%;
+      padding-left: 14px;
+      box-sizing: border-box;
+    }
+
+    .timeline-replies {
+      color: var(--mf-ink);
+      font-size: var(--mf-text-sm);
+      font-weight: var(--mf-weight-bold);
+      line-height: 20px;
+    }
+
+    .timeline-ago {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      line-height: 18px;
+    }
+
+    .timeline-last-read {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: max-content;
+      min-height: 26px;
+      margin: 8px 0 0 !important;
+      padding: 4px 8px;
+      color: var(--mf-ink-muted, var(--mf-ink-faint));
+      font-size: var(--mf-text-xs);
+      font-weight: var(--mf-weight-medium);
+      line-height: 18px;
+      background: var(--mf-surface-2);
+      border-radius: var(--mf-radius-pill);
+      box-sizing: border-box;
+
+      .progress {
+        width: auto;
+        height: auto;
+        color: var(--mf-accent);
+        background: transparent !important;
+      }
+    }
+
+    .back-button {
+      --d-button-transparent-text-color: var(--mf-accent);
+      --d-button-transparent-icon-color: var(--mf-accent);
+      min-height: 28px;
+      margin-top: 8px;
+      padding: 5px 9px;
+      color: var(--mf-accent);
+      font-size: var(--mf-text-xs);
+      font-weight: var(--mf-weight-semibold);
+      line-height: 18px;
+      background: var(--mf-accent-tint);
+      border: 0;
+      border-radius: var(--mf-radius-pill);
+      box-shadow: none;
+    }
+  }
+}
+
+@media (width <= 760px) {
+  body.archetype-regular {
+    .post-stream > .time-gap.small-action {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      min-height: 30px;
+      margin: 3px 0;
+      padding-inline: var(--mf-space-3);
+
+      .topic-avatar {
+        display: none;
+      }
+
+      .small-action-desc.timegap {
+        min-height: 26px;
+        padding: 4px 9px;
+      }
+    }
+
+    #topic-progress-wrapper #topic-progress {
+      overflow: hidden;
+      color: var(--mf-ink);
+      background: var(--mf-panel-strong, var(--mf-surface-2));
+      border: 0;
+      border-radius: var(--mf-radius-pill);
+      box-shadow: var(--mf-shadow-sm, 0 8px 24px rgb(0 0 0 / 18%));
+
+      .bg {
+        background: var(--mf-accent-tint);
+      }
+
+      .nums {
+        color: var(--mf-ink);
+        font-size: var(--mf-text-xs);
+        font-weight: var(--mf-weight-semibold);
+      }
+    }
+  }
+}
