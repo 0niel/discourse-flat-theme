@@ -55,6 +55,7 @@ body.archetype-regular {
       );
       border: 0;
       border-radius: var(--mf-radius-xl);
+
       // Timeline is persistent navigation, not a floating popover. A shadow
       // makes it look detached from the topic and is especially heavy in the
       // light scheme, so separation comes only from the surface tint.
