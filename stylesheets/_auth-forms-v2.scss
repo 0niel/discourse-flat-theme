@@ -1,0 +1,231 @@
+// =============================================================================
+//  Mirea Flat — Unified controls and login
+// =============================================================================
+// A field should read as a calm editing surface, not a framed widget. The
+// accent is reserved for focus and validation, so a dense page does not become
+// a collection of outlines.
+:is(
+  input:not([type]),
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  select
+) {
+  min-height: 42px;
+  padding: 10px 12px;
+  color: var(--mf-ink);
+  font-family: var(--mf-font);
+  font-size: var(--mf-text-base);
+  line-height: 22px;
+  background: var(--mf-surface-2);
+  border: 0 !important;
+  border-radius: var(--mf-radius-md);
+  box-shadow: none !important;
+  box-sizing: border-box;
+  transition:
+    background var(--mf-dur-fast) var(--mf-ease),
+    box-shadow var(--mf-dur-fast) var(--mf-ease);
+
+  &::placeholder {
+    color: var(--mf-ink-faint);
+    opacity: 1;
+  }
+
+  &:hover:not(:focus) {
+    background: var(--mf-panel-strong);
+  }
+
+  &:focus,
+  &:focus-visible {
+    background: var(--mf-surface);
+    box-shadow: 0 0 0 3px var(--mf-accent-tint) !important;
+    outline: 0;
+  }
+
+  &:disabled,
+  &[readonly] {
+    color: var(--mf-ink-faint);
+    background: var(--mf-surface-3);
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  min-height: 104px;
+  resize: vertical;
+}
+
+.select-kit .select-kit-header {
+  min-height: 42px;
+  padding: 10px 12px;
+  color: var(--mf-ink);
+  background: var(--mf-surface-2) !important;
+  border: 0 !important;
+  border-radius: var(--mf-radius-md);
+  box-shadow: none !important;
+  transition:
+    background var(--mf-dur-fast) var(--mf-ease),
+    box-shadow var(--mf-dur-fast) var(--mf-ease);
+
+  &:hover {
+    background: var(--mf-panel-strong) !important;
+  }
+
+  &:focus,
+  &[aria-expanded="true"] {
+    background: var(--mf-surface) !important;
+    box-shadow: 0 0 0 3px var(--mf-accent-tint) !important;
+    outline: 0;
+  }
+}
+
+// Search fields keep their existing shared shell: applying the global field
+// surface to the inner input would create a second rounded rectangle.
+:is(
+    .search-menu,
+    .search-bar,
+    .welcome-banner__search,
+    .floating-search-input-wrapper,
+    .mf-hero__search
+  )
+  input {
+  min-height: 0;
+  padding: 0;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+// ---- Login / account access -----------------------------------------------
+#login-form {
+  width: min(760px, calc(100vw - 40px));
+  margin: 0 auto;
+  padding: 0;
+  background: transparent;
+  border: 0 !important;
+  box-shadow: none !important;
+
+  .login-welcome-header {
+    margin: 0 0 var(--mf-space-6);
+
+    h1,
+    .login-welcome-header__title {
+      margin: 0;
+      color: var(--mf-ink);
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: var(--mf-weight-bold);
+      letter-spacing: var(--mf-tracking-tight);
+      line-height: 1.08;
+    }
+
+    p,
+    .login-welcome-header__description {
+      max-width: 32rem;
+      margin: var(--mf-space-3) 0 0;
+      color: var(--mf-ink-2);
+      font-size: var(--mf-text-base);
+      line-height: var(--mf-leading-normal);
+    }
+  }
+
+  .login-form,
+  .login-fields,
+  .login-inputs {
+    min-width: 0;
+  }
+
+  .login-form input,
+  .login-fields input,
+  .login-inputs input {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .login-form .btn-primary,
+  .login-button,
+  button[type="submit"] {
+    min-height: 46px;
+    margin-top: var(--mf-space-3);
+    border-radius: var(--mf-radius-md);
+  }
+
+  #login-buttons,
+  .login-buttons,
+  .login__providers {
+    display: grid;
+    gap: var(--mf-space-2);
+    align-content: start;
+
+    .btn,
+    button {
+      justify-content: center;
+      min-height: 42px;
+      margin: 0;
+      color: var(--mf-ink);
+      background: var(--mf-surface-2) !important;
+      border: 0 !important;
+      border-radius: var(--mf-radius-md);
+      box-shadow: none !important;
+
+      &:hover {
+        background: var(--mf-panel-strong) !important;
+      }
+    }
+  }
+
+  .login__links,
+  .login-link,
+  .login-forgot-password {
+    margin-top: var(--mf-space-3);
+    color: var(--mf-accent);
+    font-size: var(--mf-text-sm);
+  }
+}
+
+@media (width >= 761px) {
+  #login-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.72fr);
+    column-gap: clamp(32px, 6vw, 64px);
+    align-items: center;
+
+    .login-welcome-header {
+      grid-column: 1;
+    }
+
+    .login-form,
+    .login-fields,
+    .login-inputs {
+      grid-column: 1;
+    }
+
+    #login-buttons,
+    .login-buttons,
+    .login__providers {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+    }
+  }
+}
+
+@media (width <= 760px) {
+  #login-form {
+    width: min(100%, calc(100vw - 32px));
+
+    .login-welcome-header {
+      margin-bottom: var(--mf-space-5);
+    }
+
+    #login-buttons,
+    .login-buttons,
+    .login__providers {
+      margin-top: var(--mf-space-5);
+    }
+  }
+}
