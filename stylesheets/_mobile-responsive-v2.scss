@@ -4,6 +4,33 @@
 //  desktop markup in narrow webviews and split-screen browser windows.
 // =============================================================================
 @media (width <= 760px) {
+  // Core intentionally renders the narrow create-topic button as icon-only.
+  // In this primary action row that makes the CTA look like an unlabeled tool,
+  // so restore a concise visible label only for the icon-only variant.
+  .list-controls .navigation-controls #create-topic.no-text {
+    justify-content: center;
+    gap: var(--mf-space-2);
+
+    &::after {
+      content: "Создать тему";
+      font-size: var(--mf-text-sm);
+      font-weight: var(--mf-weight-semibold);
+      line-height: 1;
+      white-space: nowrap;
+    }
+  }
+
+  // The activity wrapper and its nested age span share the `.activity` class.
+  // Our generic clock decoration therefore matched both and rendered twice.
+  // The outer metric owns the icon; the nested age only owns the date text.
+  .topic-list .topic-item-stats > .num.activity.last > .age.activity::before {
+    content: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    mask: none !important;
+  }
+
   .more-topics__list .topic-item-stats .activity::before,
   #suggested-topics .topic-item-stats .activity::before {
     content: none;
