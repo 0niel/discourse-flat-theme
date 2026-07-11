@@ -204,6 +204,22 @@
       border-color: var(--mf-hairline-strong);
     }
 
+    // Some summary counters are links while others are plain content. Core
+    // leaves those anchors inline, which creates a baseline line-box and drops
+    // their stat about 10px below the neighbouring counters. Give both forms
+    // the same block formatting context so zero-valued linked stats stay put.
+    > a {
+      display: block;
+      width: 100%;
+
+      // Core gives linked counters `10px 14px 10px 0` padding. It is applied
+      // after the theme's normal source order, so keep this narrowly scoped
+      // reset important rather than letting linked stats drift vertically.
+      padding: 0 !important;
+      color: inherit;
+      text-decoration: none;
+    }
+
     .user-stat {
       display: flex;
       flex-direction: column;
