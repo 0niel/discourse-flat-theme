@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — final shared UI polish
-// =============================================================================
 .mf-hero__search {
   min-height: 44px;
   padding: 2px 2px 2px var(--mf-space-3);
@@ -22,10 +19,6 @@
   }
 }
 
-// Topic cards need to read as content surfaces in the light scheme, not as a
-// second page background. `light-dark()` follows Discourse's resolved
-// color-scheme (including an in-app scheme switch), rather than the device
-// preference, so the darker theme keeps its existing hierarchy.
 :root {
   --mf-topic-card: color-mix(in srgb, var(--secondary) 95%, var(--primary));
   --mf-topic-card-hover: color-mix(
@@ -50,9 +43,6 @@
 
 .desktop-view .list-container .topic-list .topic-list-item,
 .desktop-view .list-container .topic-list-item.selected {
-  // The base feed is imported after this file in Discourse's compiled bundle.
-  // Scoping its surface variables to the card keeps every core state (including
-  // unread and selected) on this surface without relying on source order.
   --mf-panel: var(--mf-topic-card);
   --mf-panel-strong: var(--mf-topic-card-hover);
   background: var(--mf-topic-card) !important;
@@ -117,8 +107,6 @@
   }
 }
 
-// Category is navigation context, not another tag. Give it a category-colored
-// tint while keeping tags as neutral chips.
 .topic-list-item .badge-category__wrapper .badge-category {
   display: inline-flex;
   align-items: center;
@@ -148,9 +136,6 @@
   }
 }
 
-// The profile navigation has a more specific legacy underline rule. Keep both
-// levels of profile navigation as self-contained controls, so the active state
-// never loses its lower corner radius or merges into a divider.
 .user-main .user-navigation {
   padding: 5px;
   background: var(--mf-panel);
@@ -194,10 +179,6 @@
   }
 }
 
-// Discourse renders a solid block and a long fade over overflowing nav items.
-// It was using the page background instead of the panel colour, which made the
-// last tab look dirty and partially obscured. Keep the cue, but make it a
-// compact, panel-coloured gradient with a clear scroll affordance.
 .horizontal-overflow-nav {
   --fade-width: 2rem;
 

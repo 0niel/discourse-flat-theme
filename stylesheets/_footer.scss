@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Footer (custom, injected via below-footer outlet)
-// =============================================================================
 .mf-footer {
   border-top: 1px solid var(--mf-hairline);
   margin-top: var(--mf-space-16);
@@ -80,7 +77,6 @@
   }
 }
 
-// Discourse's own bottom area (when shown)
 #footer,
 .below-footer-outlet {
   background: var(--mf-app-bg);

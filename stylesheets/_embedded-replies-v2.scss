@@ -1,6 +1,3 @@
-// Expanded reply chains should read like a compact conversation, not a card
-// nested inside another post. This also neutralizes Discourse's long connector
-// pseudo-element and keeps the source link inside the reply header.
 body.archetype-regular .post-stream .post__embedded-posts.embedded-posts {
   width: 100%;
   margin: 4px 0 var(--mf-space-2);

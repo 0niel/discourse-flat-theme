@@ -1,8 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Topic / post stream
-// =============================================================================
-
-// Topic title block
 #topic-title,
 .topic-title {
   h1 {
@@ -22,7 +17,6 @@
   gap: var(--mf-space-2);
 }
 
-// ---- Post wrapper ---------------------------------------------------------
 .topic-post {
   margin-bottom: var(--mf-space-4);
 }
@@ -61,7 +55,6 @@
   padding-bottom: var(--mf-space-6);
 }
 
-// ---- Avatar ---------------------------------------------------------------
 .topic-avatar {
   padding-top: var(--mf-space-4);
 }
@@ -71,7 +64,6 @@
   border-radius: var(--mf-radius-pill);
 }
 
-// ---- Meta (name, title, date) ---------------------------------------------
 .topic-meta-data {
   padding-top: var(--mf-space-4);
 
@@ -101,7 +93,6 @@
   }
 }
 
-// ---- Cooked content -------------------------------------------------------
 .cooked,
 .d-editor-preview {
   font-size: var(--mf-text-base);
@@ -157,7 +148,6 @@
   }
 }
 
-// Quotes → clean accent block
 aside.quote,
 blockquote,
 .cooked .quote {
@@ -183,7 +173,6 @@ blockquote,
   }
 }
 
-// onebox / link previews
 aside.onebox {
   max-width: 100%;
   box-sizing: border-box;
@@ -202,7 +191,6 @@ aside.onebox {
   }
 }
 
-// ---- Post controls (like / reply / share) ---------------------------------
 .post-controls {
   .actions {
     gap: 2px;
@@ -235,13 +223,11 @@ aside.onebox {
   border-radius: var(--mf-radius-sm);
 }
 
-// liked state
 .post-controls .btn.has-like .d-icon,
 .post-controls .btn.my-likes .d-icon {
   color: var(--mf-love);
 }
 
-// ---- Topic map (summary block) --------------------------------------------
 .topic-map {
   border: none !important;
   border-top: 1px solid var(--mf-hairline) !important;
@@ -283,13 +269,11 @@ aside.onebox {
     }
   }
 
-  // single-post topics show only the views number — keep it quiet, not boxed
   .number {
     font-variant-numeric: tabular-nums;
   }
 }
 
-// ---- Timeline -------------------------------------------------------------
 .topic-timeline {
   .timeline-scrollarea {
     border-color: var(--mf-hairline);
@@ -315,7 +299,6 @@ aside.onebox {
   border-radius: var(--mf-radius-md);
 }
 
-// ---- Topic footer action bar ----------------------------------------------
 .topic-footer-buttons {
   border-top: 0;
   padding-top: var(--mf-space-5);
@@ -329,13 +312,11 @@ aside.onebox {
   font-weight: var(--mf-weight-semibold);
 }
 
-// ---- Suggested / related / more topics ------------------------------------
 #suggested-topics,
 .more-topics__container,
 .suggested-topics-wrapper {
   margin-top: var(--mf-space-8);
 
-  // section heading
   .more-topics__lists .topic-list-header,
   h3.suggested-topics-title,
   .more-topics-tabs {
@@ -351,7 +332,6 @@ aside.onebox {
     font-size: var(--mf-text-lg);
   }
 
-  // rows match the main list: whitespace and hover create the hierarchy
   .topic-list {
     border: none;
   }
@@ -378,7 +358,6 @@ aside.onebox {
     font-size: var(--mf-text-base);
   }
 
-  // "N more unread / browse other topics" footer
   .more-topics__browse-more,
   .topic-list-bottom,
   .browse-more {
@@ -390,19 +369,16 @@ aside.onebox {
     }
   }
 
-  // tabs (Suggested / New / Unread)
   .more-topics-tab {
     border-radius: var(--mf-radius-md);
   }
 }
 
-// the Discourse credit footer — quiet
 .powered-by-discourse,
 #footer .powered-by {
   color: var(--mf-ink-3);
 }
 
-// ---- Post notices / small actions -----------------------------------------
 .post-notice {
   background: var(--mf-surface-2);
   border-radius: var(--mf-radius-md);

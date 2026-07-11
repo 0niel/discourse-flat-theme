@@ -1,12 +1,5 @@
-// =============================================================================
-//  Mirea Flat — Users directory / leaderboard  (/u)
-//  A polished, scannable leaderboard: clean control bar, a single card table
-//  with a sticky muted header, rank numbers (medals for the top 3), prominent
-//  members and quiet tabular stats.
-// =============================================================================
 .users-directory,
 .directory {
-  // ---- Control bar ---------------------------------------------------------
   .period-controls,
   .inline-form {
     display: flex;
@@ -27,7 +20,7 @@
   .total-rows {
     color: var(--mf-ink-3);
     font-size: var(--mf-text-sm);
-    margin-right: auto; // push filter + groups to the right
+    margin-right: auto;
   }
 
   .inline-form input[type="text"] {
@@ -37,7 +30,6 @@
     min-width: 220px;
   }
 
-  // the period dropdown reads as a heading-button
   .period-chooser .period-chooser-header {
     h2,
     .selected-name {
@@ -48,7 +40,6 @@
     }
   }
 
-  // ---- The table: one clean card -------------------------------------------
   .directory-table {
     background: var(--mf-surface);
     border: 1px solid var(--mf-hairline);
@@ -60,7 +51,6 @@
     counter-reset: rank;
   }
 
-  // header
   .directory-table__column-header {
     background: var(--mf-surface-2);
     padding: var(--mf-space-3) var(--mf-space-3);
@@ -96,7 +86,6 @@
     }
   }
 
-  // data rows
   .directory-table__row {
     counter-increment: rank;
     border-top: 1px solid var(--mf-hairline);
@@ -122,9 +111,8 @@
 
   .directory-table__label {
     color: var(--mf-ink-faint);
-  } // (mobile inline label)
+  }
 
-  // ---- Rank number + medals in the member cell -----------------------------
   .directory-table__row > .directory-table__cell:first-child {
     gap: var(--mf-space-2);
 
@@ -139,7 +127,6 @@
     }
   }
 
-  // rows live inside .directory-table__body, so the top 3 are nth-child 1/2/3
   .directory-table__row:nth-child(1)
     > .directory-table__cell:first-child::before {
     color: #d6a020;
@@ -158,7 +145,6 @@
     font-size: var(--mf-text-base);
   }
 
-  // ---- Member cell: avatar + name ------------------------------------------
   .directory-table__cell .user-info.small {
     width: 100%;
     min-width: 0;
@@ -191,7 +177,6 @@
     }
   }
 
-  // ---- Current-user row → quiet accent tint (not the default yellow) --------
   .directory-table__row.me,
   .directory-table__row.is-current-user,
   .directory-table__row.--current-user,
@@ -204,7 +189,6 @@
   }
 }
 
-// the period dropdown popup (shared select-kit styling already handles most)
 .period-chooser .period-chooser-row {
   color: var(--mf-ink-2);
 }

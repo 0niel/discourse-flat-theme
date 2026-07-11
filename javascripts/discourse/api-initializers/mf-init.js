@@ -1,13 +1,10 @@
 import { apiInitializer } from "discourse/lib/api";
 
-// Wires theme settings into runtime CSS custom properties.
 export default apiInitializer((api) => {
   const root = document.documentElement;
 
   const accent = (settings.accent_color || "").trim();
   if (accent) {
-    // derive hover/press from the custom accent so buttons/links/tabs keep
-    // their interaction feedback (a flat single value kills all state contrast)
     root.style.setProperty("--mf-accent", accent);
     root.style.setProperty(
       "--mf-accent-hover",

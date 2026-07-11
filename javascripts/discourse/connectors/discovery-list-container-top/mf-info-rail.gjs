@@ -6,8 +6,6 @@ import { ajax } from "discourse/lib/ajax";
 import icon from "discourse/ui-kit/helpers/d-icon";
 import { i18n } from "discourse-i18n";
 
-// A useful-info right rail shown beside the topic list on the homepage.
-// Layout is handled in _right-rail.scss (CSS grid on #main-outlet).
 export default class MfInfoRail extends Component {
   static shouldRender(args) {
     if (settings.show_info_rail === false) {
@@ -29,9 +27,7 @@ export default class MfInfoRail extends Component {
     try {
       const data = await ajax("/about.json");
       this.stats = data?.about?.stats || null;
-    } catch {
-      /* non-critical */
-    }
+    } catch {}
   }
 
   get pulse() {

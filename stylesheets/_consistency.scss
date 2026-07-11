@@ -1,8 +1,3 @@
-// =============================================================================
-//  Mirea Flat — cross-page consistency and visual bug fixes
-// =============================================================================
-
-// Native form controls do not reliably inherit the document font.
 button,
 input,
 textarea,
@@ -19,8 +14,6 @@ option,
   font-family: var(--mf-font);
 }
 
-// The default red “last visit” separator cuts straight through a flat feed.
-// Unread state is already represented by title weight and count badges.
 .topic-list-item-separator,
 tr.topic-list-item-separator,
 .topic-list .topic-list-item-separator {
@@ -33,8 +26,6 @@ tr.topic-list-item-separator,
   content: none !important;
 }
 
-// Keep read/unread rows in one visual system. Avoid random full-width blue
-// panels inside latest, suggested and “new/unread” lists.
 .topic-list-item.unread,
 .topic-list-item.unread-posts,
 .topic-list-item.new-topic,
@@ -50,8 +41,6 @@ tr.topic-list-item-separator,
   background: var(--mf-fill-hover) !important;
 }
 
-// Post stream must not switch between a solid card and a transparent post as
-// viewport/selection state changes.
 .topic-post,
 .topic-post article,
 .topic-post article.boxed,
@@ -71,7 +60,6 @@ tr.topic-list-item-separator,
   }
 }
 
-// Nested reply context is a distinct object, so it gets one quiet surface.
 .embedded-posts,
 .embedded-posts.top,
 .embedded-posts.bottom {
@@ -85,7 +73,6 @@ tr.topic-list-item-separator,
   background: transparent !important;
 }
 
-// Suggested/unread topic section: one calm container and transparent rows.
 #suggested-topics .topic-list,
 .more-topics__list .topic-list,
 .suggested-topics .topic-list {
@@ -108,7 +95,6 @@ tr.topic-list-item-separator,
   background: var(--mf-fill-hover) !important;
 }
 
-// Hero search was visually inset twice (hero padding + oversized field shell).
 .mf-hero__search {
   min-height: 42px;
   padding: 2px 2px 2px var(--mf-space-3);
@@ -130,7 +116,6 @@ tr.topic-list-item-separator,
   }
 }
 
-// Keep user-card badges and “+ ещё N” on one controlled row.
 #user-card:not(:empty),
 .user-card:not(:empty) {
   .badge-section,

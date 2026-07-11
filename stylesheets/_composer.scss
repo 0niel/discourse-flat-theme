@@ -1,13 +1,8 @@
-// =============================================================================
-//  Mirea Flat — Composer & editor
-// =============================================================================
 #reply-control {
   background: var(--mf-surface-elevated);
   border-top: 1px solid var(--mf-hairline);
   box-shadow: 0 -2px 14px color-mix(in srgb, var(--primary) 7%, transparent);
 
-  // CLOSED composer is collapsed to ~1px but still in the DOM — paint nothing,
-  // otherwise its surface + shadow read as a stray "line" at the page bottom
   &.closed {
     box-shadow: none !important;
     background: transparent !important;
@@ -92,7 +87,6 @@
   }
 }
 
-// composer category/tag pickers
 #reply-control .select-kit .select-kit-header {
   background: var(--mf-surface-2);
 }

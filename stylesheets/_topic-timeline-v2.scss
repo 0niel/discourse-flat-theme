@@ -1,5 +1,3 @@
-// Compact time gaps and a focused topic timeline. Keep Discourse's native
-// positioning/drag behaviour intact and only replace the visual layer.
 body.archetype-regular {
   .post-stream > .time-gap.small-action {
     display: grid;
@@ -55,10 +53,6 @@ body.archetype-regular {
       );
       border: 0;
       border-radius: var(--mf-radius-xl);
-
-      // Timeline is persistent navigation, not a floating popover. A shadow
-      // makes it look detached from the topic and is especially heavy in the
-      // light scheme, so separation comes only from the surface tint.
       box-shadow: none;
       box-sizing: border-box;
     }

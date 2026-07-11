@@ -1,5 +1,3 @@
-// Make horizontally overflowing category shortcuts visibly interactive without
-// adding permanent arrows or taking space away from the actual categories.
 .mf-hero__chips {
   scroll-snap-type: inline proximity;
   overscroll-behavior-inline: contain;
@@ -55,9 +53,6 @@
     padding-bottom: 7px;
   }
 
-  // FloatKit measures against visual viewport width (including the scrollbar),
-  // while the document uses the smaller layout viewport. Leave a real gutter
-  // so dormant/open user cards never create a 1–2px page-level x-scroll.
   #user-card,
   #group-card {
     box-sizing: border-box;

@@ -1,12 +1,4 @@
-// =============================================================================
-//  Mirea Flat — narrow viewport compositions
-//  Width-based rules intentionally live in common CSS: Discourse also renders
-//  desktop markup in narrow webviews and split-screen browser windows.
-// =============================================================================
 @media (width <= 760px) {
-  // Core intentionally renders the narrow create-topic button as icon-only.
-  // In this primary action row that makes the CTA look like an unlabeled tool,
-  // so restore a concise visible label only for the icon-only variant.
   .list-controls .navigation-controls #create-topic.no-text {
     justify-content: center;
     gap: var(--mf-space-2);
@@ -20,9 +12,6 @@
     }
   }
 
-  // The activity wrapper and its nested age span share the `.activity` class.
-  // Our generic clock decoration therefore matched both and rendered twice.
-  // The outer metric owns the icon; the nested age only owns the date text.
   .topic-list .topic-item-stats > .num.activity.last > .age.activity::before {
     content: none !important;
     display: none !important;

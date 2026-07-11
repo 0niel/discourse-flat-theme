@@ -1,8 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Miscellaneous polish (alerts, crumbs, polls, admin, etc.)
-// =============================================================================
-
-// ---- Alerts / banners -----------------------------------------------------
 .alert,
 .banner-content,
 .global-notice .alert {
@@ -30,7 +25,6 @@
   color: var(--mf-ink);
 }
 
-// Preview / read-only theme banner
 .theme-preview-banner,
 .theme-preview {
   background: var(--mf-accent-tint-soft);
@@ -38,13 +32,11 @@
   border-bottom: 1px solid var(--mf-hairline);
 }
 
-// ---- Breadcrumbs ----------------------------------------------------------
 .category-breadcrumb .badge-category__wrapper,
 .d-breadcrumbs__item {
   color: var(--mf-ink-3);
 }
 
-// ---- Pagination / load-more ----------------------------------------------
 .topic-list-bottom .btn,
 .more-topics .btn,
 nav.pagination a {
@@ -58,7 +50,6 @@ nav.pagination a.active,
   border-radius: var(--mf-radius-md);
 }
 
-// ---- Tables inside posts --------------------------------------------------
 .cooked table,
 .d-editor-preview table {
   border-collapse: separate;
@@ -84,7 +75,6 @@ nav.pagination a.active,
   }
 }
 
-// ---- Polls ----------------------------------------------------------------
 .poll {
   border: 1px solid var(--mf-hairline);
   border-radius: var(--mf-radius-lg);
@@ -109,7 +99,6 @@ nav.pagination a.active,
   }
 }
 
-// ---- Bookmarks ------------------------------------------------------------
 .bookmark-list-item,
 .bookmark-reminder {
   border-radius: var(--mf-radius-md);
@@ -124,7 +113,6 @@ nav.pagination a.active,
   color: var(--mf-accent);
 }
 
-// ---- Admin / config tables ------------------------------------------------
 .admin-container,
 .admin-contents {
   .admin-controls,
@@ -146,7 +134,6 @@ nav.pagination a.active,
   box-shadow: none;
 }
 
-// ---- Avatars global default ----------------------------------------------
 .avatar {
   border-radius: var(--mf-radius-pill);
 }
@@ -155,7 +142,6 @@ img.avatar {
   background: var(--mf-surface-2);
 }
 
-// ---- Progress / spinners --------------------------------------------------
 .spinner {
   border-top-color: var(--mf-accent);
 }
@@ -164,7 +150,6 @@ img.avatar {
   letter-spacing: var(--mf-tracking-snug);
 }
 
-// ---- Chat (if enabled) ----------------------------------------------------
 .chat-message:hover {
   background: var(--mf-fill-hover);
 }
@@ -177,21 +162,17 @@ img.avatar {
   background: var(--mf-fill-selected);
 }
 
-// ---- Code highlight blocks ------------------------------------------------
 .cooked pre code {
   background: transparent;
   border: none;
   padding: 0;
 }
 
-// base text colour so code stays legible if core's hljs palette is the light
-// one under a hand-selected dark scheme (syntax tokens override this per-span)
 .cooked pre,
 .cooked pre code {
   color: var(--mf-ink-2);
 }
 
-// ---- Tags page ------------------------------------------------------------
 .tags-page,
 .tags-index,
 .all-tag-lists {
@@ -201,7 +182,6 @@ img.avatar {
     letter-spacing: var(--mf-tracking-snug);
   }
 
-  // tag + count rows: align the "x N" count consistently
   .tag-box {
     display: flex;
     align-items: baseline;
@@ -216,7 +196,6 @@ img.avatar {
     }
   }
 
-  // grouped tag lists
   .tag-list {
     margin-bottom: var(--mf-space-6);
   }
@@ -231,7 +210,6 @@ img.avatar {
   }
 }
 
-// New-tag input + button: equal heights, aligned
 .tag-chooser,
 .tags-admin {
   display: flex;
@@ -256,7 +234,6 @@ img.avatar {
   }
 }
 
-// ---- Badges / achievements ------------------------------------------------
 .badge-group-list,
 .badges-grid,
 .user-content .badges-section .badge-group-list {
@@ -290,7 +267,6 @@ img.avatar {
     height: 100%;
   }
 
-  // ---- Compact icon in a soft tinted tile (not a huge bare glyph) ----
   .badge-icon {
     display: inline-flex;
     align-items: center;
@@ -311,7 +287,6 @@ img.avatar {
     }
   }
 
-  // medal tiers keep a tinted-tile in their own hue
   &.badge-type-gold .badge-icon {
     color: #c8901a;
     background: #{dark-light-choose(
@@ -344,7 +319,6 @@ img.avatar {
     margin: 0;
   }
 
-  // ---- Title: tidy sentence case, not heavy UPPERCASE ----
   .badge-display-name,
   .badge-link {
     color: var(--mf-ink);
@@ -362,7 +336,6 @@ img.avatar {
     font-variant-numeric: tabular-nums;
   }
 
-  // ---- Description: readable, clamped so the row of cards stays even ----
   .badge-summary,
   .badge-description {
     color: var(--mf-ink-3);
@@ -379,26 +352,21 @@ img.avatar {
   }
 }
 
-// the medium cards in the profile "top badges" row size evenly
 .badges-section .badge-card,
 .top-section .badge-card {
   min-height: 0;
 }
 
-// Badges index page
 .badges-listing .badge-card.--badge-large,
 .badge-groups-list .badge-card {
   width: 100%;
 }
 
-// ---- Mobile / narrow-viewport refinements ---------------------------------
-//  This Discourse is responsive (no .mobile-view class), so target viewport width.
 @media (width <= 768px) {
   #main-outlet {
     padding-top: var(--mf-space-2);
   }
 
-  // --- Top nav controls: single tidy row, no stacked dividers ---
   .navigation-container {
     border-bottom: 0;
     flex-wrap: wrap;
@@ -415,7 +383,6 @@ img.avatar {
     padding: 8px 10px;
   }
 
-  // --- Topic list: TITLE leads; hide poster avatars to free space ---
   .topic-list-data.posters,
   .topic-list .posters {
     display: none;
@@ -428,9 +395,6 @@ img.avatar {
     box-shadow: none !important;
   }
 
-  // On narrow viewports Discourse collapses every topic row into one data cell.
-  // Make that cell own the full grid width instead of auto-placing it in the
-  // 34px desktop avatar track.
   .topic-list .topic-list-item > .topic-list-data:only-child {
     grid-column: 1;
     width: 100%;
@@ -453,8 +417,6 @@ img.avatar {
   .topic-list .activity {
     grid-column: 3;
 
-    // Mobile Discourse already renders its own activity clock. The desktop
-    // pseudo-icon would duplicate it in the compact metadata row.
     &::before {
       content: none;
       display: none;
@@ -474,7 +436,6 @@ img.avatar {
     margin-top: 5px;
   }
 
-  // --- Post stream: comfortable, fewer dividers ---
   .topic-post .topic-body {
     padding-bottom: var(--mf-space-4);
   }
@@ -484,7 +445,6 @@ img.avatar {
     font-size: var(--mf-text-base);
   }
 
-  // a single quiet divider around the views/topic-map, not a stacked box
   .topic-map {
     border-top: 1px solid var(--mf-hairline);
     border-bottom: none;
@@ -502,7 +462,6 @@ img.avatar {
     padding: 7px;
   }
 
-  // --- Topic footer action bar wraps cleanly ---
   .topic-footer-buttons {
     padding-top: var(--mf-space-4);
   }
@@ -512,7 +471,6 @@ img.avatar {
     gap: var(--mf-space-2);
   }
 
-  // --- Suggested / new-unread topics ---
   #suggested-topics,
   .more-topics__container {
     margin-top: var(--mf-space-6);
@@ -546,7 +504,6 @@ img.avatar {
     }
   }
 
-  // --- Profile header stacks ---
   .user-main .details {
     padding: var(--mf-space-4);
 
@@ -582,7 +539,6 @@ img.avatar {
     margin-bottom: var(--mf-space-6);
   }
 
-  // Profile nav tabs scroll horizontally (no awkward wrap, no divider stack)
   .user-navigation .user-nav.nav-pills {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -597,19 +553,16 @@ img.avatar {
     }
   }
 
-  // Category cards single column (masonry collapses)
   .category-boxes,
   .category-boxes-with-topics {
     column-count: 1;
     column-width: auto;
   }
 
-  // Composer full-width
   #reply-control.open {
     border-radius: var(--mf-radius-lg) var(--mf-radius-lg) 0 0;
   }
 
-  // Topic title
   #topic-title h1,
   .topic-title h1 {
     font-size: var(--mf-text-2xl);
@@ -617,7 +570,6 @@ img.avatar {
   }
 }
 
-// Very small phones
 @media (width <= 480px) {
   .mf-hero__chips .mf-hero__chip {
     font-size: var(--mf-text-xs);

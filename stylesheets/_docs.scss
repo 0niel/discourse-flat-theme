@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Resources / Knowledge base (discourse-docs, /resources)
-// =============================================================================
 .docs {
   width: 100%;
   max-width: 1080px;
@@ -13,8 +10,6 @@
   }
 }
 
-// Search is the page header. Discourse Docs ships a large grey container around
-// it; keep just one useful surface and remove the nested-box appearance.
 .docs-search {
   width: 100%;
   max-width: none;
@@ -87,8 +82,6 @@
   gap: var(--mf-space-6);
 }
 
-// Compact horizontal filters. A tall nested sidebar made the page feel like an
-// admin table and dedicated most of the viewport to a scrollbar.
 .docs-filters {
   position: static;
   display: grid;
@@ -204,8 +197,6 @@
     display: contents;
   }
 
-  // discourse-docs may inject an optional text filter between the section
-  // controls and its list. Keep that field and the chip rail in the wide track.
   &:has(> input, > .filter) {
     grid-template-rows: auto auto;
 
@@ -252,7 +243,6 @@
     color var(--mf-dur-fast) var(--mf-ease),
     background var(--mf-dur-fast) var(--mf-ease);
 
-  // Plugin icons add noise and steal the narrow label column.
   > svg {
     display: none;
   }
@@ -305,7 +295,6 @@
   }
 }
 
-// Resource results are readable feed rows, not a stack of heavy panels.
 .docs-results {
   width: 100% !important;
   min-width: 0;

@@ -1,5 +1,3 @@
-// Restore semantic table layout inside posts. Older cooked HTML may contain
-// nested layout tables for avatars, so only the outer data table gets a frame.
 body.archetype-regular .post-stream .cooked,
 .d-editor-preview {
   table:not(td table) {
@@ -60,8 +58,6 @@ body.archetype-regular .post-stream .cooked,
     }
   }
 
-  // Legacy generated posts use a tiny nested table to pair avatar + username.
-  // It is layout-only and must not inherit the data-table card treatment.
   td > table {
     display: table !important;
     width: auto;

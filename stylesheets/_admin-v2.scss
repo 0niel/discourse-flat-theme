@@ -1,8 +1,3 @@
-// =============================================================================
-//  Admin workspace
-//  The admin app has its own layout and component vocabulary. Keep every rule
-//  below behind its body class so the public forum cannot inherit admin chrome.
-// =============================================================================
 body.admin-interface {
   --mf-admin-sidebar: 248px;
 

@@ -1,17 +1,62 @@
-# Mirea Flat
+# Oniel's Flat Theme
 
-Плоская адаптивная тема для [Mirea Ninja](https://mirea.ninja) на актуальном API Discourse. Визуальный язык основан на спокойных поверхностях, компактной типографике и ясных состояниях — без декоративных градиентов, стекла и лишних разделителей.
+A modern, responsive, full Discourse theme focused on clarity, density, and consistent interaction patterns. It provides a calm flat visual system for desktop, Android, and iOS layouts without decorative gradients, glass effects, or unnecessary separators.
 
-## Что меняет тема
+## Features
 
-- Компактный hero с поиском и быстрым переходом в популярные категории.
-- Полезный sticky rail справа на широких экранах: создание темы, активность, теги и ссылки.
-- Сканируемая лента тем, категории, топики, composer, профили, модальные окна и `/resources`.
-- Светлая и тёмная палитры на основе стандартных CSS-переменных Discourse.
-- Видимые `focus-visible` состояния, `prefers-reduced-motion` и адаптивность без уменьшения корневого размера шрифта.
-- Русская и английская runtime-локализация.
+- Responsive topic lists, categories, topic pages, profiles, groups, badges, notifications, composer, authentication, and administration screens.
+- Compact discovery hero with search and popular category shortcuts.
+- Optional information rail with activity metrics, popular tags, and custom links.
+- Shared design tokens and reusable control primitives for tabs, fields, buttons, dialogs, and status banners.
+- Light and dark color schemes based on native Discourse color variables.
+- Accessible focus states, reduced-motion support, touch-friendly controls, and mobile-specific layout fixes.
+- English and Russian translations.
 
-## Структура
+## Installation
+
+In Discourse, open **Admin → Customize → Themes**, select **Install**, and use:
+
+```text
+https://github.com/0niel/oniels-flat-theme
+```
+
+The theme can also be installed or updated with the official [`discourse_theme`](https://meta.discourse.org/t/install-the-discourse-theme-cli-console-app-to-help-you-build-themes/82950) CLI.
+
+## Theme settings
+
+| Setting             | Description                                            |
+| ------------------- | ------------------------------------------------------ |
+| `show_hero`         | Shows the compact discovery hero.                      |
+| `show_info_rail`    | Shows the information rail on wide layouts.            |
+| `rail_links`        | Defines custom links as `Label,/path \| Label,/path2`. |
+| `hero_subtitle`     | Overrides the hero subtitle.                           |
+| `accent_color`      | Overrides the theme accent color.                      |
+| `content_max_width` | Controls the maximum content width.                    |
+| `ui_radius`         | Scales interface corner radii.                         |
+
+## Development
+
+Requirements:
+
+- Node.js 22 or newer
+- pnpm 10
+- A current installation of `discourse_theme`
+
+```bash
+pnpm install --frozen-lockfile
+pnpm lint
+discourse_theme watch .
+```
+
+To upload the theme to a configured Discourse instance:
+
+```bash
+discourse_theme upload .
+```
+
+Discourse API credentials must remain in the local `~/.discourse_theme` credential store and must never be committed.
+
+## Project structure
 
 ```text
 about.json
@@ -20,56 +65,27 @@ common/common.scss
 mobile/mobile.scss
 stylesheets/_*.scss
 javascripts/discourse/
-  api-initializers/mf-init.js
-  connectors/discovery-list-container-top/
-locales/en.yml
-locales/ru.yml
+locales/
 ```
 
-`common/common.scss` — основной entrypoint Discourse. В нём находятся общие стили и width-based responsive-композиции, поэтому узкое окно и webview получают тот же качественный UI, что и телефон.
+`common/common.scss` is the primary entry point. Responsive behavior that depends on viewport width belongs in the common stylesheets. `mobile/mobile.scss` is reserved for differences in Discourse's mobile-specific DOM.
 
-`mobile/mobile.scss` загружается только для штатного `mobile-view` Discourse и содержит platform-only исправления для отличающегося мобильного DOM. Такой гибрид соответствует актуальной рекомендации Discourse: breakpoints держать в common CSS, а отдельный mobile entrypoint использовать только там, где разметка действительно различается.
+## Validation
 
-## Настройки темы
+Before publishing a change:
 
-| Настройка           | Назначение                                                   |
-| ------------------- | ------------------------------------------------------------ |
-| `show_hero`         | Показывает компактный hero на discovery-страницах            |
-| `show_info_rail`    | Показывает правый rail на широких экранах                    |
-| `rail_links`        | Задаёт ссылки в формате `Название,/path \| Название,/path2` |
-| `hero_subtitle`     | Меняет подзаголовок hero                                     |
-| `accent_color`      | Переопределяет акцентный CSS-цвет                            |
-| `content_max_width` | Ограничивает ширину основного контента                       |
-| `ui_radius`         | Масштабирует радиусы интерфейса                              |
+1. Run `pnpm install --frozen-lockfile` and `pnpm lint`.
+2. Preview `/latest`, `/categories`, `/resources`, a category, and a topic.
+3. Test desktop and mobile layouts in both light and dark color schemes.
+4. Test anonymous and authenticated states, keyboard navigation, and reduced motion.
+5. Check the browser console and verify the `/safe-mode` fallback.
 
-## Разработка
+GitHub Actions uses Discourse's official reusable theme workflow.
 
-Требуются Node.js 22+, pnpm 10+ и актуальный [`discourse_theme`](https://meta.discourse.org/t/install-the-discourse-theme-cli-console-app-to-help-you-build-themes/82950).
+## Contributing
 
-```powershell
-pnpm install
-pnpm lint
-discourse_theme watch .
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the development and pull request workflow. Security reports should follow [SECURITY.md](SECURITY.md).
 
-Для одноразовой синхронизации с уже настроенным форумом:
+## License
 
-```powershell
-discourse_theme upload .
-```
-
-API-ключи хранятся только в локальном credential store `~/.discourse_theme` и не должны попадать в репозиторий.
-
-## Проверка перед публикацией
-
-1. `pnpm install --frozen-lockfile` и `pnpm lint`.
-2. Preview темы на `/latest`, `/categories`, `/resources`, в категории и топике.
-3. Desktop и mobile, светлая и тёмная палитры, anonymous и authenticated состояния.
-4. Клавиатурная навигация, browser console и `/safe-mode` fallback.
-5. Только после preview-smoke обновление production remote theme.
-
-CI использует официальный reusable workflow `discourse-theme.yml@v1`.
-
-## Лицензия
-
-MIT — см. [LICENSE](LICENSE).
+[MIT](LICENSE)

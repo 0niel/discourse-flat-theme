@@ -1,9 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Full notification inbox
-// =============================================================================
-// Notifications are an activity feed, not a data table. Core renders them as
-// contiguous rows with blue unread bands; keep each event independently
-// scannable, with the event itself as the primary information.
 .user-notifications-page {
   .notification-history,
   .user-notifications-list {

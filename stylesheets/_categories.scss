@@ -1,12 +1,8 @@
-// =============================================================================
-//  Mirea Flat — Categories page (modern card grid)
-// =============================================================================
 .category-list {
   --category-boxes-min-width: 280px;
   --category-boxes-max-width: 1fr;
 }
 
-// ---- Box grid → masonry columns (cards keep their natural height) ----------
 .category-boxes,
 .category-boxes-with-topics {
   display: block !important;
@@ -84,15 +80,12 @@
     color: var(--mf-ink-3);
     font-size: var(--mf-text-sm);
     line-height: 1.45;
-
-    // keep descriptions short so cards stay compact
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  // subcategories → compact chips
   .subcategories {
     margin-top: var(--mf-space-3);
     display: flex;
@@ -122,7 +115,6 @@
   }
 }
 
-// ---- Table / list view of categories --------------------------------------
 table.category-list {
   border-collapse: separate;
   border-spacing: 0;
@@ -161,14 +153,12 @@ table.category-list {
   }
 }
 
-// muted categories link
 .muted-categories-link,
 .muted-categories {
   border: none;
   color: var(--mf-ink-faint);
 }
 
-// subcategory list style "boxes"
 .subcategory-list-item {
   border-bottom: 0;
 
@@ -177,7 +167,6 @@ table.category-list {
   }
 }
 
-// category title badges in headings
 .category-title-header .category-title-contents h1 {
   letter-spacing: var(--mf-tracking-tight);
 }

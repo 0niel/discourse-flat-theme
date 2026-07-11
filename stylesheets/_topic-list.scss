@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Topic list (radical: clean spacious rows, dot categories)
-// =============================================================================
 .topic-list,
 .latest-topic-list,
 .top-topic-list {
@@ -9,7 +6,6 @@
   border-spacing: 0;
 }
 
-// ---- Header row -----------------------------------------------------------
 .topic-list .topic-list-header {
   background: transparent;
   border-bottom: 1px solid var(--mf-hairline);
@@ -33,22 +29,12 @@
   }
 }
 
-// ===========================================================================
-//  FEED CARDS — reflow the topic <table> into a modern card list
-//  Layout per card:   [ OP avatar ]  Title (+ status)
-//                                     Excerpt preview (2 lines)
-//                                     ◦category  #tags
-//                                     💬 replies   👁 views   ⌚ activity
-//  Inspired by a Figma-community / Flarum hybrid: data-rich, scannable.
-// ===========================================================================
 .topic-list,
 .topic-list > tbody {
   display: block;
   width: 100%;
 }
 
-// Keep table headers available to assistive technology while removing them
-// from the visual card feed.
 .topic-list > thead {
   position: absolute;
   width: 1px;
@@ -74,9 +60,6 @@
   border-radius: var(--mf-radius-lg);
   background: transparent;
   transition: background var(--mf-dur-fast) var(--mf-ease);
-
-  // NO dividers anywhere — cards are separated by whitespace + hover only.
-  // Kill core's row borders/shadows too (they were the leftover "разделители").
   border: none !important;
   box-shadow: none !important;
 
@@ -112,7 +95,6 @@
   background: color-mix(in srgb, var(--mf-surface-2) 72%, transparent);
 }
 
-// belt-and-suspenders: no top/bottom rule between adjacent rows in any context
 .topic-list .topic-list-item + .topic-list-item,
 .more-topics__list .topic-list-item,
 #suggested-topics .topic-list-item {
@@ -124,7 +106,6 @@
   color: var(--mf-ink-faint);
 }
 
-// ---- OP avatar — the visual anchor on the left ----------------------------
 .topic-list .posters {
   grid-column: 1;
   grid-row: 1 / span 2;
@@ -138,7 +119,7 @@
 
   a:not(:first-child) {
     display: none;
-  } // only the original poster
+  }
 
   a:first-child {
     display: block;
@@ -157,13 +138,10 @@
   }
 }
 
-// ---- Main content: title · excerpt · category/tags ------------------------
 .topic-list .main-link {
   grid-column: 2 / -1;
   grid-row: 1;
   min-width: 0;
-
-  // kill core's left padding so title/excerpt/category/metrics share ONE left edge
   padding: 0 !important;
   display: flex;
   flex-direction: column;
@@ -181,8 +159,6 @@
     }
   }
 
-  // an empty status container must not indent the title; the tooltip wrapper
-  // around the title shouldn't add its own offset either — keep the row flush
   .topic-statuses:empty {
     display: none;
   }
@@ -223,7 +199,6 @@
   }
 }
 
-// unread / new topics: emphasise title weight
 .topic-list-item.unread .main-link a.title,
 .topic-list-item.unread-posts .main-link a.title,
 .topic-list-item.new-topic .main-link a.title {
@@ -231,14 +206,10 @@
   color: var(--mf-ink);
 }
 
-// Discourse marks an already-opened topic on the row, not on the anchor.
-// Keep the distinction subtle while retaining readable contrast in dark mode.
 .topic-list-item.visited .main-link a.title {
   color: color-mix(in srgb, var(--mf-ink) 86%, var(--mf-ink-3));
 }
 
-// New-post count must remain legible in every colour scheme. Core's badge
-// inherits palette colours that can otherwise collapse into a solid dot.
 .topic-list-item .badge-notification.unread-posts {
   display: inline-flex;
   align-items: center;
@@ -255,7 +226,6 @@
   font-variant-numeric: tabular-nums;
 }
 
-// ---- Metrics row (replies · views · activity) with icon glyphs ------------
 .topic-list .num.posts-map,
 .topic-list .num.views,
 .topic-list .activity {
@@ -264,10 +234,6 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-
-  // strip Discourse's tall cell/link padding so the metrics are ONE compact row
-  // (left padding made the cells 40–70px tall, floating the icons above as "bars").
-  // !important because core's .topic-list-data padding rule is more specific.
   padding: 0 !important;
   min-height: 0 !important;
   height: auto;
@@ -327,20 +293,14 @@
   --mf-ic: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpolyline points='12 6 12 12 16 14'/%3E%3C/svg%3E");
 }
 
-// drop the OP-likes column — replies/views lead
 .topic-list .num.likes {
   display: none;
 }
 
-// ---- Suggested / more-topics (bottom of a topic): NO avatar column ---------
-// these lists carry no posters cell, so collapse the avatar gutter and run the
-// content full-width with the metrics tucked underneath
 .more-topics__list .topic-list-item,
 #suggested-topics .topic-list-item,
 .suggested-topics .topic-list-item {
   grid-template-columns: auto auto minmax(0, 1fr);
-
-  // breathing room from the section's left border (no avatar gutter here)
   padding: 12px 18px;
 
   .main-link {
@@ -365,7 +325,6 @@
   }
 }
 
-// ---- Category as a colored dot + name -------------------------------------
 .badge-category__wrapper {
   .badge-category {
     background: transparent !important;
@@ -379,7 +338,6 @@
       color: var(--mf-ink-3);
     }
 
-    // colored leading dot from the category color var
     &::before {
       content: "";
       display: inline-block;
@@ -399,14 +357,12 @@
   }
 }
 
-// ---- Tags → subtle chips --------------------------------------------------
 .discourse-tags {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 6px;
 }
 
-// Canonical tag chip — ONE consistent size everywhere (list, tags page, profile)
 .discourse-tag,
 a.discourse-tag.box,
 .discourse-tag.box,
@@ -435,7 +391,6 @@ a.discourse-tag.box,
   }
 }
 
-// ---- "Pinned/closed/etc" status icons -------------------------------------
 .topic-statuses .d-icon {
   color: var(--mf-ink-faint);
 }
@@ -444,7 +399,6 @@ a.discourse-tag.box,
   color: var(--mf-accent);
 }
 
-// ---- Latest combined list (homepage right column) -------------------------
 .latest-topic-list-item,
 .top-topic-list-item {
   border-bottom: 0;
@@ -460,7 +414,6 @@ a.discourse-tag.box,
   }
 }
 
-// ---- Empty state ----------------------------------------------------------
 .topic-list-bottom .empty-state,
 .empty-state {
   color: var(--mf-ink-3);
@@ -471,14 +424,10 @@ a.discourse-tag.box,
   }
 }
 
-// ---- Bulk-select / selected rows ------------------------------------------
 .topic-list-item.bulk-selected > td {
   background: var(--mf-fill-selected);
 }
 
-// ---- Per-category colour accent (mirea.ninja palette) ---------------------
-// Each row carries a `category-<slug>` class — expose the category colour and
-// reveal a crisp left accent on hover for fast visual scanning.
 .topic-list-item.category-exams,
 .topic-list-item.category-emergency-help {
   --row-cat: #bf1e2e;

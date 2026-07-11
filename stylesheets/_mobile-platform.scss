@@ -1,7 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Discourse mobile-view only
-//  These rules target mobile-only core markup, not merely a narrow viewport.
-// =============================================================================
 html.mobile-view {
   max-width: 100%;
 
@@ -18,8 +14,6 @@ html.mobile-view {
       min-width: 0;
     }
 
-    // Staff already have the same admin menu in the footer action rail.
-    // Keeping both creates a floating duplicate wrench beside the progress pill.
     .topic-admin-menu-trigger {
       display: none !important;
     }

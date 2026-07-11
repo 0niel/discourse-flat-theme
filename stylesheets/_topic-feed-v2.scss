@@ -1,7 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Topic feed v2
-//  Social, information-dense cards inspired by modern community marketplaces.
-// =============================================================================
 .desktop-view .list-container .topic-list .topic-list-item,
 .desktop-view .list-container .topic-list-item.selected {
   display: grid;
@@ -178,9 +174,6 @@
       display: grid;
       grid-template-columns: 44px minmax(0, 1fr);
       gap: var(--mf-space-3);
-
-      // Core's table column keeps an intrinsic width after the row becomes a
-      // block. Container units fill the actual feed, including embedded views.
       width: 100cqi !important;
       max-width: none;
       min-width: 0;

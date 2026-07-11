@@ -21,7 +21,7 @@ en:
     resources: "Study resources"
     about: "About the community"
   theme_metadata:
-    description: "Mirea Flat — a fast, calm and flat theme for Mirea Ninja with a responsive feed, compact search and useful right rail."
+    description: "Oniel's Flat Theme — a fast and calm Discourse theme with a responsive feed, compact search, and useful information rail."
     settings:
       show_hero: "Show the custom homepage hero (branding, search, category chips, forum stats)."
       show_info_rail: "Show the right info rail on the homepage (forum pulse, tags, quick links)."

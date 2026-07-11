@@ -1,9 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Unified controls and login
-// =============================================================================
-// A field should read as a calm editing surface, not a framed widget. The
-// accent is reserved for focus and validation, so a dense page does not become
-// a collection of outlines.
 :is(
   input:not([type], .d-otp-input),
   input[type="text"],
@@ -86,8 +80,6 @@ textarea {
   }
 }
 
-// Search fields keep their existing shared shell: applying the global field
-// surface to the inner input would create a second rounded rectangle.
 :is(
     .search-menu,
     .search-bar,
@@ -102,7 +94,6 @@ textarea {
   box-shadow: none !important;
 }
 
-// ---- Login / account access -----------------------------------------------
 .login-fullpage {
   .login-body {
     display: grid !important;
@@ -235,8 +226,6 @@ textarea {
   }
 }
 
-// Discourse OTP uses one transparent input stretched over six visual slots.
-// It must never inherit the generic filled-field surface or login input size.
 .d-otp {
   max-width: 100%;
 

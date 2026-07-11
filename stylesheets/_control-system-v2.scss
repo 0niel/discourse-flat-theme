@@ -1,15 +1,9 @@
-// =============================================================================
-//  Mirea Flat — Scalable navigation and search primitives
-// =============================================================================
 :root {
   --mf-control-height: 36px;
   --mf-control-gap: 3px;
   --mf-search-height: 42px;
 }
 
-// Horizontal tabs across core, admin and plugins use the same interaction
-// contract as discovery navigation. Structural selectors cover future tablists
-// without coupling the theme to one route or one Ember component tree.
 :where(
   .nav-pills,
   .d-tabs,
@@ -82,9 +76,6 @@
   }
 }
 
-// Search shells own shape, surface and focus. Their child input is deliberately
-// transparent so icon, text and keyboard hint form one control, not nested
-// rounded rectangles.
 :where(
   .sidebar-search__input-container,
   .admin-search__input-group,
@@ -160,9 +151,6 @@
   background: transparent !important;
 }
 
-// Keep the focus indicator on the composite control itself. Core and plugin
-// input rules can be more specific than the low-specificity primitive above,
-// so these structural selectors deliberately win without naming a route.
 :is(
   .sidebar-search__input-container,
   .admin-search__input-group,

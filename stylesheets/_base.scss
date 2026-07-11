@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Base layer (typography, canvas, global polish)
-// =============================================================================
 html {
   font-size: 100%;
   background: var(--mf-app-bg);
@@ -29,7 +26,6 @@ body {
   background: var(--mf-app-bg);
 }
 
-// ---- Headings -------------------------------------------------------------
 h1,
 h2,
 h3,
@@ -47,7 +43,6 @@ h1 {
   letter-spacing: -0.03em;
 }
 
-// ---- Links ----------------------------------------------------------------
 a {
   color: var(--mf-accent);
   text-decoration: none;
@@ -60,7 +55,6 @@ a {
   }
 }
 
-// keep utility links (titles, names) inheriting ink, not accent
 .topic-list .main-link a.title,
 .latest-topic-list-item .main-link a,
 a.title.raw-link,
@@ -69,7 +63,6 @@ a.title.raw-link,
   color: var(--mf-ink);
 }
 
-// ---- Selection / focus ----------------------------------------------------
 ::selection {
   background: var(--mf-accent-tint);
   color: var(--mf-ink);
@@ -89,7 +82,6 @@ select:focus-visible,
   border-radius: var(--mf-radius-xs);
 }
 
-// ---- Code / mono ----------------------------------------------------------
 code,
 pre,
 kbd,
@@ -114,13 +106,11 @@ pre {
   padding: var(--mf-space-4);
 }
 
-// ---- Rules ----------------------------------------------------------------
 hr {
   border: none;
   border-top: 1px solid var(--mf-hairline);
 }
 
-// ---- Images in posts ------------------------------------------------------
 .cooked img:not(.emoji, .avatar),
 .d-editor-preview img:not(.emoji, .avatar) {
   border-radius: var(--mf-radius-md);

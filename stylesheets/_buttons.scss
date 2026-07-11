@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Buttons (Vercel/Geist-style: solid, flat, crisp)
-// =============================================================================
 .btn {
   border-radius: var(--mf-radius-md);
   border: 1px solid transparent;
@@ -27,14 +24,12 @@
   }
 }
 
-// Default / neutral
 .btn-default,
 .btn.btn-icon-text:not(.btn-primary, .btn-danger) {
   background: var(--mf-surface);
   border-color: var(--mf-hairline-strong);
   color: var(--mf-ink);
 
-  // hover = background tint only; never darken the border into a "box"
   &:hover {
     background: var(--mf-surface-2);
     border-color: var(--mf-hairline-strong);
@@ -47,7 +42,6 @@
   }
 }
 
-// icon-only buttons: ultra-flat, hover is a soft tint, no border box
 .btn.no-text,
 .btn-default.no-text {
   border-color: transparent;
@@ -63,7 +57,6 @@
   }
 }
 
-// Primary
 .btn-primary {
   background: var(--mf-accent);
   border-color: transparent;
@@ -85,7 +78,6 @@
   }
 }
 
-// Danger
 .btn-danger {
   background: var(--mf-danger);
   border-color: transparent;
@@ -101,7 +93,6 @@
   }
 }
 
-// Success
 .btn-success {
   background: var(--mf-success);
   border-color: transparent;
@@ -116,8 +107,6 @@
   }
 }
 
-// Disabled — core's box-shadow/background-image reset above hides the default
-// disabled treatment, so give every button a clear disabled state of its own
 .btn:disabled,
 .btn[disabled],
 .btn.disabled {
@@ -126,7 +115,6 @@
   cursor: not-allowed;
 }
 
-// Flat / ghost / text
 .btn-flat,
 .btn-transparent,
 .btn-link,
@@ -150,13 +138,11 @@
   }
 }
 
-// Icon-only
 .btn.no-text.btn-icon {
   padding: 8px;
   border-radius: var(--mf-radius-sm);
 }
 
-// Sizes
 .btn.btn-small {
   padding: 5px 10px;
   font-size: var(--mf-text-sm);
@@ -167,7 +153,6 @@
   font-size: var(--mf-text-base);
 }
 
-// Float-kit buttons (menus, tooltips triggers)
 .fk-d-button,
 .fk-d-menu__trigger {
   border-radius: var(--mf-radius-sm);
@@ -179,12 +164,10 @@
   border: 1px solid var(--mf-hairline);
 }
 
-// "Create Topic" gets primary treatment already; ensure icon spacing
 #create-topic {
   font-weight: var(--mf-weight-semibold);
 }
 
-// Like / post action buttons
 .post-controls .btn,
 .topic-footer-buttons .btn {
   border-radius: var(--mf-radius-sm);

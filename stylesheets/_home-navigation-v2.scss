@@ -1,7 +1,3 @@
-// =============================================================================
-//  Mirea Flat — topic-list navigation surface
-//  Keeps filters, primary destinations and topic creation in one composition.
-// =============================================================================
 .list-controls .navigation-container {
   display: grid;
   grid-template-columns: minmax(0, 1fr) max-content;

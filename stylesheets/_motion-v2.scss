@@ -1,8 +1,3 @@
-// =============================================================================
-//  Mirea Flat — restrained motion system
-//  Only opacity/compositor transforms are animated. Nothing here changes
-//  layout, blocks interaction, or runs when reduced motion is requested.
-// =============================================================================
 @media (prefers-reduced-motion: no-preference) {
   @keyframes mf-content-enter {
     from {
@@ -54,7 +49,6 @@
     }
   }
 
-  // One short route-level reveal. Individual rows do not cascade or wait.
   .mf-hero {
     animation: mf-content-enter var(--mf-dur-slow) var(--mf-ease-out);
   }
@@ -68,7 +62,6 @@
     animation: mf-fade-enter var(--mf-dur) var(--mf-ease);
   }
 
-  // Popovers are true elevated surfaces, so a tiny scale/slide clarifies origin.
   .menu-panel:not(.slide-in),
   .fk-d-menu__inner-content,
   .select-kit-body,

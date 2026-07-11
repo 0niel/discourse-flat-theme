@@ -1,7 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Topic page v2
-//  Compact post rhythm, quiet service states and readable related topics.
-// =============================================================================
 body.archetype-regular {
   .post-stream > .topic-post {
     margin-bottom: var(--mf-space-2);
@@ -119,7 +115,6 @@ body.archetype-regular {
     }
   }
 
-  // The red core marker duplicates unread state and cuts through cards.
   .post-stream > .topic-post-visited,
   .post-stream > .small-action.topic-post-visited {
     position: absolute !important;
@@ -146,10 +141,6 @@ body.archetype-regular {
     }
   }
 
-  // Topic metadata changes are events, not posts. The generic flat layer used
-  // to turn them into a full card, leaving a large empty block around a single
-  // tag update. Keep the author/context visible while matching the stream's
-  // natural rhythm and preserving the moderation actions.
   .post-stream article.small-action:not(.time-gap) {
     min-height: 0;
     margin: 2px 0;

@@ -6,15 +6,11 @@ import { themePrefix } from "virtual:theme";
 import icon from "discourse/ui-kit/helpers/d-icon";
 import { i18n } from "discourse-i18n";
 
-// A custom, flat hero rendered at the top of the homepage discovery list.
-// Shows branding, a search entry, quick category chips, and live forum stats.
 export default class MfHero extends Component {
-  // Only on the top-level discovery pages (no specific category / tag drilldown)
   static shouldRender(args) {
     if (settings.show_hero === false) {
       return false;
     }
-    // hide on category / tag drilldowns; show on latest/top/new/unread/categories
     return !args?.category && !args?.tag;
   }
 
@@ -22,7 +18,7 @@ export default class MfHero extends Component {
   @service siteSettings;
 
   get title() {
-    return this.siteSettings.title || this.site.title || "Mirea Ninja";
+    return this.siteSettings.title || this.site.title || "Community";
   }
 
   get description() {

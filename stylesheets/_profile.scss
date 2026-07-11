@@ -1,10 +1,4 @@
-// =============================================================================
-//  Mirea Flat — User profile (cardinal redesign)
-// =============================================================================
 .user-main {
-  // ---- Header card --------------------------------------------------------
-  // Discourse paints .user-content white with no padding — make it part of the
-  // canvas so the white stat tiles / cards read as elevated panels.
   .user-main-content,
   .user-content-wrapper,
   .user-content,
@@ -13,8 +7,6 @@
     box-shadow: none;
   }
 
-  // header card — scoped with :has(.primary) so it never leaks onto the
-  // small .details elements (like-count rows) nested deeper in summaries
   .details:has(.primary) {
     background: var(--mf-surface);
     border: 1px solid var(--mf-hairline);
@@ -28,7 +20,6 @@
       border-radius: 0;
     }
 
-    // the inner flex row (avatar | name | controls)
     .primary {
       display: flex;
       gap: var(--mf-space-5);
@@ -99,7 +90,6 @@
     }
   }
 
-  // ---- Profile navigation → same compact tabs as discovery ----------------
   .user-navigation {
     padding: 0;
     background: transparent;
@@ -170,8 +160,6 @@
       border: none;
     }
 
-    // Message filters use the same compact controls as the primary profile
-    // destinations rather than a separate rounded toolbar.
     &.user-navigation-secondary .nav-pills > li > a {
       min-height: 36px;
       padding: 8px 11px;
@@ -190,7 +178,6 @@
   }
 }
 
-// ---- Summary sections: bare (title + content), NOT cards-in-cards ----------
 .user-content .top-section,
 #user-summary .top-section {
   background: transparent;
@@ -211,7 +198,6 @@
   }
 }
 
-// ---- Statistics → stat-card grid -------------------------------------------
 .user-content .stats-section ul,
 #user-summary .stats-section ul {
   list-style: none;
@@ -236,17 +222,9 @@
       border-color: var(--mf-hairline-strong);
     }
 
-    // Some summary counters are links while others are plain content. Core
-    // leaves those anchors inline, which creates a baseline line-box and drops
-    // their stat about 10px below the neighbouring counters. Give both forms
-    // the same block formatting context so zero-valued linked stats stay put.
     > a {
       display: block;
       width: 100%;
-
-      // Core gives linked counters `10px 14px 10px 0` padding. It is applied
-      // after the theme's normal source order, so keep this narrowly scoped
-      // reset important rather than letting linked stats drift vertically.
       padding: 0 !important;
       color: inherit;
       text-decoration: none;
@@ -285,7 +263,6 @@
   }
 }
 
-// ---- Two-column sub-sections (replies / topics) ----------------------------
 .user-content .top-section {
   .top-sub-section {
     margin-bottom: var(--mf-space-4);
@@ -295,7 +272,6 @@
     }
   }
 
-  // list items inside summary sections
   ul.user-stream,
   .topic-info,
   .user-summary-list {
@@ -305,7 +281,6 @@
     }
   }
 
-  // generic list rows in summary (links, replies, topics)
   li {
     a.title,
     a {
@@ -325,7 +300,6 @@
     }
   }
 
-  // top categories list
   &.top-categories-section table {
     width: 100%;
     border-collapse: separate;
@@ -351,7 +325,6 @@
     }
   }
 
-  // badges inside profile
   &.badges-section .badge-card {
     margin: 0;
   }
@@ -361,7 +334,6 @@
   }
 }
 
-// "Other replies / Other topics / More" links
 .user-content .top-section .more,
 .user-content .top-section a.btn-flat {
   color: var(--mf-accent);
@@ -372,7 +344,6 @@
   }
 }
 
-// ---- Fans / Favorites (most-liked user lists) — fix overlap & boxes --------
 .summary-user-list {
   ul {
     list-style: none;
@@ -406,7 +377,6 @@
       background: var(--mf-fill-hover);
     }
 
-    // avatar — static (kill core absolute positioning that caused the overlap)
     .user-image {
       position: static;
       margin: 0;
@@ -471,7 +441,6 @@
       display: none;
     }
 
-    // the like count row — reset the header-card border that leaks here
     .details {
       position: static;
       display: inline-flex;
@@ -501,7 +470,6 @@
   }
 }
 
-// ---- Activity / messages streams -------------------------------------------
 .user-stream-item,
 .user-stream .item {
   background: var(--mf-surface);
@@ -538,7 +506,6 @@
   }
 }
 
-// ---- Preferences (settings) pages ------------------------------------------
 .user-preferences {
   .control-group {
     border-bottom: 1px solid var(--mf-hairline);
@@ -557,7 +524,6 @@
   }
 }
 
-// avatar selector, notification level buttons keep flat radius
 .user-content .notification-level-controls .btn,
 .user-main .btn {
   border-radius: var(--mf-radius-md);

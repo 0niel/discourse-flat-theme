@@ -1,6 +1,3 @@
-// =============================================================================
-//  Mirea Flat — Navigation (segmented tabs + list controls)
-// =============================================================================
 .navigation-container {
   align-items: center;
   gap: var(--mf-space-2);
@@ -9,7 +6,6 @@
   margin-bottom: var(--mf-space-3);
 }
 
-// Primary nav: Latest / Categories / Unread / Top … as clean underline tabs
 .nav-pills {
   background: transparent;
   gap: 0;
@@ -47,7 +43,6 @@
     font-weight: var(--mf-weight-semibold);
   }
 
-  // count bubble next to tab
   .badge-notification {
     background: var(--mf-accent-tint);
     color: var(--mf-accent);
@@ -57,7 +52,6 @@
   }
 }
 
-// Category / tag dropdown chips ("категории ›", "теги ›")
 .list-controls {
   .category-breadcrumb {
     gap: var(--mf-space-2);
@@ -81,13 +75,11 @@
   }
 }
 
-// The whole controls row layout
 .navigation-controls,
 .list-controls .container {
   gap: var(--mf-space-2);
 }
 
-// Bottom navigation (mobile footer nav)
 .footer-nav {
   background: var(--mf-surface);
   border-top: 1px solid var(--mf-hairline);
@@ -98,9 +90,6 @@
   }
 }
 
-// Dropdown / "more" navigation menus — shadow lifts them, no extra frame.
-// (.select-kit-collection is clipped by its body, so it must NOT re-round —
-// see _forms.scss; double-rounding makes a "ring inside a ring".)
 .menu-panel,
 .fk-d-menu__inner-content {
   border-radius: var(--mf-radius-lg);
