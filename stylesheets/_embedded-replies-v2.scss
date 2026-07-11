@@ -1,0 +1,219 @@
+// Expanded reply chains should read like a compact conversation, not a card
+// nested inside another post. This also neutralizes Discourse's long connector
+// pseudo-element and keeps the source link inside the reply header.
+body.archetype-regular .post-stream .post__embedded-posts.embedded-posts {
+  width: 100%;
+  margin: 4px 0 var(--mf-space-2);
+  padding: 0;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0;
+  box-shadow: none !important;
+
+  .post__collapse-button.collapse-up {
+    display: none !important;
+  }
+
+  .load-more-replies {
+    position: static !important;
+    inset: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    min-height: 30px;
+    margin: 6px 0 2px 52px;
+    padding: 5px 10px;
+    color: var(--mf-ink-muted, var(--mf-ink-faint));
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-semibold);
+    line-height: 18px;
+    background: var(--mf-surface-2);
+    border: 0;
+    border-radius: var(--mf-radius-pill);
+    transform: none !important;
+  }
+
+  > .reply {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent !important;
+    border: 0 !important;
+
+    + .reply {
+      margin-top: 8px;
+    }
+
+    > .row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 40px minmax(0, 1fr);
+      column-gap: 12px;
+      align-items: start;
+      width: 100%;
+      padding: 8px 0 10px;
+      background: transparent !important;
+      border: 0 !important;
+
+      &::before,
+      &::after {
+        display: none !important;
+        content: none !important;
+      }
+    }
+
+    .topic-avatar {
+      grid-column: 1;
+      width: 40px;
+      height: 40px;
+      min-height: 40px;
+      padding: 0;
+      background: transparent !important;
+      border: 0 !important;
+
+      .post-avatar,
+      .main-avatar {
+        display: block;
+        width: 40px;
+        height: 40px;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .topic-body {
+      grid-column: 2;
+      width: auto;
+      min-width: 0;
+      padding: 0 0 2px;
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    .topic-meta-data.embedded-reply {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 28px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+      .names {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+        min-width: 0;
+      }
+
+      .post-link-arrow {
+        position: static !important;
+        inset: auto !important;
+        flex: 0 0 auto;
+        width: auto;
+        height: auto;
+        margin: 0 0 0 auto;
+
+        .post-info.arrow {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          min-height: 28px;
+          padding: 4px 8px;
+          color: var(--mf-ink-faint);
+          font-size: var(--mf-text-xs);
+          font-weight: var(--mf-weight-medium);
+          line-height: 18px;
+          background: transparent;
+          border-radius: var(--mf-radius-pill);
+
+          &:hover {
+            color: var(--mf-ink);
+            background: var(--mf-fill-hover);
+          }
+        }
+      }
+    }
+
+    .cooked {
+      width: auto;
+      margin: 2px 0 0;
+      padding: 4px 0 0;
+      color: var(--mf-ink-2);
+      line-height: 1.5;
+
+      p {
+        margin-bottom: 7px;
+      }
+
+      > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (width <= 760px) {
+  body.archetype-regular .post-stream .post__embedded-posts.embedded-posts {
+    margin-block: 2px var(--mf-space-2);
+
+    .load-more-replies {
+      margin-left: 43px;
+    }
+
+    > .reply {
+      + .reply {
+        margin-top: 6px;
+      }
+
+      > .row {
+        grid-template-columns: 34px minmax(0, 1fr);
+        column-gap: 9px;
+        padding-block: 7px 9px;
+      }
+
+      .topic-avatar,
+      .topic-avatar .post-avatar,
+      .topic-avatar .main-avatar,
+      .topic-avatar .avatar {
+        width: 34px;
+        height: 34px;
+        min-height: 34px;
+      }
+
+      .topic-meta-data.embedded-reply {
+        flex-wrap: wrap;
+        gap: 3px 6px;
+
+        .names {
+          flex: 1 1 auto;
+        }
+
+        .post-link-arrow .post-info.arrow {
+          width: 28px;
+          min-height: 28px;
+          padding: 5px;
+          justify-content: center;
+          overflow: hidden;
+          color: var(--mf-ink-faint);
+          font-size: 0;
+
+          .d-icon {
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+
+      .cooked {
+        padding-top: 3px;
+        font-size: var(--mf-text-sm);
+      }
+    }
+  }
+}
