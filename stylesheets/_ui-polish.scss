@@ -98,3 +98,28 @@
     }
   }
 }
+
+// Discourse renders a solid block and a long fade over overflowing nav items.
+// It was using the page background instead of the panel colour, which made the
+// last tab look dirty and partially obscured. Keep the cue, but make it a
+// compact, panel-coloured gradient with a clear scroll affordance.
+.horizontal-overflow-nav {
+  --fade-width: 2rem;
+
+  > .horizontal-overflow-nav__scroll-right,
+  > .horizontal-overflow-nav__scroll-left {
+    --fade-color: var(--mf-panel);
+    width: 24px;
+    background-color: transparent !important;
+
+    .d-icon {
+      color: var(--mf-accent) !important;
+      opacity: 0.9;
+    }
+  }
+
+  > .horizontal-overflow-nav__scroll-right::before,
+  > .horizontal-overflow-nav__scroll-left::after {
+    opacity: 0.92;
+  }
+}
