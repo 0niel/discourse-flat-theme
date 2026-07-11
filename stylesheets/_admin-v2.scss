@@ -1,0 +1,318 @@
+// =============================================================================
+//  Admin workspace
+//  The admin app has its own layout and component vocabulary. Keep every rule
+//  below behind its body class so the public forum cannot inherit admin chrome.
+// =============================================================================
+body.admin-interface {
+  --mf-admin-sidebar: 248px;
+
+  .admin-content.boxed.white,
+  .admin-content {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .admin-contents {
+    min-width: 0;
+    gap: var(--mf-space-4);
+  }
+
+  .d-page-header {
+    min-height: 0;
+    height: auto;
+    padding: var(--mf-space-5) var(--mf-space-6);
+    background: var(--mf-surface);
+    border: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-xl);
+
+    &__breadcrumbs {
+      margin-bottom: var(--mf-space-3);
+      color: var(--mf-ink-3);
+      font-size: var(--mf-text-sm);
+    }
+
+    &__title-row {
+      margin: 0;
+    }
+
+    &__description {
+      max-width: 800px;
+      margin-top: var(--mf-space-2);
+      color: var(--mf-ink-3);
+      line-height: var(--mf-leading-normal);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(26px, 3vw, 34px);
+      letter-spacing: var(--mf-tracking-tight);
+      line-height: var(--mf-leading-tight);
+    }
+  }
+
+  .dashboard {
+    .section-top,
+    > .section,
+    .community-health.section {
+      box-sizing: border-box;
+      width: 100%;
+      margin: 0;
+      padding: var(--mf-space-5) var(--mf-space-6);
+      background: var(--mf-surface);
+      border: 1px solid var(--mf-hairline);
+      border-radius: var(--mf-radius-xl);
+      box-shadow: none;
+    }
+
+    .section-title {
+      margin: 0 0 var(--mf-space-4);
+      padding: 0;
+      border: 0;
+
+      h2,
+      h3 {
+        margin: 0;
+        font-size: var(--mf-text-xl);
+        letter-spacing: var(--mf-tracking-snug);
+      }
+    }
+
+    .version-checks,
+    .dashboard-stats.version-check {
+      height: auto;
+      min-height: 0;
+    }
+
+    .dashboard-stats.version-check {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: var(--mf-space-3);
+      padding: 0;
+
+      .version-number,
+      .version-status {
+        box-sizing: border-box;
+        min-width: 0;
+        padding: var(--mf-space-4);
+        background: var(--mf-surface-2);
+        border: 0;
+        border-radius: var(--mf-radius-lg);
+      }
+
+      .version-number h3,
+      .version-status h3 {
+        margin-bottom: var(--mf-space-2);
+        font-size: var(--mf-text-sm);
+        color: var(--mf-ink-3);
+      }
+
+      .update-header:empty,
+      .update-header:not(:has(*)) {
+        display: none;
+      }
+
+      .upgrades-banner,
+      .update-header:not(:empty) {
+        grid-column: 1 / -1;
+        margin: 0;
+        padding: var(--mf-space-3) var(--mf-space-4);
+        color: var(--mf-accent);
+        background: var(--mf-accent-tint);
+        border: 0;
+        border-radius: var(--mf-radius-lg);
+      }
+    }
+
+    .dashboard-problems {
+      .section-body,
+      .problem-messages > ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      li.dashboard-problem {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: var(--mf-space-4);
+        margin: 0 0 var(--mf-space-2);
+        padding: var(--mf-space-3) var(--mf-space-4);
+        list-style: none;
+        background: var(--mf-surface-2);
+        border: 0;
+        border-radius: var(--mf-radius-lg);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      li.dashboard-problem .notice {
+        display: contents;
+      }
+
+      li.dashboard-problem .message {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      li.dashboard-problem .btn {
+        flex: 0 0 auto;
+      }
+    }
+
+    .db-site-advice {
+      padding: var(--mf-space-5) var(--mf-space-6);
+      background: var(--mf-surface);
+      border: 1px solid var(--mf-hairline);
+      border-radius: var(--mf-radius-xl);
+    }
+
+    .db-site-advice__list {
+      display: grid;
+      gap: var(--mf-space-2);
+      margin: 0;
+      padding: 0;
+    }
+
+    .db-site-advice__item {
+      padding: var(--mf-space-3) var(--mf-space-4);
+      background: var(--mf-surface-2);
+      border: 0;
+      border-radius: var(--mf-radius-lg);
+    }
+
+    .period-section,
+    .charts,
+    .chart-canvas-container {
+      min-width: 0;
+    }
+  }
+
+  .admin-config-area-card,
+  .admin-controls,
+  .admin-contents table {
+    border-color: var(--mf-hairline);
+    border-radius: var(--mf-radius-lg);
+    box-shadow: none;
+  }
+
+  .admin-contents table {
+    background: var(--mf-surface);
+
+    th {
+      color: var(--mf-ink-3);
+      font-size: var(--mf-text-xs);
+      font-weight: var(--mf-weight-semibold);
+      letter-spacing: 0.025em;
+    }
+
+    tbody tr {
+      transition: background-color var(--mf-dur-fast) var(--mf-ease);
+
+      &:hover {
+        background: var(--mf-fill-hover);
+      }
+    }
+  }
+}
+
+@media (1000px <= width <= 1100px) {
+  body.admin-interface .dashboard .dashboard-stats.version-check {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .version-status {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+@media (width >= 1000px) {
+  body.admin-interface {
+    #main-outlet-wrapper {
+      grid-template-columns: var(--mf-admin-sidebar) minmax(0, 1fr);
+      gap: var(--mf-space-6);
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1440px;
+      margin-inline: auto;
+      padding-inline: var(--mf-space-5);
+    }
+
+    .sidebar-wrapper,
+    .sidebar-container {
+      width: var(--mf-admin-sidebar);
+    }
+
+    .sidebar-sections.admin-panel {
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      max-height: calc(100vh - var(--header-offset, 64px) - 24px);
+      margin-top: var(--mf-space-3);
+      padding: var(--mf-space-3);
+      overflow-y: auto;
+      background: var(--mf-surface);
+      border: 1px solid var(--mf-hairline);
+      border-radius: var(--mf-radius-xl);
+      scrollbar-width: thin;
+      scrollbar-color: var(--mf-hairline-strong) transparent;
+    }
+
+    .sidebar-panel-header {
+      margin-bottom: var(--mf-space-2);
+      padding: var(--mf-space-2);
+      background: var(--mf-surface-2);
+      border-radius: var(--mf-radius-lg);
+    }
+
+    .sidebar-section-link {
+      min-height: 36px;
+      border-radius: var(--mf-radius-md);
+    }
+
+    .sidebar-section-link.active {
+      color: var(--mf-accent);
+      background: var(--mf-fill-selected);
+    }
+
+    .sidebar-section-header-text {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-2xs);
+      font-weight: var(--mf-weight-semibold);
+      letter-spacing: 0.065em;
+      text-transform: uppercase;
+    }
+
+    #main-outlet {
+      width: auto;
+      min-width: 0;
+      padding: var(--mf-space-4) 0 var(--mf-space-12);
+    }
+  }
+}
+
+@media (width <= 760px) {
+  body.admin-interface {
+    .d-page-header,
+    .dashboard .section-top,
+    .dashboard > .section,
+    .dashboard .community-health.section {
+      padding: var(--mf-space-4);
+      border-radius: var(--mf-radius-lg);
+    }
+
+    .dashboard .dashboard-stats.version-check {
+      grid-template-columns: 1fr;
+    }
+
+    .dashboard .dashboard-problems {
+      li.dashboard-problem {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+// Make horizontally overflowing category shortcuts visibly interactive without
+// adding permanent arrows or taking space away from the actual categories.
+.mf-hero__chips {
+  scroll-snap-type: inline proximity;
+  overscroll-behavior-inline: contain;
+  padding-inline-end: var(--mf-space-6);
+  padding-block-end: 7px;
+  mask-image: linear-gradient(
+    to right,
+    #000 0,
+    #000 calc(100% - 22px),
+    transparent 100%
+  );
+  scrollbar-width: thin;
+  scrollbar-color: var(--mf-accent-line) transparent;
+
+  &::-webkit-scrollbar {
+    display: block;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--mf-accent-line);
+    border-radius: var(--mf-radius-pill);
+  }
+}
+
+.mf-hero__chip {
+  scroll-snap-align: start;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .mf-hero__chips {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+}
+
+@media (width <= 600px) {
+  body.mf-home .mf-hero {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+  }
+
+  body.mf-home .mf-hero .mf-hero__chips {
+    padding-bottom: 7px;
+  }
+
+  // FloatKit measures against visual viewport width (including the scrollbar),
+  // while the document uses the smaller layout viewport. Leave a real gutter
+  // so dormant/open user cards never create a 1–2px page-level x-scroll.
+  #user-card,
+  #group-card {
+    box-sizing: border-box;
+    max-width: calc(100vw - 36px);
+  }
+}
