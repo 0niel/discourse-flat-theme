@@ -289,15 +289,18 @@
     display: inline-flex;
     align-items: center;
   }
+}
 
-  &::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    flex: 0 0 auto;
-    background: currentcolor;
-    mask: var(--mf-ic) center / 14px 14px no-repeat;
-  }
+.topic-list .num.posts-map::before,
+.topic-list .num.views::before,
+.topic-list .topic-list-data.activity::before,
+.topic-list .num.activity::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  background: currentcolor;
+  mask: var(--mf-ic) center / 14px 14px no-repeat;
 }
 
 .topic-list .num.posts-map {

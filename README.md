@@ -17,6 +17,7 @@
 about.json
 settings.yml
 common/common.scss
+mobile/mobile.scss
 stylesheets/_*.scss
 javascripts/discourse/
   api-initializers/mf-init.js
@@ -25,7 +26,9 @@ locales/en.yml
 locales/ru.yml
 ```
 
-`common/common.scss` — штатный entrypoint Discourse. Он импортирует смысловые partials из `stylesheets/`; генерировать или коммитить собранный CSS не нужно.
+`common/common.scss` — основной entrypoint Discourse. В нём находятся общие стили и width-based responsive-композиции, поэтому узкое окно и webview получают тот же качественный UI, что и телефон.
+
+`mobile/mobile.scss` загружается только для штатного `mobile-view` Discourse и содержит platform-only исправления для отличающегося мобильного DOM. Такой гибрид соответствует актуальной рекомендации Discourse: breakpoints держать в common CSS, а отдельный mobile entrypoint использовать только там, где разметка действительно различается.
 
 ## Настройки темы
 

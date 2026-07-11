@@ -1,0 +1,212 @@
+// =============================================================================
+//  Mirea Flat — narrow viewport compositions
+//  Width-based rules intentionally live in common CSS: Discourse also renders
+//  desktop markup in narrow webviews and split-screen browser windows.
+// =============================================================================
+@media (width <= 760px) {
+  .more-topics__list .topic-item-stats .activity::before,
+  #suggested-topics .topic-item-stats .activity::before {
+    content: none;
+  }
+
+  .more-topics__list .topic-item-stats > .num.activity.last::before,
+  #suggested-topics .topic-item-stats > .num.activity.last::before {
+    content: "";
+    display: block;
+    flex: 0 0 14px;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    background: currentcolor;
+    mask: var(--mf-ic) center / 14px 14px no-repeat;
+  }
+
+  .categories-list {
+    .category-list.with-topics {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--mf-space-3);
+      width: 100%;
+      max-width: 100%;
+      margin: 0 0 var(--mf-space-8);
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .category-list-item.category {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: var(--mf-panel);
+      border-width: 0 0 0 3px !important;
+      border-style: solid !important;
+      border-radius: var(--mf-radius-xl);
+      box-shadow: none;
+      overflow: hidden;
+
+      > .topic-list,
+      > .topic-list > tbody {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      > .topic-list {
+        table-layout: fixed;
+        border: 0;
+      }
+
+      tr {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      tr:first-child {
+        display: block;
+
+        > .main-link {
+          display: block;
+          width: 100%;
+          padding: var(--mf-space-4) var(--mf-space-4) 6px !important;
+          box-sizing: border-box;
+          font-size: var(--mf-text-lg);
+          line-height: 1.25;
+        }
+      }
+
+      .category-description {
+        display: block !important;
+        padding: 0 var(--mf-space-4) var(--mf-space-3);
+
+        > td {
+          display: block;
+          width: 100%;
+          padding: 0 !important;
+          color: var(--mf-ink-3);
+          font-size: var(--mf-text-sm);
+          line-height: 1.4;
+        }
+
+        > td > div {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+      }
+
+      .category-topic-link {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) max-content;
+        align-items: center;
+        min-height: 46px;
+        padding: 0 var(--mf-space-4);
+        background: transparent !important;
+        border: 0;
+
+        &:hover {
+          background: var(--mf-fill-hover) !important;
+        }
+
+        > .main-link {
+          display: block;
+          grid-column: 1;
+          grid-row: 1;
+          width: auto;
+          min-width: 0;
+          padding: 8px 0 !important;
+        }
+
+        > .num.posts {
+          display: flex;
+          grid-column: 2;
+          grid-row: 1;
+          align-items: center;
+          justify-self: end;
+          width: auto !important;
+          min-width: 30px;
+          padding: 8px 0 8px var(--mf-space-3) !important;
+          color: var(--mf-ink-faint);
+        }
+
+        .topic-inset {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) max-content;
+          align-items: center;
+          gap: var(--mf-space-2);
+          min-width: 0;
+        }
+
+        .topic-inset .title {
+          display: -webkit-box;
+          min-width: 0;
+          overflow: hidden;
+          color: var(--mf-ink);
+          font-size: var(--mf-text-sm);
+          font-weight: var(--mf-weight-semibold);
+          line-height: 1.35;
+          white-space: normal;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+
+        .topic-inset .age {
+          color: var(--mf-ink-faint);
+          font-size: var(--mf-text-xs);
+          white-space: nowrap;
+        }
+      }
+
+      .subcategories-list {
+        display: block;
+        padding: 4px var(--mf-space-4) var(--mf-space-4);
+
+        > td {
+          display: block;
+          width: 100%;
+          padding: 0 !important;
+        }
+
+        .subcategories {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px 10px;
+        }
+
+        .subcategory {
+          margin: 0;
+          color: var(--mf-ink-3);
+          font-size: var(--mf-text-xs);
+        }
+      }
+
+      > .category-topics-count {
+        display: none;
+      }
+    }
+  }
+
+  body.archetype-regular {
+    #suggested-topics,
+    .more-topics__container,
+    .more-topics__list,
+    .suggested-topics-wrapper,
+    .more-topics__list .topic-list,
+    .more-topics__list .topic-list > tbody {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .more-topics__list .topic-item-stats > .num.activity.last,
+    #suggested-topics .topic-item-stats > .num.activity.last {
+      min-width: 0;
+      margin-left: auto;
+    }
+  }
+}
