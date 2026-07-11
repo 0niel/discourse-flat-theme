@@ -1,0 +1,54 @@
+// =============================================================================
+//  Mirea Flat — final shared UI polish
+// =============================================================================
+.mf-hero__search {
+  min-height: 44px;
+  padding: 2px 2px 2px var(--mf-space-3);
+
+  input {
+    align-self: center;
+    height: 40px !important;
+    min-height: 40px !important;
+    margin: 0;
+    padding-block: 0 !important;
+    box-sizing: border-box;
+    line-height: 40px;
+  }
+
+  > .d-icon {
+    align-self: center;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+// Category is navigation context, not another tag. Give it a category-colored
+// tint while keeping tags as neutral chips.
+.topic-list-item .badge-category__wrapper .badge-category {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 3px 9px !important;
+  color: var(--mf-ink-2) !important;
+  font-size: var(--mf-text-xs);
+  font-weight: var(--mf-weight-semibold);
+  line-height: 1.25;
+  background: color-mix(
+    in srgb,
+    var(--category-badge-color, var(--mf-accent)) 14%,
+    transparent
+  ) !important;
+  border: 0 !important;
+  border-radius: var(--mf-radius-pill);
+
+  &::before {
+    width: 7px;
+    height: 7px;
+    margin-right: 6px;
+    background: var(--category-badge-color, var(--mf-accent));
+  }
+
+  .badge-category__name {
+    color: inherit !important;
+  }
+}
