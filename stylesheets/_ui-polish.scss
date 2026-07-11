@@ -22,6 +22,101 @@
   }
 }
 
+// Topic cards need to read as content surfaces in the light scheme, not as a
+// second page background. `light-dark()` follows Discourse's resolved
+// color-scheme (including an in-app scheme switch), rather than the device
+// preference, so the darker theme keeps its existing hierarchy.
+:root {
+  --mf-topic-card: color-mix(in srgb, var(--secondary) 95%, var(--primary));
+  --mf-topic-card-hover: color-mix(
+    in srgb,
+    var(--secondary) 91%,
+    var(--primary)
+  );
+}
+
+@supports (color: light-dark(white, black)) {
+  :root {
+    --mf-topic-card: light-dark(
+      var(--secondary),
+      color-mix(in srgb, var(--secondary) 95%, var(--primary))
+    );
+    --mf-topic-card-hover: light-dark(
+      color-mix(in srgb, var(--secondary) 97%, var(--primary)),
+      color-mix(in srgb, var(--secondary) 91%, var(--primary))
+    );
+  }
+}
+
+.desktop-view .list-container .topic-list .topic-list-item,
+.desktop-view .list-container .topic-list-item.selected {
+  // The base feed is imported after this file in Discourse's compiled bundle.
+  // Scoping its surface variables to the card keeps every core state (including
+  // unread and selected) on this surface without relying on source order.
+  --mf-panel: var(--mf-topic-card);
+  --mf-panel-strong: var(--mf-topic-card-hover);
+  background: var(--mf-topic-card) !important;
+
+  &:hover,
+  &.pinned {
+    background: var(--mf-topic-card-hover) !important;
+  }
+
+  &.unread,
+  &.unread-posts,
+  &.unseen-topic,
+  &.new-topic {
+    background: color-mix(
+      in srgb,
+      var(--mf-topic-card) 94%,
+      var(--mf-accent)
+    ) !important;
+  }
+
+  &.bulk-selected,
+  &.selected {
+    background: color-mix(
+      in srgb,
+      var(--mf-topic-card) 84%,
+      var(--mf-accent)
+    ) !important;
+  }
+}
+
+.mobile-view .list-container .topic-list .topic-list-item,
+.mobile-view .list-container .topic-list-item.selected {
+  --mf-panel: var(--mf-topic-card);
+  --mf-panel-strong: var(--mf-topic-card-hover);
+
+  > .topic-list-data:only-child {
+    background: var(--mf-topic-card) !important;
+  }
+
+  &:hover > .topic-list-data:only-child {
+    background: var(--mf-topic-card-hover) !important;
+  }
+
+  &.unread > .topic-list-data:only-child,
+  &.unread-posts > .topic-list-data:only-child,
+  &.unseen-topic > .topic-list-data:only-child,
+  &.new-topic > .topic-list-data:only-child {
+    background: color-mix(
+      in srgb,
+      var(--mf-topic-card) 94%,
+      var(--mf-accent)
+    ) !important;
+  }
+
+  &.bulk-selected > .topic-list-data:only-child,
+  &.selected > .topic-list-data:only-child {
+    background: color-mix(
+      in srgb,
+      var(--mf-topic-card) 84%,
+      var(--mf-accent)
+    ) !important;
+  }
+}
+
 // Category is navigation context, not another tag. Give it a category-colored
 // tint while keeping tags as neutral chips.
 .topic-list-item .badge-category__wrapper .badge-category {
