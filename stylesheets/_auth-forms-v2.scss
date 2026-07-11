@@ -5,7 +5,7 @@
 // accent is reserved for focus and validation, so a dense page does not become
 // a collection of outlines.
 :is(
-  input:not([type]),
+  input:not([type], .d-otp-input),
   input[type="text"],
   input[type="search"],
   input[type="email"],
@@ -175,7 +175,7 @@ textarea {
     margin: 0;
   }
 
-  #login-form input {
+  #login-form input:not(.d-otp-input) {
     width: 100%;
     min-height: 46px;
   }
@@ -235,11 +235,68 @@ textarea {
   }
 }
 
+// Discourse OTP uses one transparent input stretched over six visual slots.
+// It must never inherit the generic filled-field surface or login input size.
+.d-otp {
+  max-width: 100%;
+
+  .d-otp-group {
+    gap: var(--mf-space-2);
+  }
+
+  .d-otp-slot {
+    width: 42px;
+    height: 46px;
+    padding: 0;
+    color: var(--mf-ink);
+    font-size: var(--mf-text-base);
+    font-weight: var(--mf-weight-semibold);
+    background: var(--mf-surface-2);
+    border: 0 !important;
+    border-radius: var(--mf-radius-md);
+    box-shadow: none;
+    box-sizing: border-box;
+
+    &.--is-focused {
+      background: var(--mf-surface);
+      box-shadow: 0 0 0 3px var(--mf-accent-tint);
+      outline: 0;
+    }
+
+    &.--placeholder {
+      color: var(--mf-ink-faint);
+    }
+  }
+
+  .d-otp-input {
+    min-height: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+}
+
 @media (width <= 760px) {
   .login-fullpage .login-body {
     grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
     gap: var(--mf-space-6);
     width: min(100%, calc(100vw - 32px)) !important;
+  }
+}
+
+@media (width <= 420px) {
+  .d-otp {
+    .d-otp-group {
+      gap: 6px;
+    }
+
+    .d-otp-slot {
+      width: 36px;
+      height: 42px;
+    }
   }
 }
