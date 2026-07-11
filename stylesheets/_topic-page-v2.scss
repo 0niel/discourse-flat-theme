@@ -146,6 +146,90 @@ body.archetype-regular {
     }
   }
 
+  // Topic metadata changes are events, not posts. The generic flat layer used
+  // to turn them into a full card, leaving a large empty block around a single
+  // tag update. Keep the author/context visible while matching the stream's
+  // natural rhythm and preserving the moderation actions.
+  .post-stream article.small-action:not(.time-gap) {
+    min-height: 0;
+    margin: 2px 0;
+    padding: 0;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    box-shadow: none !important;
+
+    .topic-avatar {
+      width: 32px;
+      min-width: 32px;
+      padding-top: 7px;
+      background: transparent !important;
+      border: 0 !important;
+
+      .avatar {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .small-action-desc {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: 30px auto;
+      gap: 2px var(--mf-space-2);
+      min-height: 0;
+      padding: 6px 0;
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    .small-action-contents {
+      grid-column: 1;
+      grid-row: 1;
+      display: flex;
+      align-items: center;
+      min-height: 30px;
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-sm);
+      line-height: 1.35;
+    }
+
+    .small-action-buttons {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+      margin: 0;
+    }
+
+    .small-action-custom-message {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      color: var(--mf-ink-3);
+      font-size: var(--mf-text-sm);
+      line-height: 1.45;
+      background: transparent !important;
+      border: 0 !important;
+
+      .hashtag-cooked {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        min-height: 22px;
+        padding: 2px 8px;
+        color: var(--mf-accent);
+        font-size: var(--mf-text-xs);
+        font-weight: var(--mf-weight-medium);
+        line-height: 1.25;
+        background: var(--mf-accent-tint-soft);
+        border: 0 !important;
+        border-radius: var(--mf-radius-pill);
+      }
+    }
+  }
+
   .post-stream__bottom-boundary,
   .topic-timer-info,
   .topic-map,
