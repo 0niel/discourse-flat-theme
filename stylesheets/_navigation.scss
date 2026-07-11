@@ -1,0 +1,96 @@
+.navigation-container {
+  align-items: center;
+  gap: var(--mf-space-2);
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: var(--mf-space-3);
+}
+
+.nav-pills {
+  background: transparent;
+  gap: 0;
+
+  > li > a {
+    color: var(--mf-ink-3);
+    font-weight: var(--mf-weight-medium);
+    font-size: var(--mf-text-md);
+    letter-spacing: var(--mf-tracking-snug);
+    border-radius: var(--mf-radius-sm);
+    padding: 8px 12px;
+    margin-bottom: 0;
+    border: none;
+    background: transparent;
+    position: relative;
+    transition:
+      color var(--mf-dur-fast) var(--mf-ease),
+      background var(--mf-dur-fast) var(--mf-ease);
+
+    &:hover {
+      color: var(--mf-ink);
+      background: var(--mf-fill-hover);
+    }
+
+    .d-icon {
+      color: inherit;
+    }
+  }
+
+  > li.active > a,
+  > li > a.active,
+  > li > a.active:hover {
+    color: var(--mf-accent);
+    background: var(--mf-accent-tint-soft);
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .badge-notification {
+    background: var(--mf-accent-tint);
+    color: var(--mf-accent);
+    font-weight: var(--mf-weight-semibold);
+    border-radius: var(--mf-radius-pill);
+    padding: 0 6px;
+  }
+}
+
+.list-controls {
+  .category-breadcrumb {
+    gap: var(--mf-space-2);
+
+    .select-kit.combo-box .select-kit-header,
+    li > .select-kit .select-kit-header {
+      background: var(--mf-surface-2);
+      border: 1px solid transparent;
+      border-radius: var(--mf-radius-md);
+      color: var(--mf-ink-2);
+      font-weight: var(--mf-weight-medium);
+      transition:
+        border-color var(--mf-dur-fast) var(--mf-ease),
+        background var(--mf-dur-fast) var(--mf-ease);
+
+      &:hover {
+        border-color: transparent;
+        background: var(--mf-surface-3);
+      }
+    }
+  }
+}
+
+.navigation-controls,
+.list-controls .container {
+  gap: var(--mf-space-2);
+}
+
+.footer-nav {
+  background: var(--mf-surface);
+  border-top: 1px solid var(--mf-hairline);
+  box-shadow: none;
+
+  .footer-nav-widget .btn {
+    color: var(--mf-ink-2);
+  }
+}
+
+.menu-panel,
+.fk-d-menu__inner-content {
+  border-radius: var(--mf-radius-lg);
+}

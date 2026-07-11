@@ -1,0 +1,361 @@
+.btn {
+  &.btn-primary,
+  &.btn-danger,
+  &.btn-success,
+  &.btn-call-to-action {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      color: #fff;
+
+      .d-icon {
+        color: #fff;
+      }
+    }
+  }
+
+  &.btn-default,
+  &.btn-flat,
+  &.btn-text,
+  &.btn-transparent,
+  &.btn-icon,
+  &.no-text {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      color: var(--mf-ink);
+
+      .d-icon {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.btn {
+  &:hover {
+    box-shadow: none !important;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--mf-accent);
+    outline-offset: 2px;
+  }
+
+  &.btn-default:hover,
+  &.btn-default:focus {
+    border-color: var(--mf-ink-faint);
+  }
+
+  &.btn-flat:hover,
+  &.btn-icon.no-text:hover {
+    border-color: transparent;
+  }
+
+  &:active,
+  &.btn-active,
+  &[aria-expanded="true"] {
+    box-shadow: none !important;
+  }
+}
+
+.select-kit .select-kit-header {
+  &:hover {
+    background: var(--mf-surface-2);
+  }
+
+  &:focus,
+  &[aria-expanded="true"] {
+    border-color: var(--mf-accent);
+    box-shadow: 0 0 0 3px var(--mf-accent-tint);
+    outline: none;
+  }
+}
+
+a:active {
+  color: var(--mf-accent-press);
+}
+
+.btn-flat:active {
+  background: var(--mf-fill-active);
+}
+
+aside.quote {
+  .quote,
+  aside.quote,
+  blockquote {
+    border-left: 2px solid var(--mf-hairline-strong);
+    background: transparent;
+    border-radius: 0;
+    margin-top: var(--mf-space-2);
+  }
+
+  blockquote {
+    padding-left: var(--mf-space-3);
+  }
+}
+
+.cooked blockquote blockquote {
+  border-left-color: var(--mf-hairline);
+  background: transparent;
+}
+
+.embedded-posts {
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-md);
+  background: var(--mf-surface-2);
+  box-shadow: none;
+
+  &.top {
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  &.bottom {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .reply,
+  .topic-body {
+    border: none !important;
+    background: transparent;
+
+    .cooked {
+      color: var(--mf-ink-2);
+    }
+  }
+
+  .arrow {
+    color: var(--mf-ink-faint);
+  }
+}
+
+.reply-to-tab {
+  background: var(--mf-surface-2);
+  border: none;
+  border-radius: var(--mf-radius-pill);
+  color: var(--mf-ink-3);
+  box-shadow: none;
+
+  &:hover {
+    background: var(--mf-fill-hover);
+    color: var(--mf-ink);
+  }
+}
+
+.cooked details,
+details.details {
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-md);
+  background: var(--mf-surface-2);
+  padding: 0;
+
+  summary {
+    padding: var(--mf-space-2) var(--mf-space-3);
+    color: var(--mf-ink-2);
+    border-radius: var(--mf-radius-md);
+
+    &:hover {
+      background: var(--mf-fill-hover);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--mf-accent);
+      outline-offset: -2px;
+    }
+  }
+
+  &[open] summary {
+    border-bottom: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-md) var(--mf-radius-md) 0 0;
+  }
+
+  > :not(summary) {
+    padding: 0 var(--mf-space-3) var(--mf-space-2);
+  }
+
+  details {
+    border: none;
+    background: transparent;
+  }
+}
+
+aside.quote pre,
+details pre {
+  border: none;
+}
+
+aside.onebox {
+  .onebox-body {
+    border: none;
+  }
+
+  header.source {
+    border: none;
+    background: transparent;
+  }
+
+  .aspect-image,
+  img {
+    border-radius: var(--mf-radius-sm);
+  }
+}
+
+.post-controls .actions .btn,
+.topic-footer-buttons .btn-flat,
+.post-action-menu__like,
+.post-action-menu__reply {
+  border: none !important;
+  background: transparent;
+  box-shadow: none !important;
+
+  &:hover {
+    background: var(--mf-fill-hover);
+  }
+
+  &:active {
+    background: var(--mf-fill-active);
+  }
+}
+
+.double-button {
+  border-radius: var(--mf-radius-sm);
+  overflow: hidden;
+
+  .btn {
+    border-radius: 0;
+
+    &:first-child {
+      border-top-left-radius: var(--mf-radius-sm);
+      border-bottom-left-radius: var(--mf-radius-sm);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--mf-radius-sm);
+      border-bottom-right-radius: var(--mf-radius-sm);
+    }
+  }
+}
+
+.quick-access-panel li,
+.user-menu .notifications li,
+.menu-panel .menu-links-row,
+.results .item {
+  border: none;
+  border-radius: var(--mf-radius-sm);
+
+  &:hover,
+  &.selected,
+  &:focus {
+    background: var(--mf-fill-hover);
+  }
+}
+
+.topic-list-item.selected > td,
+.latest-topic-list-item.selected {
+  background: var(--mf-fill-selected);
+}
+
+.sidebar-section-link:focus-visible {
+  outline: 2px solid var(--mf-accent);
+  outline-offset: -2px;
+}
+
+.topic-avatar .avatar,
+.topic-meta-data .avatar {
+  box-shadow: none;
+}
+
+.discourse-tag:active {
+  background: var(--mf-fill-active);
+}
+
+input:active,
+textarea:active {
+  outline: none;
+}
+
+.topic-list-item a.title .badge-notification {
+  vertical-align: middle;
+}
+
+.user-stream-item,
+.top-section,
+.details,
+.mf-hero__chip,
+.category-box {
+  box-shadow: none !important;
+}
+
+aside.onebox,
+.badge-card,
+.mf-rail-card,
+.poll,
+.user-stream-item,
+.user-stream .item,
+.alert:not(.alert-banner),
+.dashboard .panel,
+.admin-config-area-card,
+.education-message,
+.composer-popup {
+  border-radius: var(--mf-radius-lg);
+}
+
+.fk-d-menu__inner-content,
+.menu-panel,
+.select-kit .select-kit-body,
+.tippy-box,
+.quick-access-panel,
+.user-menu .panel-body {
+  border-radius: var(--mf-radius-lg);
+}
+
+.d-modal__body,
+.modal-inner-container,
+#user-card,
+.user-card,
+#group-card,
+.group-card {
+  border-radius: var(--mf-radius-xl);
+}
+
+.btn,
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+.select-kit .select-kit-header {
+  border-radius: var(--mf-radius-md);
+}
+
+.discourse-tag:not(.box--pill),
+.mf-rail-tag,
+.badge-category.--style-square {
+  border-radius: var(--mf-radius-sm);
+}
+
+.topic-list .topic-list-header,
+.latest-topic-list-item,
+.user-navigation,
+.navigation-container,
+.user-content .top-categories-section table td,
+.d-modal__header,
+.d-modal__footer,
+.topic-footer-buttons,
+hr {
+  border-color: var(--mf-hairline);
+}

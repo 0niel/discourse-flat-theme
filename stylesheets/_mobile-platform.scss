@@ -1,0 +1,27 @@
+html.mobile-view {
+  max-width: 100%;
+
+  body {
+    max-width: 100%;
+    overscroll-behavior-x: none;
+  }
+
+  .topic-navigation {
+    #topic-progress-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .topic-admin-menu-trigger {
+      display: none !important;
+    }
+
+    #topic-progress {
+      min-width: 72px;
+      margin-left: auto;
+      border-radius: var(--mf-radius-pill);
+    }
+  }
+}

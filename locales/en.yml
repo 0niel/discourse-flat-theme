@@ -1,0 +1,32 @@
+en:
+  hero:
+    eyebrow: "Student community"
+    default_subtitle: "A community for RTU MIREA students and staff"
+    search_placeholder: "Search the forum"
+    search_label: "Search the forum"
+    search_action: "Search"
+    categories_label: "Popular categories"
+  rail:
+    ask_title: "Have a question?"
+    ask_body: "Start a topic and the community will help."
+    create_topic: "Create topic"
+    pulse_title: "Forum pulse"
+    tags_title: "Popular tags"
+    links_title: "Quick links"
+    posts_today: "posts today"
+    topics_today: "new topics today"
+    active_week: "active this week"
+    all_categories: "All categories"
+    help: "Help needed"
+    resources: "Study resources"
+    about: "About the community"
+  theme_metadata:
+    description: "Oniel's Flat Theme — a fast and calm Discourse theme with a responsive feed, compact search, and useful information rail."
+    settings:
+      show_hero: "Show the custom homepage hero (branding, search, category chips, forum stats)."
+      show_info_rail: "Show the right info rail on the homepage (forum pulse, tags, quick links)."
+      rail_links: "Quick links in the right rail. Format: Label,/url|Label2,/url2 (empty = defaults)."
+      hero_subtitle: "Subtitle shown under the title in the homepage hero."
+      accent_color: "Override the accent color (any CSS color, e.g. #2563eb). Leave empty to use the theme default."
+      content_max_width: "Maximum width of the main content column, in pixels."
+      ui_radius: "Corner-radius multiplier for the whole UI (1 = default, 0 = sharp, 2 = very rounded)."

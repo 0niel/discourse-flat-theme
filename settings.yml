@@ -1,0 +1,31 @@
+show_hero:
+  type: bool
+  default: true
+
+show_info_rail:
+  type: bool
+  default: true
+
+rail_links:
+  type: string
+  default: ""
+
+hero_subtitle:
+  type: string
+  default: ""
+
+accent_color:
+  type: string
+  default: ""
+
+content_max_width:
+  type: integer
+  default: 1240
+  min: 1040
+  max: 1600
+
+ui_radius:
+  type: float
+  default: 1.0
+  min: 0.0
+  max: 2.0

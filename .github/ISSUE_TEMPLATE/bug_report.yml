@@ -1,0 +1,61 @@
+name: Bug report
+description: Report a reproducible problem in Oniel's Flat Theme
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for helping improve the theme.
+  - type: input
+    id: discourse-version
+    attributes:
+      label: Discourse version
+      placeholder: 2026.7.0-latest
+    validations:
+      required: true
+  - type: input
+    id: theme-version
+    attributes:
+      label: Theme version or commit
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem
+      description: Describe what happened and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Open...
+        2. Select...
+        3. Observe...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: Chrome 140, Android 16
+    validations:
+      required: true
+  - type: dropdown
+    id: color-scheme
+    attributes:
+      label: Color scheme
+      options:
+        - Light
+        - Dark
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add screenshots, console output, and any other useful details.

@@ -1,0 +1,205 @@
+.user-main > .about {
+  margin-bottom: var(--mf-space-4) !important;
+  overflow: hidden;
+  background: var(--mf-panel);
+  border: 0 !important;
+  border-radius: var(--mf-radius-xl);
+  box-shadow: none !important;
+}
+
+.user-main > .about .user-profile-image {
+  position: relative;
+  height: clamp(180px, 22vw, 240px) !important;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 !important;
+}
+
+.user-main > .about .details,
+.user-main > .about .details:has(.primary) {
+  width: 100%;
+  margin: 0;
+  padding: 0 var(--mf-space-5) var(--mf-space-5) !important;
+  overflow: visible;
+  background: var(--mf-panel) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+}
+
+.user-main > .about:not(.has-background) .details,
+.user-main > .about:not(.has-background) .details:has(.primary) {
+  padding-top: var(--mf-space-5);
+}
+
+.user-main > .about .details .primary {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--mf-space-4);
+  min-height: 92px;
+  padding-top: var(--mf-space-4);
+}
+
+.user-main > .about.has-background .user-profile-avatar {
+  align-self: start;
+  margin-top: calc(var(--mf-space-10) * -1) !important;
+}
+
+.user-main > .about .user-profile-avatar .avatar {
+  display: block;
+  width: 88px;
+  height: 88px;
+  background: var(--mf-panel);
+  border: 4px solid var(--mf-panel) !important;
+  border-radius: var(--mf-radius-pill);
+  box-sizing: border-box;
+}
+
+.user-main > .about .primary-textual {
+  min-width: 0;
+  padding: var(--mf-space-1) 0 0 !important;
+}
+
+.user-main > .about .user-profile-names .username {
+  overflow-wrap: anywhere;
+  font-size: var(--mf-text-2xl);
+  line-height: var(--mf-leading-tight);
+}
+
+.user-main > .about .details .controls {
+  align-self: start;
+  justify-self: end;
+  min-width: 0;
+  padding-top: var(--mf-space-1);
+}
+
+.user-main > .about .details .controls ul {
+  justify-content: flex-end;
+}
+
+.user-main > .about .secondary {
+  display: block;
+  width: 100%;
+  margin: var(--mf-space-3) 0 0;
+  border: 0 !important;
+}
+
+.user-main > .about .secondary dl {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--mf-space-3) var(--mf-space-6);
+  margin: 0;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.user-main > .about .secondary dl > div {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  min-width: 96px;
+  margin: 0;
+}
+
+.user-main > .about .secondary dt,
+.user-main > .about .secondary dd {
+  margin: 0;
+  padding: 0;
+}
+
+.user-main > .about .secondary dt {
+  color: var(--mf-ink-faint);
+  font-size: var(--mf-text-2xs);
+  font-weight: var(--mf-weight-semibold);
+  line-height: var(--mf-leading-snug);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.user-main > .about .secondary dd {
+  min-width: 0;
+  color: var(--mf-ink);
+  font-size: var(--mf-text-sm);
+  font-weight: var(--mf-weight-medium);
+  line-height: var(--mf-leading-snug);
+}
+
+.user-main > .about .secondary dd.groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px var(--mf-space-2);
+}
+
+.user-main > .about .secondary dl > div:has(> dt.groups) {
+  flex: 0 1 300px;
+}
+
+.user-main > .new-user-wrapper > .user-navigation {
+  margin-top: 0;
+}
+
+@media (width <= 760px) {
+  .user-main > .about {
+    margin-inline: 0;
+    border-radius: var(--mf-radius-lg);
+  }
+
+  .user-main > .about .user-profile-image {
+    height: 144px !important;
+  }
+
+  .user-main > .about .details,
+  .user-main > .about .details:has(.primary) {
+    padding: 0 var(--mf-space-4) var(--mf-space-4) !important;
+  }
+
+  .user-main > .about:not(.has-background) .details,
+  .user-main > .about:not(.has-background) .details:has(.primary) {
+    padding-top: var(--mf-space-4);
+  }
+
+  .user-main > .about .details .primary {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: var(--mf-space-3);
+    padding-top: var(--mf-space-3);
+  }
+
+  .user-main > .about.has-background .user-profile-avatar {
+    margin-top: calc(var(--mf-space-8) * -1) !important;
+  }
+
+  .user-main > .about .user-profile-avatar .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .user-main > .about .user-profile-names .username {
+    font-size: var(--mf-text-xl);
+  }
+
+  .user-main > .about .details .controls {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+  }
+
+  .user-main > .about .details .controls ul {
+    justify-content: flex-start;
+  }
+
+  .user-main > .about .secondary dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--mf-space-3);
+  }
+
+  .user-main > .about .secondary dl > div {
+    min-width: 0;
+  }
+
+  .user-main > .about .secondary dl > div:has(> dt.groups) {
+    grid-column: 1 / -1;
+  }
+}
