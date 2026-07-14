@@ -1,0 +1,42 @@
+.tags-controls {
+  align-items: center;
+  gap: var(--mf-space-2) var(--mf-space-4);
+}
+
+.all-tag-lists .tag-list .category-title-link .category-name {
+  font-size: var(--mf-text-base);
+  font-weight: var(--mf-weight-semibold);
+  letter-spacing: var(--mf-tracking-snug);
+  color: var(--mf-ink);
+}
+
+section.tag-info {
+  padding-bottom: var(--mf-space-4);
+  margin-bottom: var(--mf-space-4);
+  border-bottom: 1px solid var(--mf-hairline);
+
+  .tag-name-wrapper .discourse-tag {
+    font-size: var(--mf-text-xl);
+    font-weight: var(--mf-weight-bold);
+    letter-spacing: var(--mf-tracking-tight);
+  }
+
+  .tag-description-wrapper,
+  .tag-associations {
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+  }
+
+  .synonyms-list {
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+  }
+}
+
+body.tags-intersection .category-breadcrumb {
+  color: var(--mf-ink-3);
+}
+
+.tag-navigation .mini-tag-chooser.tags-intersection-chooser {
+  min-width: 160px;
+}

@@ -1,0 +1,127 @@
+:root {
+  --mf-font:
+    inter, "YS Text", ui-sans-serif, system-ui, -apple-system,
+    blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial,
+    "Noto Sans", sans-serif;
+  --mf-font-mono:
+    "Geist Mono", "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code",
+    menlo, consolas, monospace;
+  --font-family: var(--mf-font);
+  --heading-font-family: var(--mf-font);
+  --d-font-family: var(--mf-font);
+  --mf-text-2xs: 11px;
+  --mf-text-xs: 12px;
+  --mf-text-sm: 13px;
+  --mf-text-md: 14px;
+  --mf-text-base: 15px;
+  --mf-text-lg: 17px;
+  --mf-text-xl: 20px;
+  --mf-text-2xl: 24px;
+  --mf-text-3xl: 30px;
+  --mf-text-4xl: 40px;
+  --mf-text-5xl: 52px;
+  --mf-leading-tight: 1.18;
+  --mf-leading-snug: 1.34;
+  --mf-leading-normal: 1.55;
+  --mf-leading-relaxed: 1.7;
+  --mf-tracking-tight: -0.022em;
+  --mf-tracking-snug: -0.013em;
+  --mf-tracking-normal: -0.006em;
+  --mf-weight-normal: 400;
+  --mf-weight-medium: 500;
+  --mf-weight-semibold: 600;
+  --mf-weight-bold: 680;
+  --mf-space-1: 4px;
+  --mf-space-2: 8px;
+  --mf-space-3: 12px;
+  --mf-space-4: 16px;
+  --mf-space-5: 20px;
+  --mf-space-6: 24px;
+  --mf-space-8: 32px;
+  --mf-space-10: 40px;
+  --mf-space-12: 48px;
+  --mf-space-16: 64px;
+  --mf-space-20: 80px;
+  --mf-radius-scale: #{$ui_radius};
+  --mf-radius-xs: calc(5px * var(--mf-radius-scale));
+  --mf-radius-sm: calc(7px * var(--mf-radius-scale));
+  --mf-radius-md: calc(9px * var(--mf-radius-scale));
+  --mf-radius-lg: calc(12px * var(--mf-radius-scale));
+  --mf-radius-xl: calc(16px * var(--mf-radius-scale));
+  --mf-radius-2xl: calc(22px * var(--mf-radius-scale));
+  --mf-radius-pill: 999px;
+  --mf-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --mf-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --mf-dur-fast: 120ms;
+  --mf-dur: 160ms;
+  --mf-dur-slow: 240ms;
+  --mf-content-width: #{$content_max_width}px;
+  --mf-surface: var(--secondary);
+  --mf-surface-elevated: var(--secondary);
+  --mf-app-bg: color-mix(in srgb, var(--secondary) 97%, var(--primary));
+  --mf-surface-2: color-mix(in srgb, var(--secondary) 95%, var(--primary));
+  --mf-surface-3: color-mix(in srgb, var(--secondary) 91%, var(--primary));
+  --mf-fill-hover: color-mix(in srgb, var(--primary) 5%, transparent);
+  --mf-fill-active: color-mix(in srgb, var(--primary) 9%, transparent);
+  --mf-fill-selected: color-mix(in srgb, var(--tertiary) 10%, transparent);
+  --mf-hairline: color-mix(in srgb, var(--primary) 11%, transparent);
+  --mf-hairline-strong: color-mix(in srgb, var(--primary) 18%, transparent);
+  --mf-ink: var(--primary);
+  --mf-ink-2: color-mix(in srgb, var(--primary) 78%, var(--secondary));
+  --mf-ink-3: color-mix(in srgb, var(--primary) 62%, var(--secondary));
+  --mf-ink-faint: color-mix(in srgb, var(--primary) 55%, var(--secondary));
+  --mf-accent: var(--tertiary);
+  --mf-accent-hover: color-mix(in srgb, var(--mf-accent) 84%, var(--primary));
+  --mf-accent-press: color-mix(in srgb, var(--mf-accent) 72%, var(--primary));
+  --mf-accent-fg: #fff;
+  --mf-accent-tint: color-mix(in srgb, var(--mf-accent) 12%, transparent);
+  --mf-accent-tint-soft: color-mix(in srgb, var(--mf-accent) 7%, transparent);
+  --mf-accent-line: color-mix(in srgb, var(--mf-accent) 30%, transparent);
+  --mf-panel: color-mix(in srgb, var(--secondary) 95%, var(--primary));
+  --mf-panel-strong: color-mix(in srgb, var(--secondary) 91%, var(--primary));
+  --mf-panel-hover: color-mix(in srgb, var(--secondary) 88%, var(--primary));
+  --mf-success: var(--success);
+  --mf-success-tint: color-mix(in srgb, var(--success) 13%, transparent);
+  --mf-danger: var(--danger);
+  --mf-danger-tint: color-mix(in srgb, var(--danger) 13%, transparent);
+  --mf-danger-hover: color-mix(in srgb, var(--danger) 85%, var(--primary));
+  --mf-warning: var(--highlight, #d98c1a);
+  --mf-love: var(--love);
+  --shadow-card: none;
+  --shadow-header: none;
+  --shadow-composer: 0 -1px 0 var(--mf-hairline);
+  --shadow-dropdown: none;
+  --shadow-menu-panel: none;
+  --shadow-modal: none;
+  --shadow-focus: 0 0 0 3px var(--mf-accent-line);
+  --shadow-focus-danger: 0 0 0 3px var(--mf-danger-tint);
+  --d-border-radius: var(--mf-radius-md);
+  --d-border-radius-large: var(--mf-radius-lg);
+  --d-tag-border-radius: var(--mf-radius-sm);
+  --d-tag-font-size: var(--mf-text-sm);
+  --token-radius-normal: var(--mf-radius-md);
+  --category-badge-border-radius: var(--mf-radius-xs);
+  --content-border-color: var(--mf-hairline);
+  --table-border-color: transparent;
+  --primary-low: var(--mf-hairline-strong);
+  --d-selected: var(--mf-fill-selected);
+  --d-selected-text-color: var(--mf-accent);
+  --d-hover: var(--mf-fill-hover);
+  --d-content-background: var(--mf-app-bg);
+  --d-font-family--monospace: var(--mf-font-mono);
+  --d-category-border-accent-width: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --mf-dur-fast: 0ms;
+    --mf-dur: 0ms;
+    --mf-dur-slow: 0ms;
+  }
+}
+
+@if $accent_color != "" {
+  :root {
+    --mf-accent: #{$accent_color};
+  }
+}

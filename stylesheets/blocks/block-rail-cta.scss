@@ -1,0 +1,26 @@
+.block-rail-cta {
+  padding: var(--mf-space-4);
+  background: var(--mf-accent-tint-soft);
+  border-radius: var(--mf-radius-lg);
+
+  &__title {
+    margin: 0 0 4px;
+    color: var(--mf-ink);
+    font-size: var(--mf-text-base);
+    font-weight: var(--mf-weight-semibold);
+    letter-spacing: var(--mf-tracking-snug);
+  }
+
+  &__body {
+    margin: 0 0 var(--mf-space-3);
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+  }
+
+  .btn-primary {
+    width: 100%;
+    min-height: 38px;
+    justify-content: center;
+    gap: 6px;
+  }
+}

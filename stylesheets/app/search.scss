@@ -1,0 +1,116 @@
+.search-container {
+  .search-page-heading {
+    font-weight: var(--mf-weight-bold);
+    letter-spacing: var(--mf-tracking-tight);
+    color: var(--mf-ink);
+
+    span.term {
+      background: var(--mf-accent-tint);
+      color: var(--mf-ink);
+      border-radius: var(--mf-radius-xs);
+      padding: 0 4px;
+    }
+  }
+
+  .search-advanced .search-info .sort-by {
+    color: var(--mf-ink-3);
+  }
+
+  .search-notice .fps-invalid {
+    background: var(--mf-danger-tint);
+    border: 1px solid var(--mf-danger);
+    border-radius: var(--mf-radius-md);
+    color: var(--mf-ink);
+  }
+}
+
+.search-highlight {
+  background: var(--mf-accent-tint);
+  color: var(--mf-ink);
+  border-radius: var(--mf-radius-xs);
+  padding: 0 2px;
+}
+
+.fps-result {
+  padding-block: var(--mf-space-4);
+  transition: background var(--mf-dur-fast) var(--mf-ease);
+
+  & + & {
+    border-top: 1px solid var(--mf-hairline);
+  }
+
+  &:hover {
+    background: var(--mf-fill-hover);
+  }
+
+  .search-link .topic-title {
+    color: var(--mf-ink);
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .search-category {
+    color: var(--mf-ink-3);
+  }
+
+  .blurb {
+    color: var(--mf-ink-3);
+
+    .date {
+      color: var(--mf-ink-faint);
+    }
+  }
+
+  .like-count {
+    color: var(--mf-ink-faint);
+  }
+}
+
+.search-results {
+  .fps-user-item .user-titles {
+    .name {
+      color: var(--mf-ink);
+    }
+
+    .username {
+      color: var(--mf-ink-3);
+    }
+  }
+
+  .fps-category-item,
+  .fps-tag-item {
+    padding-bottom: var(--mf-space-3);
+    border-bottom: 1px solid var(--mf-hairline);
+  }
+}
+
+.no-results-suggestion {
+  color: var(--mf-ink-3);
+}
+
+.search-menu .results .heading {
+  h4 {
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-2xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .clear-recent-searches {
+    color: var(--mf-ink-3);
+
+    &:hover {
+      color: var(--mf-ink);
+    }
+  }
+}
+
+.search-random-quick-tip {
+  color: var(--mf-ink-3);
+
+  .tip-label {
+    background: var(--mf-accent-tint);
+    color: var(--mf-accent);
+    border-radius: var(--mf-radius-xs);
+  }
+}

@@ -1,0 +1,100 @@
+:root {
+  --d-input-bg-color: var(--mf-panel);
+  --d-input-text-color: var(--mf-ink);
+  --d-input-border: none;
+  --d-input-border-radius: var(--mf-radius-md);
+  --d-input-focused-color: var(--mf-accent);
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+textarea,
+.d-editor-input,
+.select-kit .select-kit-header,
+.select-kit.combo-box .select-kit-header {
+  background: var(--d-input-bg-color);
+  border: var(--d-input-border);
+  border-radius: var(--d-input-border-radius);
+  color: var(--d-input-text-color);
+  font-family: var(--mf-font);
+  box-shadow: none;
+  transition:
+    outline-color var(--mf-dur-fast) var(--mf-ease),
+    background var(--mf-dur-fast) var(--mf-ease);
+
+  &::placeholder {
+    color: var(--mf-ink-faint);
+  }
+
+  &:focus,
+  &:focus-within {
+    border: var(--d-input-border);
+    outline: 2px solid var(--d-input-focused-color);
+    outline-offset: 1px;
+    box-shadow: none;
+  }
+}
+
+.search-menu-container .menu-panel,
+.search-menu .results {
+  border-radius: var(--mf-radius-lg);
+}
+
+.search-menu .search-result-topic,
+.search-menu .search-link {
+  &:hover,
+  &.selected {
+    background: var(--mf-fill-hover);
+    border-radius: var(--mf-radius-sm);
+  }
+}
+
+.select-kit {
+  .select-kit-body {
+    border: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-lg);
+    background: var(--mf-surface-elevated);
+    overflow: hidden;
+  }
+
+  .select-kit-collection {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .select-kit-row {
+    border-radius: var(--mf-radius-sm);
+
+    &:hover,
+    &.is-highlighted {
+      background: var(--mf-fill-hover);
+    }
+
+    &.is-selected {
+      background: var(--mf-fill-selected);
+      color: var(--mf-accent);
+    }
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--mf-accent);
+}
+
+.form-kit__field label,
+.control-label,
+label.checkbox-label {
+  color: var(--mf-ink-2);
+  font-weight: var(--mf-weight-medium);
+}
+
+.d-toggle-switch__checkbox:checked + .d-toggle-switch__checkbox-slider,
+.ember-toggle.ember-toggle-on .toggle-toggle {
+  background: var(--mf-accent);
+}

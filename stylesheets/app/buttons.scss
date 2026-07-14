@@ -1,0 +1,171 @@
+:root {
+  --d-button-border-radius: var(--mf-radius-md);
+  --d-button-border: none;
+  --d-button-transition:
+    background-color var(--mf-dur-fast) var(--mf-ease),
+    border-color var(--mf-dur-fast) var(--mf-ease),
+    color var(--mf-dur-fast) var(--mf-ease),
+    transform var(--mf-dur-fast) var(--mf-ease);
+  --d-button-default-text-color: var(--mf-ink);
+  --d-button-default-text-color--hover: var(--mf-ink);
+  --d-button-default-bg-color: var(--mf-panel);
+  --d-button-default-bg-color--hover: var(--mf-panel-strong);
+  --d-button-default-icon-color: var(--mf-ink-2);
+  --d-button-default-icon-color--hover: var(--mf-ink);
+  --d-button-primary-text-color: var(--mf-accent-fg);
+  --d-button-primary-text-color--hover: var(--mf-accent-fg);
+  --d-button-primary-bg-color: var(--mf-accent);
+  --d-button-primary-bg-color--hover: var(--mf-accent-hover);
+  --d-button-primary-icon-color: var(--mf-accent-fg);
+  --d-button-primary-icon-color--hover: var(--mf-accent-fg);
+  --d-button-danger-text-color: #fff;
+  --d-button-danger-text-color--hover: #fff;
+  --d-button-danger-bg-color: var(--mf-danger);
+  --d-button-danger-bg-color--hover: var(--mf-danger-hover);
+  --d-button-danger-icon-color: #fff;
+  --d-button-danger-icon-color--hover: #fff;
+  --d-button-success-text-color: #fff;
+  --d-button-success-text-color--hover: #fff;
+  --d-button-success-bg-color: var(--mf-success);
+  --d-button-success-bg-color--hover: color-mix(
+    in srgb,
+    var(--mf-success) 86%,
+    var(--primary)
+  );
+  --d-button-success-icon-color: #fff;
+  --d-button-success-icon-color--hover: #fff;
+  --d-button-flat-text-color: var(--mf-ink-2);
+  --d-button-flat-text-color--hover: var(--mf-ink);
+  --d-button-flat-icon-color: var(--mf-ink-2);
+  --d-button-flat-icon-color--hover: var(--mf-ink);
+  --d-button-flat-bg-color: transparent;
+  --d-button-flat-bg-color--hover: var(--mf-fill-hover);
+  --d-button-flat-bg-color--focus: var(--mf-fill-hover);
+  --d-button-transparent-text-color: var(--mf-ink-2);
+  --d-button-transparent-text-color--hover: var(--mf-ink);
+  --d-button-transparent-icon-color: var(--mf-ink-2);
+  --d-button-transparent-icon-color--hover: var(--mf-ink);
+}
+
+.btn {
+  background-image: none !important;
+  box-shadow: none !important;
+  font-family: var(--mf-font);
+  font-weight: var(--mf-weight-medium);
+  font-size: var(--mf-text-md);
+  letter-spacing: var(--mf-tracking-snug);
+  padding: 8px 14px;
+
+  .d-icon {
+    opacity: 0.92;
+  }
+
+  &:active {
+    transform: translateY(0.5px);
+  }
+}
+
+.btn-default:active,
+.btn.btn-icon-text:not(.btn-primary, .btn-danger):active {
+  background: var(--mf-fill-active);
+}
+
+.btn.btn-icon-text:not(.btn-primary, .btn-danger) {
+  background: var(--d-button-default-bg-color);
+  color: var(--d-button-default-text-color);
+
+  &:hover {
+    background: var(--d-button-default-bg-color--hover);
+  }
+}
+
+.btn.no-text,
+.btn-default.no-text {
+  background: transparent;
+
+  &:hover {
+    background: var(--mf-fill-hover);
+  }
+
+  &:active {
+    background: var(--mf-fill-active);
+  }
+}
+
+.btn-primary {
+  font-weight: var(--mf-weight-semibold);
+
+  .d-icon {
+    opacity: 1;
+  }
+
+  &:active {
+    background: var(--mf-accent-press);
+  }
+}
+
+.btn-danger:active {
+  background: color-mix(in srgb, var(--mf-danger) 78%, #000);
+}
+
+.btn-success:active {
+  background: color-mix(in srgb, var(--mf-success) 74%, #000);
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.btn-flat.btn-primary,
+.btn-transparent.btn-primary,
+.btn-flat.text-color-primary,
+.btn-transparent.text-color-primary {
+  color: var(--mf-accent);
+
+  &:hover {
+    background: var(--mf-accent-tint-soft);
+  }
+}
+
+.btn.no-text.btn-icon {
+  padding: 8px;
+  border-radius: var(--mf-radius-sm);
+}
+
+.btn.btn-small {
+  padding: 5px 10px;
+  font-size: var(--mf-text-sm);
+}
+
+.btn.btn-large {
+  padding: 11px 20px;
+  font-size: var(--mf-text-base);
+}
+
+.fk-d-button,
+.fk-d-menu__trigger {
+  border-radius: var(--mf-radius-sm);
+  box-shadow: none;
+}
+
+.fk-d-menu .fk-d-menu__inner-content {
+  border-radius: var(--mf-radius-lg);
+  border: 1px solid var(--mf-hairline);
+}
+
+#create-topic {
+  font-weight: var(--mf-weight-semibold);
+}
+
+.topic-footer-buttons .btn {
+  border-radius: var(--mf-radius-sm);
+}
+
+.btn.like:hover .d-icon,
+.btn-toggle-reaction-like:hover .d-icon {
+  color: var(--mf-love);
+}

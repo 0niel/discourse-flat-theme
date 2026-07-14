@@ -1,0 +1,122 @@
+:root {
+  --d-header-icon-color: var(--mf-ink-2);
+  --d-header-icon-color--hover: var(--mf-ink);
+  --d-header-icon-color--active: var(--mf-ink);
+  --d-header-icon-background--hover: var(--mf-fill-hover);
+  --d-header-icon-background--active: var(--mf-fill-active);
+  --d-header-padding-x: var(--mf-space-4);
+}
+
+.d-header-wrap {
+  --d-header-height: 56px;
+}
+
+.d-header {
+  background: var(--mf-surface);
+  border-bottom: 1px solid var(--mf-hairline);
+  box-shadow: none;
+
+  .wrap {
+    max-width: calc(var(--mf-content-width) + 320px);
+  }
+
+  .contents {
+    align-items: center;
+  }
+}
+
+.d-header .title {
+  padding-right: var(--mf-space-4);
+
+  img#site-logo,
+  .logo-big,
+  img.logo-small {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+
+  img#site-logo,
+  .logo-big {
+    max-height: 30px;
+    width: auto;
+  }
+
+  #site-text-logo {
+    font-weight: var(--mf-weight-bold);
+    letter-spacing: var(--mf-tracking-tight);
+    font-size: var(--mf-text-xl);
+  }
+
+  a:hover {
+    opacity: 0.82;
+  }
+}
+
+.header-sidebar-toggle .btn,
+.d-header-icons .icon,
+.header-dropdown-toggle .icon,
+.d-header .btn-flat {
+  border-radius: var(--mf-radius-sm);
+  transition:
+    background var(--mf-dur-fast) var(--mf-ease),
+    color var(--mf-dur-fast) var(--mf-ease);
+
+  .d-icon {
+    color: inherit;
+  }
+}
+
+.d-header-icons {
+  gap: 2px;
+
+  .icon {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.header-dropdown-toggle.current-user .avatar {
+  border-radius: var(--mf-radius-pill);
+  outline: 2px solid transparent;
+  transition: outline-color var(--mf-dur) var(--mf-ease);
+}
+
+.header-dropdown-toggle.current-user:hover .avatar {
+  outline-color: var(--mf-accent-line);
+}
+
+.d-header .badge-notification {
+  background: var(--mf-accent);
+  color: var(--mf-accent-fg);
+  font-weight: var(--mf-weight-semibold);
+  border: 2px solid var(--mf-app-bg);
+  padding: 0 5px;
+  border-radius: var(--mf-radius-pill);
+
+  &.unread-notifications {
+    background: var(--mf-accent);
+  }
+
+  &.unread-private-messages,
+  &.ring {
+    background: var(--mf-danger);
+  }
+}
+
+.d-header .floating-search-input-wrapper,
+.d-header .search-banner {
+  .search-input,
+  input[type="search"] {
+    background: var(--mf-surface-2);
+    border: 1px solid var(--mf-hairline-strong);
+    border-radius: var(--mf-radius-md);
+  }
+}
+
+.d-header .extra-info-wrapper .topic-link {
+  font-weight: var(--mf-weight-semibold);
+  letter-spacing: var(--mf-tracking-snug);
+}

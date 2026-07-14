@@ -1,0 +1,57 @@
+.block-rail-tags {
+  &__title {
+    margin: 0 0 var(--mf-space-3);
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  &__tag {
+    padding: 4px 8px;
+    color: var(--mf-ink-2);
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-medium);
+    background: var(--mf-surface-2);
+    border: 0;
+    border-radius: var(--mf-radius-sm);
+
+    &:hover {
+      color: var(--mf-ink);
+      background: var(--mf-surface-3);
+    }
+  }
+
+  &__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--mf-space-3);
+    color: var(--mf-accent);
+    font-size: var(--mf-text-sm);
+    font-weight: var(--mf-weight-medium);
+    transition: color var(--mf-dur-fast) var(--mf-ease);
+
+    .d-icon {
+      width: 13px;
+      height: 13px;
+      color: inherit;
+      transition: translate var(--mf-dur-fast) var(--mf-ease);
+    }
+
+    &:hover {
+      color: var(--mf-accent-hover);
+
+      .d-icon {
+        translate: 2px 0;
+      }
+    }
+  }
+}

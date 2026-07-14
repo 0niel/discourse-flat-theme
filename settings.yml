@@ -7,12 +7,29 @@ show_info_rail:
   default: true
 
 rail_links:
-  type: string
-  default: ""
+  type: objects
+  default: []
+  schema:
+    name: link
+    properties:
+      label:
+        type: string
+        required: true
+        validations:
+          max_length: 100
+      url:
+        type: string
+        required: true
+        validations:
+          max_length: 500
 
 hero_subtitle:
   type: string
   default: ""
+
+show_topic_excerpts:
+  type: bool
+  default: true
 
 accent_color:
   type: string

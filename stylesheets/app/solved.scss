@@ -1,0 +1,104 @@
+aside.quote.accepted-answer {
+  margin: var(--mf-space-3) 0;
+  overflow: hidden;
+  background: var(--mf-success-tint);
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-lg);
+  box-shadow: none;
+
+  > .title {
+    gap: var(--mf-space-2);
+    padding: var(--mf-space-2) var(--mf-space-3) 4px;
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+    font-weight: var(--mf-weight-medium);
+    background: transparent;
+    border: 0;
+
+    &.quote__title--can-toggle-content {
+      cursor: pointer;
+    }
+  }
+
+  .accepted-answer--solver {
+    color: var(--mf-ink-2);
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .accepted-answer--accepter {
+    color: var(--mf-ink-3);
+  }
+
+  .quote-controls .quote-toggle {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 0;
+    color: var(--mf-ink-3);
+    background: transparent;
+    border-radius: var(--mf-radius-sm);
+    transition:
+      background-color var(--mf-dur-fast) var(--mf-ease),
+      color var(--mf-dur-fast) var(--mf-ease);
+
+    &:hover,
+    &:focus-visible {
+      color: var(--mf-ink);
+      background: var(--mf-fill-hover);
+    }
+  }
+
+  > blockquote,
+  .expanded-quote,
+  .post__contents-cooked-quote {
+    padding: 6px var(--mf-space-3) var(--mf-space-3);
+    color: var(--mf-ink-2);
+    background: transparent;
+  }
+}
+
+.topic-status.solved {
+  &,
+  .d-icon {
+    color: var(--mf-success);
+  }
+}
+
+.post-action-menu__solved-unaccepted {
+  &:hover,
+  &:focus-visible {
+    color: var(--mf-success);
+    background: var(--mf-success-tint);
+
+    .d-icon {
+      color: var(--mf-success);
+    }
+  }
+}
+
+.post-action-menu__solved-accepted {
+  color: var(--mf-success);
+
+  .d-icon {
+    color: var(--mf-success);
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: var(--mf-success-tint);
+  }
+}
+
+.accepted-text {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--mf-space-1);
+  padding: 0 var(--mf-space-2);
+  color: var(--mf-success);
+  font-size: var(--mf-text-sm);
+  font-weight: var(--mf-weight-medium);
+
+  .d-icon,
+  .accepted-label {
+    color: var(--mf-success);
+  }
+}

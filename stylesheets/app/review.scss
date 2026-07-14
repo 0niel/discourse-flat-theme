@@ -1,0 +1,130 @@
+.reviewable-filters {
+  background: var(--mf-surface-2);
+  padding: var(--mf-space-4) var(--mf-space-5);
+
+  .filter-label {
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+  }
+}
+
+.reviewable-filters-actions {
+  padding-top: var(--mf-space-3);
+  border-top: 1px solid var(--mf-hairline);
+}
+
+.reviewable-item {
+  background: var(--mf-surface);
+  border: 1px solid var(--mf-hairline);
+  border-radius: var(--mf-radius-lg);
+  padding: var(--mf-space-5);
+  margin-block: var(--mf-space-5);
+  box-shadow: none;
+  transition: border-color var(--mf-dur-fast) var(--mf-ease);
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:hover {
+    border-color: var(--mf-hairline-strong);
+  }
+
+  .post-body__toggle-btn {
+    background: var(--mf-surface-2);
+    color: var(--mf-ink-2);
+    border: 1px solid var(--mf-hairline);
+    border-radius: var(--mf-radius-pill);
+    box-shadow: none;
+
+    .d-icon {
+      color: inherit;
+    }
+
+    &:hover {
+      background: var(--mf-fill-hover);
+      color: var(--mf-ink);
+    }
+  }
+
+  .post-topic .title-text {
+    color: var(--mf-ink);
+  }
+
+  .reviewable-meta-data {
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+
+    .reviewable-type {
+      color: var(--mf-accent);
+      background: var(--mf-accent-tint);
+      border-radius: var(--mf-radius-xs);
+    }
+
+    .created-at a {
+      color: inherit;
+    }
+  }
+
+  .reviewable-actions {
+    gap: var(--mf-space-2);
+    margin-top: var(--mf-space-4);
+  }
+}
+
+.reviewable-stale {
+  color: var(--mf-ink-3);
+}
+
+.no-review {
+  color: var(--mf-ink-3);
+}
+
+.reviewable-user-details:not(:last-child) {
+  border-bottom: 1px solid var(--mf-hairline);
+}
+
+.reviewable-scores {
+  color: var(--mf-ink-2);
+  border-top: 1px solid var(--mf-hairline);
+
+  th {
+    color: var(--mf-ink-3);
+    font-weight: var(--mf-weight-semibold);
+  }
+
+  .d-icon {
+    color: var(--mf-ink-faint);
+  }
+
+  .approved,
+  .approved svg {
+    color: var(--mf-success);
+  }
+
+  .rejected,
+  .rejected svg {
+    color: var(--mf-danger);
+  }
+}
+
+.reviewable-score-reason {
+  color: var(--mf-ink-3);
+}
+
+.reviewable-topics {
+  th {
+    color: var(--mf-ink-3);
+  }
+
+  tbody tr:hover {
+    background: var(--mf-fill-hover);
+  }
+}
+
+@include viewport.until(sm) {
+  .reviewable-scores {
+    scrollbar-width: thin;
+    scrollbar-color: var(--mf-fill-active) transparent;
+  }
+}

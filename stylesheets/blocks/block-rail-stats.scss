@@ -1,0 +1,43 @@
+.block-rail-stats {
+  &__title {
+    margin: 0 0 var(--mf-space-3);
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: grid;
+      grid-template-columns: 18px auto minmax(0, 1fr);
+      align-items: center;
+      gap: var(--mf-space-2);
+      min-height: 30px;
+    }
+  }
+
+  &__icon .d-icon {
+    color: var(--mf-accent);
+    font-size: var(--mf-text-sm);
+  }
+
+  &__value {
+    color: var(--mf-ink);
+    font-weight: var(--mf-weight-bold);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &__label {
+    color: var(--mf-ink-3);
+    font-size: var(--mf-text-sm);
+  }
+}

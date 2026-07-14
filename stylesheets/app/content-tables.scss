@@ -1,0 +1,97 @@
+body.archetype-regular .post-stream .cooked,
+.d-editor-preview {
+  table:not(td table) {
+    display: table !important;
+    width: 100%;
+    max-width: 100%;
+    margin-block: var(--mf-space-3);
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    border: 0;
+    border-radius: var(--mf-radius-md);
+    box-shadow: none;
+    overflow: hidden;
+
+    > thead,
+    > tbody,
+    > tfoot,
+    > thead > tr,
+    > tbody > tr,
+    > tfoot > tr {
+      width: 100%;
+    }
+
+    > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+      min-width: 0;
+      padding: 8px 10px;
+      vertical-align: middle;
+      overflow-wrap: anywhere;
+      border: 0;
+    }
+
+    > :is(thead, tbody, tfoot) > tr > th {
+      color: var(--mf-ink-muted, var(--mf-ink-2));
+      font-weight: var(--mf-weight-semibold);
+      text-align: left;
+      overflow-wrap: normal;
+      word-break: normal;
+      background: var(--mf-surface-2);
+    }
+
+    > tbody > tr:nth-child(even) > td {
+      background: color-mix(in srgb, var(--mf-surface-2) 55%, transparent);
+    }
+
+    > tbody > tr:hover > td {
+      background: var(--mf-fill-hover);
+    }
+
+    td > .avatar,
+    td > p > .avatar {
+      display: block;
+      max-width: none;
+    }
+  }
+
+  td > table {
+    display: table !important;
+    width: auto;
+    max-width: 100%;
+    margin: 0;
+    table-layout: auto;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0;
+    box-shadow: none !important;
+
+    tr,
+    tbody,
+    td,
+    th {
+      width: auto;
+      height: auto;
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    td,
+    th {
+      padding: 0 6px 0 0;
+    }
+  }
+}
+
+@include viewport.until(md) {
+  body.archetype-regular .post-stream .cooked,
+  .d-editor-preview {
+    table:not(td table) {
+      font-size: var(--mf-text-sm);
+
+      > :is(thead, tbody, tfoot) > tr > :is(th, td) {
+        padding: 7px 8px;
+      }
+    }
+  }
+}

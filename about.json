@@ -5,18 +5,13 @@
   "license_url": "https://github.com/0niel/discourse-flat-theme/blob/main/LICENSE",
   "learn_more": "https://github.com/0niel/discourse-flat-theme#readme",
   "authors": "Oniel",
-  "theme_version": "2.0.0",
-  "minimum_discourse_version": null,
+  "theme_version": "3.0.0",
+  "minimum_discourse_version": "2026.6.0",
   "maximum_discourse_version": null,
   "assets": {},
   "modifiers": {
-    "svg_icons": [
-      "arrow-right",
-      "fire",
-      "magnifying-glass",
-      "plus",
-      "users"
-    ]
+    "serialize_topic_excerpts": true,
+    "svg_icons": ["arrow-right", "fire", "magnifying-glass", "plus", "users"]
   },
   "color_schemes": {
     "Oniel's Flat Theme": {
