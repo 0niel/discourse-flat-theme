@@ -412,6 +412,21 @@
   }
 }
 
+.badge-category {
+  padding: 2px 0 !important;
+  color: var(--mf-ink-3) !important;
+  background: transparent !important;
+  border: 0 !important;
+
+  .badge-category__name {
+    color: inherit;
+  }
+
+  &:hover .badge-category__name {
+    color: var(--mf-ink);
+  }
+}
+
 .discourse-tags {
   display: inline-flex;
   flex-wrap: wrap;
@@ -648,8 +663,9 @@ a.discourse-tag.box,
     a:first-child .avatar,
     a.latest:not(:first-child) .avatar {
       display: block;
-      width: 22px !important;
-      height: 22px !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
       border-radius: var(--mf-radius-pill);
     }
   }
@@ -713,7 +729,7 @@ a.discourse-tag.box,
     padding: 2px 9px !important;
     color: var(--mf-ink-3);
     font-size: var(--mf-text-xs);
-    background: var(--mf-surface-2);
+    background: var(--mf-surface-3);
     border-radius: var(--mf-radius-pill);
 
     &::before {
@@ -854,10 +870,15 @@ a.discourse-tag.box,
     display: flex;
     align-items: center;
     gap: var(--mf-space-2);
+    box-sizing: border-box;
     width: 100%;
     min-width: 0;
     margin: 0;
-    padding-right: 40px;
+    padding-right: 36px;
+  }
+
+  .topic-item-stats .activity {
+    flex: 0 0 auto;
   }
 
   .topic-item-stats__category-tags {
@@ -911,7 +932,7 @@ a.discourse-tag.box,
     padding: 0 8px !important;
     color: var(--mf-ink-3);
     font-size: var(--mf-text-xs);
-    background: var(--mf-surface-2) !important;
+    background: var(--mf-surface-3) !important;
     border-radius: var(--mf-radius-pill);
 
     &::before {

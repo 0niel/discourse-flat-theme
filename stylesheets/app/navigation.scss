@@ -389,3 +389,9 @@
     color: var(--mf-ink-3);
   }
 }
+
+body.navigation-filter .list-controls .navigation-container {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}

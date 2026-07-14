@@ -125,10 +125,10 @@
   --mf-love: var(--love);
   --shadow-card: none;
   --shadow-header: none;
-  --shadow-composer: 0 -1px 0 var(--mf-hairline);
-  --shadow-dropdown: none;
-  --shadow-menu-panel: none;
-  --shadow-modal: none;
+  --shadow-composer: 0 -10px 36px rgb(0 0 0 / 10%);
+  --shadow-dropdown: 0 8px 28px rgb(0 0 0 / 12%);
+  --shadow-menu-panel: 0 10px 32px rgb(0 0 0 / 12%);
+  --shadow-modal: 0 18px 60px rgb(0 0 0 / 18%);
   --shadow-focus: 0 0 0 3px var(--mf-accent-line);
   --shadow-focus-danger: 0 0 0 3px var(--mf-danger-tint);
   --d-border-radius: var(--mf-radius-md);

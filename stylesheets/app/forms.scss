@@ -17,6 +17,9 @@ input:not([type]),
 select,
 textarea,
 .d-editor-input,
+.form-kit__control-input,
+.form-kit__control-textarea,
+.form-kit__control-select,
 .select-kit .select-kit-header,
 .select-kit.combo-box .select-kit-header {
   background: var(--d-input-bg-color);
@@ -26,7 +29,7 @@ textarea,
   font-family: var(--mf-font);
   box-shadow: none;
   transition:
-    outline-color var(--mf-dur-fast) var(--mf-ease),
+    box-shadow var(--mf-dur-fast) var(--mf-ease),
     background var(--mf-dur-fast) var(--mf-ease);
 
   &::placeholder {
@@ -37,9 +40,8 @@ textarea,
   &:focus-within {
     border: var(--d-input-border);
     background: var(--d-input-bg-color--focus);
-    outline: 2px solid var(--d-input-focused-color);
-    outline-offset: 1px;
-    box-shadow: none;
+    outline: 0;
+    box-shadow: var(--shadow-focus);
   }
 }
 
