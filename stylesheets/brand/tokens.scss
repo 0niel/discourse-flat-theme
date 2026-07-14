@@ -56,16 +56,43 @@
   --mf-dur: 160ms;
   --mf-dur-slow: 240ms;
   --mf-content-width: #{$content_max_width}px;
-  --mf-surface: var(--secondary);
-  --mf-surface-elevated: var(--secondary);
-  --mf-app-bg: color-mix(in srgb, var(--secondary) 97%, var(--primary));
-  --mf-surface-2: color-mix(in srgb, var(--secondary) 95%, var(--primary));
-  --mf-surface-3: color-mix(in srgb, var(--secondary) 91%, var(--primary));
-  --mf-fill-hover: color-mix(in srgb, var(--primary) 5%, transparent);
-  --mf-fill-active: color-mix(in srgb, var(--primary) 9%, transparent);
+  --mf-surface: light-dark(
+    var(--secondary),
+    color-mix(in srgb, var(--secondary) 95%, var(--primary))
+  );
+  --mf-surface-elevated: light-dark(
+    var(--secondary),
+    color-mix(in srgb, var(--secondary) 91%, var(--primary))
+  );
+  --mf-app-bg: light-dark(
+    color-mix(in srgb, var(--secondary) 97%, var(--primary)),
+    var(--secondary)
+  );
+  --mf-surface-2: light-dark(
+    color-mix(in srgb, var(--secondary) 95%, var(--primary)),
+    color-mix(in srgb, var(--secondary) 90%, var(--primary))
+  );
+  --mf-surface-3: light-dark(
+    color-mix(in srgb, var(--secondary) 91%, var(--primary)),
+    color-mix(in srgb, var(--secondary) 86%, var(--primary))
+  );
+  --mf-fill-hover: light-dark(
+    color-mix(in srgb, var(--primary) 5%, transparent),
+    color-mix(in srgb, var(--primary) 8%, transparent)
+  );
+  --mf-fill-active: light-dark(
+    color-mix(in srgb, var(--primary) 9%, transparent),
+    color-mix(in srgb, var(--primary) 13%, transparent)
+  );
   --mf-fill-selected: color-mix(in srgb, var(--tertiary) 10%, transparent);
-  --mf-hairline: color-mix(in srgb, var(--primary) 11%, transparent);
-  --mf-hairline-strong: color-mix(in srgb, var(--primary) 18%, transparent);
+  --mf-hairline: light-dark(
+    color-mix(in srgb, var(--primary) 11%, transparent),
+    color-mix(in srgb, var(--primary) 16%, transparent)
+  );
+  --mf-hairline-strong: light-dark(
+    color-mix(in srgb, var(--primary) 18%, transparent),
+    color-mix(in srgb, var(--primary) 27%, transparent)
+  );
   --mf-ink: var(--primary);
   --mf-ink-2: color-mix(in srgb, var(--primary) 78%, var(--secondary));
   --mf-ink-3: color-mix(in srgb, var(--primary) 62%, var(--secondary));
@@ -77,9 +104,18 @@
   --mf-accent-tint: color-mix(in srgb, var(--mf-accent) 12%, transparent);
   --mf-accent-tint-soft: color-mix(in srgb, var(--mf-accent) 7%, transparent);
   --mf-accent-line: color-mix(in srgb, var(--mf-accent) 30%, transparent);
-  --mf-panel: color-mix(in srgb, var(--secondary) 95%, var(--primary));
-  --mf-panel-strong: color-mix(in srgb, var(--secondary) 91%, var(--primary));
-  --mf-panel-hover: color-mix(in srgb, var(--secondary) 88%, var(--primary));
+  --mf-panel: light-dark(
+    color-mix(in srgb, var(--secondary) 95%, var(--primary)),
+    color-mix(in srgb, var(--secondary) 91%, var(--primary))
+  );
+  --mf-panel-strong: light-dark(
+    color-mix(in srgb, var(--secondary) 91%, var(--primary)),
+    color-mix(in srgb, var(--secondary) 87%, var(--primary))
+  );
+  --mf-panel-hover: light-dark(
+    color-mix(in srgb, var(--secondary) 88%, var(--primary)),
+    color-mix(in srgb, var(--secondary) 84%, var(--primary))
+  );
   --mf-success: var(--success);
   --mf-success-tint: color-mix(in srgb, var(--success) 13%, transparent);
   --mf-danger: var(--danger);

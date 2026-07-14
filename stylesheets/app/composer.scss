@@ -1,7 +1,7 @@
 #reply-control {
   background: var(--mf-surface);
   border: 0;
-  box-shadow: 0 -10px 36px color-mix(in srgb, var(--primary) 8%, transparent);
+  box-shadow: 0 -10px 36px rgb(0 0 0 / 10%);
 
   &.closed {
     background: transparent !important;
@@ -15,7 +15,7 @@
     border: 0 !important;
     border-top-left-radius: var(--mf-radius-2xl);
     border-top-right-radius: var(--mf-radius-2xl);
-    box-shadow: 0 -14px 44px color-mix(in srgb, var(--primary) 12%, transparent);
+    box-shadow: 0 -14px 44px rgb(0 0 0 / 16%);
   }
 
   .grippie {
@@ -218,7 +218,7 @@
     background: var(--mf-surface) !important;
     border: 0 !important;
     border-radius: var(--mf-radius-lg);
-    box-shadow: 0 12px 36px color-mix(in srgb, var(--primary) 14%, transparent) !important;
+    box-shadow: 0 12px 36px rgb(0 0 0 / 18%) !important;
 
     .select-kit-filter {
       margin: 0 0 4px;
@@ -438,7 +438,7 @@
     background: var(--mf-surface-2);
     border: 0;
     border-radius: var(--mf-radius-lg);
-    box-shadow: 0 12px 36px color-mix(in srgb, var(--primary) 14%, transparent);
+    box-shadow: 0 12px 36px rgb(0 0 0 / 18%);
 
     h3 {
       color: var(--mf-ink);
