@@ -237,3 +237,11 @@ body.archetype-regular {
     }
   }
 }
+
+@include viewport.from(md) {
+  .topic-navigation:not(:has(.topic-timeline)) #topic-progress-wrapper,
+  .topic-navigation .timeline-container:empty,
+  #topic-progress:empty {
+    display: none;
+  }
+}

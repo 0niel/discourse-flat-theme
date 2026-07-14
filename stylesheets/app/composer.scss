@@ -141,7 +141,7 @@
     font-size: var(--mf-text-base);
     font-weight: var(--mf-weight-medium);
     line-height: 22px;
-    background: var(--mf-surface-2) !important;
+    background: var(--d-input-bg-color) !important;
     border: 0 !important;
     border-radius: var(--mf-radius-md);
     box-shadow: none !important;
@@ -153,7 +153,7 @@
 
     &:focus {
       outline: 0;
-      background: var(--mf-surface-3) !important;
+      background: var(--d-input-bg-color--focus) !important;
       box-shadow: var(--shadow-focus) !important;
     }
   }
@@ -173,7 +173,7 @@
 
   .tags-input .mini-tag-chooser {
     box-sizing: border-box;
-    background: var(--mf-surface-2) !important;
+    background: var(--d-input-bg-color) !important;
     border-radius: var(--mf-radius-md);
   }
 
@@ -184,7 +184,7 @@
     min-height: 36px;
     padding-inline: 10px;
     color: var(--mf-ink-2);
-    background: var(--mf-surface-2) !important;
+    background: var(--d-input-bg-color) !important;
     border: 0 !important;
     border-radius: var(--mf-radius-md);
     box-shadow: none !important;
@@ -205,7 +205,7 @@
 
     &:hover {
       color: var(--mf-ink);
-      background: var(--mf-surface-3) !important;
+      background: var(--d-input-bg-color--focus) !important;
     }
 
     &:focus-visible {
@@ -366,18 +366,20 @@
     font-family: var(--mf-font) !important;
     font-size: var(--mf-text-base);
     line-height: 1.55;
-    background: var(--mf-surface-2) !important;
+    background: transparent !important;
     border: 0 !important;
     border-radius: var(--mf-radius-lg) !important;
     outline: 0 !important;
     box-shadow: none !important;
 
-    &:focus {
-      background: var(--mf-surface-3) !important;
+    &:focus,
+    &:focus-within {
+      background: transparent !important;
+      outline: 0 !important;
     }
 
     &::placeholder {
-      color: var(--mf-ink-faint);
+      color: var(--mf-ink-3);
     }
   }
 

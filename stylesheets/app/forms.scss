@@ -1,5 +1,6 @@
 :root {
-  --d-input-bg-color: var(--mf-panel);
+  --d-input-bg-color: var(--mf-surface-3);
+  --d-input-bg-color--focus: var(--mf-panel-hover);
   --d-input-text-color: var(--mf-ink);
   --d-input-border: none;
   --d-input-border-radius: var(--mf-radius-md);
@@ -12,6 +13,8 @@ input[type="email"],
 input[type="password"],
 input[type="number"],
 input[type="url"],
+input:not([type]),
+select,
 textarea,
 .d-editor-input,
 .select-kit .select-kit-header,
@@ -27,16 +30,22 @@ textarea,
     background var(--mf-dur-fast) var(--mf-ease);
 
   &::placeholder {
-    color: var(--mf-ink-faint);
+    color: var(--mf-ink-3);
   }
 
   &:focus,
   &:focus-within {
     border: var(--d-input-border);
+    background: var(--d-input-bg-color--focus);
     outline: 2px solid var(--d-input-focused-color);
     outline-offset: 1px;
     box-shadow: none;
   }
+}
+
+select {
+  min-height: 34px;
+  padding: 4px 10px;
 }
 
 .search-menu-container .menu-panel,

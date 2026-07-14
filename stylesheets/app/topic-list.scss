@@ -568,9 +568,9 @@ a.discourse-tag.box,
 .desktop-view .list-container .topic-list .topic-list-item,
 .desktop-view .list-container .topic-list-item.selected {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) max-content;
-  grid-template-rows: repeat(3, auto);
-  gap: 2px var(--mf-space-5);
+  grid-template-columns: minmax(0, 1fr) max-content max-content max-content;
+  grid-template-rows: auto;
+  gap: 2px var(--mf-space-3);
   min-height: 0;
   margin: 0;
   padding: 14px 24px;
@@ -614,14 +614,14 @@ a.discourse-tag.box,
 
   .posters {
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 1;
     display: flex;
     align-items: center;
     align-self: center;
     justify-self: end;
     width: auto;
     height: auto;
-    margin: 2px 0;
+    margin: 0 var(--mf-space-2) 0 var(--mf-space-3);
 
     a,
     a:first-child,
@@ -656,7 +656,7 @@ a.discourse-tag.box,
 
   .main-link {
     grid-column: 1;
-    grid-row: 1 / span 3;
+    grid-row: 1;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -704,27 +704,11 @@ a.discourse-tag.box,
     opacity: 1;
   }
 
-  .activity {
-    grid-column: 2;
+  .num.posts-map {
+    grid-column: 3;
     grid-row: 1;
     justify-self: end;
-    align-self: start;
-    min-width: 0;
-    padding: 0 !important;
-    color: var(--mf-ink-faint);
-    font-size: var(--mf-text-xs);
-    font-weight: var(--mf-weight-normal);
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .num.posts-map {
-    grid-column: 2;
-    grid-row: 3;
-    justify-self: end;
-    align-self: end;
+    align-self: center;
     min-width: 0;
     padding: 2px 9px !important;
     color: var(--mf-ink-3);
@@ -736,6 +720,23 @@ a.discourse-tag.box,
       width: 12px;
       height: 12px;
       mask-size: 12px 12px;
+    }
+  }
+
+  .activity {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    justify-content: flex-end;
+    min-width: 52px;
+    padding: 0 !important;
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-normal);
+
+    &::before {
+      display: none;
     }
   }
 

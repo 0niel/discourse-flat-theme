@@ -676,21 +676,22 @@ body.archetype-regular {
   .more-topics__list .topic-list-item,
   .suggested-topics .topic-list-item {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 64px 72px 88px;
-    grid-template-rows: minmax(54px, auto);
+    grid-template-columns: minmax(0, 1fr) max-content max-content;
+    grid-template-rows: auto;
     gap: 0 var(--mf-space-3);
     align-items: center;
-    min-height: 72px;
-    margin: 0 0 var(--mf-space-2);
-    padding: 9px var(--mf-space-4);
+    min-height: 0;
+    margin: 0;
+    padding: 12px var(--mf-space-3);
     box-sizing: border-box;
-    background: var(--mf-panel) !important;
+    background: transparent !important;
     border: 0 !important;
     border-radius: var(--mf-radius-lg);
     box-shadow: none !important;
+    transition: background var(--mf-dur-fast) var(--mf-ease);
 
     &:hover {
-      background: var(--mf-panel-strong) !important;
+      background: var(--mf-fill-hover) !important;
     }
 
     > td {
@@ -720,6 +721,7 @@ body.archetype-regular {
     }
 
     .link-bottom-line {
+      order: 0;
       min-height: 18px;
       margin: 0;
       overflow: visible;
@@ -735,45 +737,54 @@ body.archetype-regular {
       display: none;
     }
 
-    .num.posts-map,
     .num.views,
-    .activity {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 6px;
-      align-self: center;
-      min-width: 0;
-      padding: 0 !important;
-      color: var(--mf-ink-faint);
-      font-size: var(--mf-text-xs);
-      font-variant-numeric: tabular-nums;
+    .num.likes {
+      display: none;
     }
 
     .num.posts-map {
       grid-column: 2;
       grid-row: 1;
-    }
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      align-self: center;
+      justify-self: end;
+      min-width: 0;
+      padding: 2px 9px !important;
+      color: var(--mf-ink-3);
+      font-size: var(--mf-text-xs);
+      font-variant-numeric: tabular-nums;
+      background: var(--mf-surface-2);
+      border-radius: var(--mf-radius-pill);
 
-    .num.views {
-      grid-column: 3;
-      grid-row: 1;
+      &::before {
+        display: block;
+        flex: 0 0 12px;
+        width: 12px;
+        height: 12px;
+        margin: 0;
+        mask-size: 12px 12px;
+      }
     }
 
     .activity {
-      grid-column: 4;
+      grid-column: 3;
       grid-row: 1;
-      justify-self: start;
-    }
+      display: inline-flex;
+      align-items: center;
+      align-self: center;
+      justify-self: end;
+      justify-content: flex-end;
+      min-width: 52px;
+      padding: 0 !important;
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+      font-variant-numeric: tabular-nums;
 
-    .num.posts-map::before,
-    .num.views::before,
-    .activity::before {
-      display: block;
-      flex: 0 0 14px;
-      width: 14px;
-      height: 14px;
-      margin: 0;
+      &::before {
+        display: none;
+      }
     }
 
     .topic-statuses .d-icon {
@@ -804,12 +815,7 @@ body.archetype-regular {
     &.unread-posts,
     &.unseen-topic,
     &.new-topic {
-      background: color-mix(
-        in srgb,
-        var(--mf-panel) 94%,
-        var(--mf-accent)
-      ) !important;
-      box-shadow: inset 3px 0 var(--mf-accent) !important;
+      background: var(--mf-accent-tint-soft) !important;
 
       .main-link a.title {
         font-weight: var(--mf-weight-bold);
