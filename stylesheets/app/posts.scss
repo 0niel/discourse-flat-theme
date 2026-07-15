@@ -312,6 +312,16 @@ body.archetype-regular {
       column-gap: var(--mf-post-column-gap);
       align-items: start;
       width: 100%;
+
+      > .post-notice {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .post-stream > .topic-post .post-notice {
+      grid-column: 1 / -1;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .post-stream > .topic-post .topic-avatar {

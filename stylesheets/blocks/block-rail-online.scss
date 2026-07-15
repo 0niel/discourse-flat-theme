@@ -1,0 +1,53 @@
+.block-rail-online {
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 var(--mf-space-3);
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-xs);
+    font-weight: var(--mf-weight-semibold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    color: var(--mf-accent);
+    font-size: var(--mf-text-2xs);
+    font-variant-numeric: tabular-nums;
+    background: var(--mf-accent-tint);
+    border-radius: var(--mf-radius-pill);
+  }
+
+  &__avatars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  &__user {
+    display: block;
+    width: 28px;
+    height: 28px;
+    overflow: hidden;
+    border-radius: var(--mf-radius-pill);
+    transition: translate var(--mf-dur-fast) var(--mf-ease);
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--mf-radius-pill);
+      object-fit: cover;
+    }
+
+    &:hover {
+      translate: 0 -1px;
+    }
+  }
+}

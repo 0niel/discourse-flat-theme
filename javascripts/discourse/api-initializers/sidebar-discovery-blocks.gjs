@@ -2,6 +2,7 @@ import BlockGroup from "discourse/blocks/builtin/block-group";
 import { apiInitializer } from "discourse/lib/api";
 import BlockRailCta from "../blocks/block-rail-cta";
 import BlockRailLinks from "../blocks/block-rail-links";
+import BlockRailOnline from "../blocks/block-rail-online";
 import BlockRailStats from "../blocks/block-rail-stats";
 import BlockRailTags from "../blocks/block-rail-tags";
 
@@ -23,6 +24,7 @@ export default apiInitializer((api) => {
       ],
       children: [
         { block: BlockRailCta },
+        { block: BlockRailOnline },
         { block: BlockRailStats },
         { block: BlockRailTags },
         {

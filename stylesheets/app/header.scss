@@ -120,3 +120,38 @@
   font-weight: var(--mf-weight-semibold);
   letter-spacing: var(--mf-tracking-snug);
 }
+
+.d-header .extra-info-wrapper {
+  min-width: 0;
+
+  .extra-info {
+    min-width: 0;
+    align-items: center;
+  }
+
+  .topic-link {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--mf-ink);
+    font-size: var(--mf-text-base);
+    font-weight: var(--mf-weight-semibold);
+    line-height: 1.25;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .topic-header-extra,
+  .header-topic-title-suffix {
+    display: none;
+  }
+
+  .categories-wrapper {
+    margin: 0;
+
+    .badge-category__wrapper {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}

@@ -147,3 +147,38 @@
     color: var(--mf-ink-faint);
   }
 }
+
+.d-modal .link-share-container {
+  display: flex;
+  align-items: center;
+  gap: var(--mf-space-2);
+
+  input,
+  input[type="text"] {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 38px;
+    padding: 8px 11px;
+    color: var(--mf-ink-2);
+    font-size: var(--mf-text-sm);
+    background: var(--d-input-bg-color);
+    border: 0;
+    border-radius: var(--mf-radius-md);
+  }
+
+  .btn {
+    flex: 0 0 auto;
+  }
+}
+
+.d-modal .link-share-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: var(--mf-space-3);
+
+  .btn {
+    min-height: 34px;
+    border-radius: var(--mf-radius-md);
+  }
+}

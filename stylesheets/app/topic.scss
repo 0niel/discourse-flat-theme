@@ -674,6 +674,7 @@ body.archetype-regular {
 .desktop-view body.archetype-regular {
   #suggested-topics .topic-list-item,
   .more-topics__list .topic-list-item,
+  .more-topics__container .topic-list-item,
   .suggested-topics .topic-list-item {
     display: grid;
     grid-template-columns: minmax(0, 1fr) max-content max-content;
@@ -961,5 +962,40 @@ body.archetype-regular {
         box-shadow: inset 3px 0 var(--mf-accent) !important;
       }
     }
+  }
+}
+
+.topic-map__contents .topic-map__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--mf-space-2);
+  min-height: 32px;
+}
+
+.topic-map__stats .avatar,
+.topic-map__users-trigger .avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--mf-radius-pill);
+}
+
+.topic-map__views-trigger,
+.topic-map__users-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 4px 8px;
+  color: var(--mf-ink-3);
+  border-radius: var(--mf-radius-md);
+
+  .number {
+    color: var(--mf-ink-2);
+    font-weight: var(--mf-weight-semibold);
+    font-variant-numeric: tabular-nums;
+  }
+
+  &:hover {
+    background: var(--mf-fill-hover);
   }
 }

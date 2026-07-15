@@ -103,6 +103,7 @@
 
 .topic-list .topic-list-item + .topic-list-item,
 .more-topics__list .topic-list-item,
+.more-topics__container .topic-list-item,
 #suggested-topics .topic-list-item {
   border-top: none !important;
   box-shadow: none !important;
@@ -235,6 +236,7 @@
 }
 
 .more-topics__list .topic-excerpt,
+.more-topics__container .topic-excerpt,
 #suggested-topics .topic-excerpt,
 .suggested-topics .topic-excerpt {
   display: none;
@@ -353,6 +355,7 @@
 }
 
 .more-topics__list .topic-list-item,
+.more-topics__container .topic-list-item,
 #suggested-topics .topic-list-item,
 .suggested-topics .topic-list-item {
   grid-template-columns: auto auto minmax(0, 1fr);
@@ -952,4 +955,8 @@ a.discourse-tag.box,
   &.selected > .topic-list-data:only-child {
     background: var(--mf-fill-selected) !important;
   }
+}
+
+.fk-d-tooltip__content:not([data-identifier]) {
+  display: none !important;
 }
