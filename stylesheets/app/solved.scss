@@ -2,7 +2,7 @@ aside.quote.accepted-answer {
   margin: var(--mf-space-3) 0;
   overflow: hidden;
   background: var(--mf-success-tint);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   box-shadow: none;
 
@@ -56,10 +56,88 @@ aside.quote.accepted-answer {
   }
 }
 
-.topic-status.solved {
+.topic-status.solved,
+.topic-status.--solved {
   &,
   .d-icon {
     color: var(--mf-success);
+  }
+}
+
+.d-post-accordion.accepted-answers {
+  margin: var(--mf-space-3) 0;
+
+  .d-post-accordion__layout {
+    background: var(--mf-success-tint);
+    border: 0 !important;
+    border-radius: var(--mf-radius-lg);
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .d-post-accordion__header {
+    padding: var(--mf-space-2) var(--mf-space-3);
+    background: transparent;
+    border: 0 !important;
+  }
+
+  .accepted-answers__title {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+    color: var(--mf-success);
+    font-size: var(--mf-text-sm);
+    font-weight: var(--mf-weight-semibold);
+    letter-spacing: 0;
+    text-transform: none;
+
+    .d-icon {
+      color: var(--mf-success);
+    }
+  }
+
+  .d-post-accordion__items {
+    padding: 0 var(--mf-space-2) var(--mf-space-2);
+  }
+}
+
+.d-post-accordion .d-post-accordion-item {
+  background: var(--mf-surface);
+  border: 0 !important;
+  border-radius: var(--mf-radius-md);
+  box-shadow: none;
+
+  .d-post-accordion-item__header {
+    padding: var(--mf-space-2) var(--mf-space-3) 0;
+    color: var(--mf-ink-3);
+    border: 0;
+
+    .user-link {
+      color: var(--mf-ink-2);
+      font-weight: var(--mf-weight-semibold);
+    }
+
+    .relative-date {
+      color: var(--mf-ink-faint);
+      font-size: var(--mf-text-xs);
+    }
+  }
+
+  .d-post-accordion-item__content,
+  .cooked {
+    padding: var(--mf-space-2) var(--mf-space-3) var(--mf-space-3);
+    color: var(--mf-ink-2);
+  }
+
+  .d-post-accordion-item__expand-btn,
+  .d-post-accordion-item__toggle {
+    color: var(--mf-accent);
+    background: transparent;
+
+    &:hover {
+      background: var(--mf-fill-hover);
+    }
   }
 }
 

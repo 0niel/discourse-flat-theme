@@ -4,7 +4,7 @@
   }
 
   .meta {
-    background: color-mix(in srgb, var(--mf-ink) 82%, transparent);
+    background: rgb(8 9 11 / 82%);
     transition: opacity var(--mf-dur) var(--mf-ease);
   }
 
@@ -12,34 +12,34 @@
   .filename,
   .informations,
   .d-icon {
-    color: var(--mf-surface);
+    color: #fff;
   }
 }
 
 :is(.pswp__bg, .pswp__top-bar) {
-  background: var(--mf-ink);
+  background: rgb(8 9 11 / 93%);
 }
 
 .pswp__button .pswp__icn {
-  color: var(--mf-surface);
+  color: #fff;
 }
 
 .pswp__caption {
   .pswp__caption-title {
-    color: var(--mf-surface);
+    color: #fff;
     font-weight: var(--mf-weight-medium);
   }
 
   .pswp__caption-details {
-    color: var(--mf-ink);
-    background: var(--mf-surface-elevated);
+    color: rgb(255 255 255 / 78%);
+    background: rgb(24 26 30 / 92%);
     border-radius: var(--mf-radius-sm);
     box-shadow: none;
   }
 }
 
 .pswp__custom-counter {
-  color: var(--mf-surface);
+  color: #fff;
   text-shadow: none;
 }
 
@@ -91,7 +91,7 @@
   }
 
   &__thumbnail {
-    border: 1px solid var(--mf-hairline);
+    border: 0;
     border-radius: var(--mf-radius-sm);
   }
 }
@@ -122,12 +122,12 @@
 .popular-topics,
 .recent-topics {
   background: var(--mf-surface);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-xl);
 
   h2 {
     color: var(--mf-ink);
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
   }
 }
 

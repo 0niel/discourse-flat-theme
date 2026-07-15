@@ -23,7 +23,7 @@ textarea,
 .select-kit .select-kit-header,
 .select-kit.combo-box .select-kit-header {
   background: var(--d-input-bg-color);
-  border: var(--d-input-border);
+  border: none !important;
   border-radius: var(--d-input-border-radius);
   color: var(--d-input-text-color);
   font-family: var(--mf-font);
@@ -66,10 +66,28 @@ select {
 
 .select-kit {
   .select-kit-body {
-    border: 1px solid var(--mf-hairline);
+    border: 0;
     border-radius: var(--mf-radius-lg);
     background: var(--mf-surface-elevated);
     overflow: hidden;
+  }
+
+  .select-kit-filter {
+    margin: 0 0 4px;
+    padding: 0;
+
+    .filter-input {
+      min-height: 34px;
+      padding: 6px 10px;
+      background: var(--d-input-bg-color);
+      border: 0 !important;
+      border-radius: var(--mf-radius-sm);
+
+      &:focus {
+        background: var(--d-input-bg-color--focus);
+        box-shadow: var(--shadow-focus);
+      }
+    }
   }
 
   .select-kit-collection {

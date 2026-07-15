@@ -48,7 +48,7 @@
 .post-voting-post-list {
   padding: var(--mf-space-2);
   background: var(--mf-surface-elevated);
-  border: 1px solid var(--mf-hairline-strong);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   box-shadow:
     0 10px 26px color-mix(in srgb, #000 32%, transparent),
@@ -63,7 +63,7 @@
 .post-voting-answers-header {
   align-items: center;
   padding: var(--mf-space-3) 0;
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
 }
 
 .post-voting-answers-headers-count {
@@ -95,7 +95,7 @@
 
 .post-voting-comment {
   padding: var(--mf-space-2) 0;
-  border-top: 1px solid var(--mf-hairline);
+  border-top: 0;
 }
 
 .post-voting-comment-deleted {

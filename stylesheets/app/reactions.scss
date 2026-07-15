@@ -79,7 +79,7 @@
       overflow: hidden;
       color: var(--mf-ink);
       background: var(--mf-surface-elevated);
-      border: 1px solid var(--mf-hairline-strong);
+      border: 0;
       border-radius: var(--mf-radius-lg);
       box-shadow:
         0 10px 26px color-mix(in srgb, #000 32%, transparent),
@@ -104,7 +104,7 @@
   padding: 6px;
   overflow: auto;
   background: var(--mf-surface-elevated);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-xl);
   box-shadow:
     0 12px 32px color-mix(in srgb, #000 34%, transparent),

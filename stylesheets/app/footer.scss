@@ -1,5 +1,5 @@
 .mf-footer {
-  border-top: 1px solid var(--mf-hairline);
+  border-top: 0;
   margin-top: var(--mf-space-16);
   padding: var(--mf-space-12) var(--mf-space-5) var(--mf-space-10);
   background: var(--mf-app-bg);
@@ -67,7 +67,7 @@
     max-width: var(--mf-content-width);
     margin: var(--mf-space-8) auto 0;
     padding-top: var(--mf-space-5);
-    border-top: 1px solid var(--mf-hairline);
+    border-top: 0;
     display: flex;
     flex-wrap: wrap;
     gap: var(--mf-space-3);

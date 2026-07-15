@@ -36,7 +36,7 @@
   transition: background var(--mf-dur-fast) var(--mf-ease);
 
   & + & {
-    border-top: 1px solid var(--mf-hairline);
+    border-top: 0;
   }
 
   &:hover {
@@ -79,7 +79,7 @@
   .fps-category-item,
   .fps-tag-item {
     padding-bottom: var(--mf-space-3);
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
   }
 }
 

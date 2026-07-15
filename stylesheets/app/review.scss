@@ -10,12 +10,12 @@
 
 .reviewable-filters-actions {
   padding-top: var(--mf-space-3);
-  border-top: 1px solid var(--mf-hairline);
+  border-top: 0;
 }
 
 .reviewable-item {
   background: var(--mf-surface);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   padding: var(--mf-space-5);
   margin-block: var(--mf-space-5);
@@ -33,7 +33,7 @@
   .post-body__toggle-btn {
     background: var(--mf-surface-2);
     color: var(--mf-ink-2);
-    border: 1px solid var(--mf-hairline);
+    border: 0;
     border-radius: var(--mf-radius-pill);
     box-shadow: none;
 
@@ -81,12 +81,12 @@
 }
 
 .reviewable-user-details:not(:last-child) {
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
 }
 
 .reviewable-scores {
   color: var(--mf-ink-2);
-  border-top: 1px solid var(--mf-hairline);
+  border-top: 0;
 
   th {
     color: var(--mf-ink-3);

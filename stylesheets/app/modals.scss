@@ -1,7 +1,7 @@
 .modal.d-modal {
   .d-modal__container {
     border-radius: var(--mf-radius-xl);
-    border: 1px solid var(--mf-hairline-strong);
+    border: 0;
   }
 
   .d-modal__body,
@@ -12,7 +12,7 @@
 
   .d-modal__header,
   .modal-header {
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
 
     .d-modal__title-text,
     .title {
@@ -23,7 +23,7 @@
 
   .d-modal__footer,
   .modal-footer {
-    border-top: 1px solid var(--mf-hairline);
+    border-top: 0;
   }
 }
 
@@ -40,7 +40,7 @@
 .user-menu,
 .notification-menu {
   background: var(--mf-surface-elevated);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   box-shadow: var(--shadow-menu-panel);
 
@@ -84,6 +84,6 @@
 .fk-d-default-toast,
 #dialog-holder .dialog-content {
   border-radius: var(--mf-radius-lg);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   box-shadow: var(--shadow-modal);
 }

@@ -1,7 +1,7 @@
 .alert,
 .banner-content,
 .global-notice .alert {
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   box-shadow: none;
 }
@@ -29,7 +29,7 @@
 .theme-preview {
   background: var(--mf-accent-tint-soft);
   color: var(--mf-ink);
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
 }
 
 .category-breadcrumb .badge-category__wrapper,
@@ -54,7 +54,7 @@ nav.pagination a.active,
 .d-editor-preview table {
   border-collapse: separate;
   border-spacing: 0;
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-md);
   overflow: hidden;
 
@@ -62,7 +62,7 @@ nav.pagination a.active,
     background: var(--mf-surface-2);
     color: var(--mf-ink-2);
     font-weight: var(--mf-weight-semibold);
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
   }
 
   td,
@@ -76,7 +76,7 @@ nav.pagination a.active,
 }
 
 .poll {
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   background: var(--mf-surface);
 
@@ -128,7 +128,7 @@ nav.pagination a.active,
 
 .dashboard .section .panel,
 .admin-config-area .admin-config-area-card {
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   background: var(--mf-surface);
   box-shadow: none;
@@ -243,7 +243,7 @@ img.avatar {
 
 .badge-card {
   background: var(--mf-surface);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
   box-shadow: none;
   padding: var(--mf-space-4);
@@ -445,7 +445,7 @@ img.avatar {
   }
 
   .topic-map {
-    border-top: 1px solid var(--mf-hairline);
+    border-top: 0;
     border-bottom: none;
   }
 

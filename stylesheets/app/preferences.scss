@@ -90,7 +90,7 @@
 
 .user-preferences .pref-associated-accounts table {
   tr {
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
 
     &:last-child {
       border-bottom: 0;
@@ -110,7 +110,7 @@
   border-top-color: var(--mf-hairline);
 
   tr {
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
 
     &:last-child {
       border-bottom: 0;

@@ -313,6 +313,7 @@
 
   .d-editor-button-bar {
     flex-wrap: nowrap;
+    align-items: center;
     gap: 1px;
     min-height: 36px;
     padding: 3px 2px;
@@ -329,6 +330,18 @@
     .toolbar__button,
     .composer-toggle-switch {
       flex: 0 0 auto;
+      align-self: center;
+    }
+
+    .composer-toggle-switch {
+      display: inline-flex;
+      align-items: center;
+      height: 28px;
+      margin: 0 4px 0 0;
+    }
+
+    .toolbar__button .d-icon {
+      display: block;
     }
 
     .toolbar__button {

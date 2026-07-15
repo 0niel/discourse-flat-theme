@@ -13,7 +13,7 @@
 
 .d-header {
   background: var(--mf-surface);
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
   box-shadow: none;
 
   .wrap {
@@ -111,7 +111,7 @@
   .search-input,
   input[type="search"] {
     background: var(--mf-surface-2);
-    border: 1px solid var(--mf-hairline-strong);
+    border: 0;
     border-radius: var(--mf-radius-md);
   }
 }

@@ -151,7 +151,7 @@ blockquote,
 
   .title {
     background: transparent;
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
     color: var(--mf-ink-3);
     font-weight: var(--mf-weight-medium);
 
@@ -169,9 +169,9 @@ blockquote,
 aside.onebox {
   max-width: 100%;
   box-sizing: border-box;
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-lg);
-  background: var(--mf-surface);
+  background: var(--mf-surface-2);
   box-shadow: none;
 
   .onebox-body {
@@ -224,7 +224,7 @@ aside.onebox {
 
 .topic-map {
   border: none !important;
-  border-top: 1px solid var(--mf-hairline) !important;
+  border-top: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;

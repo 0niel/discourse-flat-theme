@@ -49,6 +49,7 @@
 
 .btn {
   background-image: none !important;
+  border: none !important;
   box-shadow: none !important;
   font-family: var(--mf-font);
   font-weight: var(--mf-weight-medium);
@@ -70,7 +71,14 @@
   background: var(--mf-fill-active);
 }
 
-.btn.btn-icon-text:not(.btn-primary, .btn-danger) {
+.btn.btn-icon-text:not(.btn-primary, .btn-danger),
+.btn.btn-default:not(
+    .btn-primary,
+    .btn-danger,
+    .btn-flat,
+    .btn-transparent,
+    .no-text
+  ) {
   background: var(--d-button-default-bg-color);
   color: var(--d-button-default-text-color);
 
@@ -153,8 +161,9 @@
 }
 
 .fk-d-menu .fk-d-menu__inner-content {
+  border: 0;
   border-radius: var(--mf-radius-lg);
-  border: 1px solid var(--mf-hairline);
+  box-shadow: var(--shadow-dropdown);
 }
 
 #create-topic {

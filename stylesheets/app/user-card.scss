@@ -3,7 +3,7 @@
 #group-card:not(:empty),
 .group-card:not(:empty) {
   box-shadow: var(--shadow-dropdown) !important;
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-xl) !important;
   background: var(--mf-surface-elevated);
   overflow: hidden;
@@ -142,7 +142,7 @@
   }
 
   .user-content-wrapper .user-navigation {
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
   }
 }
 

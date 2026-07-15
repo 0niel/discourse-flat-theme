@@ -13,7 +13,7 @@
 .topic-list {
   .topic-list-header {
     background: transparent;
-    border-bottom: 1px solid var(--mf-hairline);
+    border-bottom: 0;
 
     th.topic-list-data {
       padding: 0 var(--mf-space-3) var(--mf-space-2);
@@ -858,7 +858,7 @@ a.discourse-tag.box,
   }
 
   .topic-item-metadata.right {
-    position: static;
+    position: relative;
     grid-column: 2;
     display: flex;
     flex-direction: column;
@@ -920,8 +920,8 @@ a.discourse-tag.box,
 
   .topic-item-metadata > .pull-right {
     position: absolute;
-    top: 12px;
-    right: 14px;
+    top: -2px;
+    right: 0;
     float: none;
     margin: 0;
   }

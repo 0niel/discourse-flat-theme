@@ -14,7 +14,7 @@
 }
 
 .chat-channel-divider {
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
   color: var(--mf-ink-3);
   font-size: var(--mf-text-2xs);
   font-weight: var(--mf-weight-semibold);
@@ -69,7 +69,7 @@
 }
 
 .c-navbar-container {
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
   background: var(--mf-surface);
 }
 
@@ -96,18 +96,18 @@
 }
 
 .chat-side-panel {
-  border-left: 1px solid var(--mf-hairline);
+  border-left: 0;
   background: var(--mf-surface);
 }
 
 .chat-thread-header,
 .chat-thread-list-header {
-  border-top: 1px solid var(--mf-hairline);
-  border-bottom: 1px solid var(--mf-hairline);
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .chat-thread-list-item {
-  border-bottom: 1px solid var(--mf-hairline);
+  border-bottom: 0;
 
   .chat-user-avatar .avatar {
     border-color: var(--mf-surface);
@@ -192,7 +192,7 @@
 
 .chat-message-actions {
   background: var(--mf-surface-elevated);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   box-shadow: none;
 }
 
@@ -245,7 +245,7 @@
 
 .c-footer {
   background: var(--mf-surface);
-  border-top: 1px solid var(--mf-hairline);
+  border-top: 0;
 }
 
 .chat-channel-card {

@@ -92,7 +92,7 @@ tt,
 
 :not(pre) > code {
   background: var(--mf-surface-2);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-xs);
   padding: 0.12em 0.4em;
   font-size: 0.88em;
@@ -100,14 +100,14 @@ tt,
 
 pre {
   background: var(--mf-surface-2);
-  border: 1px solid var(--mf-hairline);
+  border: 0;
   border-radius: var(--mf-radius-md);
   padding: var(--mf-space-4);
 }
 
 hr {
   border: none;
-  border-top: 1px solid var(--mf-hairline);
+  border-top: 0;
 }
 
 .cooked img:not(.emoji, .avatar),
