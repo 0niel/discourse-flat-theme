@@ -249,9 +249,9 @@ aside.onebox {
   .topic-map__stat .label,
   .topic-map-stat-label {
     color: var(--mf-ink-faint);
-    text-transform: uppercase;
-    font-size: var(--mf-text-2xs);
-    letter-spacing: 0.05em;
+    font-size: var(--mf-text-sm);
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .btn {
@@ -979,9 +979,12 @@ body.archetype-regular {
   border-radius: var(--mf-radius-pill);
 }
 
+.topic-map__stats .btn,
+.topic-map__stat,
 .topic-map__views-trigger,
 .topic-map__users-trigger {
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
   gap: 6px;
   min-height: 32px;
@@ -990,9 +993,23 @@ body.archetype-regular {
   border-radius: var(--mf-radius-md);
 
   .number {
-    color: var(--mf-ink-2);
+    display: inline;
+    color: var(--mf-ink-2) !important;
+    font-size: var(--mf-text-sm);
     font-weight: var(--mf-weight-semibold);
     font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+
+  .topic-map__stat-label,
+  .topic-map-stat-label {
+    display: inline;
+    color: var(--mf-ink-faint);
+    font-size: var(--mf-text-sm);
+    font-weight: var(--mf-weight-normal);
+    letter-spacing: 0;
+    line-height: 1.2;
+    text-transform: none;
   }
 
   &:hover {

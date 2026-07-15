@@ -465,3 +465,16 @@
     flex: 1 1 150px;
   }
 }
+
+.search-menu .search-input,
+.search-menu-container .search-input,
+.floating-search-input-wrapper {
+  &:focus-within {
+    background: var(--mf-surface-3) !important;
+    box-shadow: none !important;
+  }
+}
+
+.period-chooser .select-kit-body .select-kit-filter {
+  display: none;
+}

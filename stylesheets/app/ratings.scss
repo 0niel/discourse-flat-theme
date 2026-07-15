@@ -35,7 +35,12 @@ span.star-rating {
 
 #list-area .rating-list,
 .topic-list-item .rating-list {
+  justify-content: flex-start;
+  align-self: flex-start;
+  width: auto;
+  margin: 0;
   font-size: var(--mf-text-xs);
+  text-align: left;
 
   span.star-rating {
     font-size: var(--mf-text-xs);
